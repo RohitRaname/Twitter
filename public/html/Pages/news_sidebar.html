@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <aside class="news hidden">
+      <div class="news-container">
+        <h4 class="h-5 p-sm">What's happening</h4>
+
+        <ul class="news-list">
+          <li class="preview-item">
+            <div class="preview-details">
+              <div class="preview-extra">
+                <p>CNN</p>
+              </div>
+              <div class="p">me and dan pena are alpha male</div>
+            </div>
+            <div class="preview-upload-img">
+              <img
+                src="../../img/tweets/tweet-6334670cb0d772863c7ac1be-1667086108022.jpeg"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+
+        <footer class="p-sm">
+          <button class="btn--primary-text more-news">Show more</button>
+        </footer>
+      </div>
+    </aside>
+    <aside class="follow-people">
+      <div class="news-container">
+        <h4 class="h-5 p-sm">Who to follow</h4>
+
+        <ul class="follow-list">
+          <div
+            class="modal-item preview-item preview-item-container"
+            data-state=""
+            data-hover=""
+            data-user-id="6334670cb0d772863c7ac1be"
+            data-avatar="@rana"
+          >
+            <div class="preview-item-content" data-preview-window-target="">
+              <img
+                class="preview-img"
+                src="../../img/users/default.png"
+                alt=""
+                data-preview-window-target-el="true"
+              />
+              <div class="preview-details-col">
+                <div class="p" data-preview-window-target-el="true">
+                  Dan Pena
+                </div>
+                <div class="preview-extra" data-preview-window-target-el="true">
+                  @rana
+                </div>
+              </div>
+            </div>
+            <p class="preview-state toggle-child" data-active="false">
+              <button class="btn--outline btn--sm el-1" data-follow="false">
+                Following
+              </button>
+              <button class="btn--outline btn--sm el-2" data-follow="true">
+                Follow
+              </button>
+            </p>
+          </div>
+        </ul>
+
+        <footer class="p-sm">
+          <button class="btn--primary-text more-news">Show more</button>
+        </footer>
+      </div>
+    </aside>
+  </body>
+</html>

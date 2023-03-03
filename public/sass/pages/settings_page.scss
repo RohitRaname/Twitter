@@ -1,0 +1,16 @@
+.main-container[data-page='settings'] {
+  grid-template-columns: 2fr 8fr;
+
+  .settings-item {
+    grid-template-columns: min-content 1fr;
+    height: auto;
+
+    .preview-state {
+      top: 20%;
+    }
+  }
+
+  p {
+    overflow-wrap: break-word;
+  }
+}

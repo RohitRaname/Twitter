@@ -1,0 +1,26 @@
+form.form.form--forgotPassword(data-form='forgotPassword' data-optional='false' data-action='send-verification' data-all-input-fields-valid='false' onsubmit='return false;'
+data-progress-line-exist="true" 
+data-is_form_hidden="true" 
+data-form_submitting="false"
+ )
+    .form-overlay.overlay &nbsp;
+    .form-container.abs-center
+        div.progress-line(data-progress='0')
+        button.btn--icon.form-closeBtn(data-action='close')
+            i.fa.fa-times
+        .form-content
+            .center.mg-sm.m-center
+                i.fab.fa-twitter.icon--simple
+            h4.h-4.mg-lw Reset your password
+            p.t--sm.mg-md
+                | We found the following imformation associated with your account.
+            .form-checkbox
+                h.h-8.mg-md
+                    | Email a confirmation code to #{email}
+                button.btn--checkbox(data-type='circle' data-checked='false')
+                    i.fas.fa-check
+            .form-submitBtn__box
+                button.btn--white.btn--100.form-submitBtn(disabled="" data-action='next')
+                    | Next
+                button.btn--outline.btn--100.form-submitBtn(data-action='cancel')
+                    | Cancel

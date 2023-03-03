@@ -1,0 +1,233 @@
+.postedTweet {
+  &:hover {
+    transition: all 1s;
+    background: var(--backgrund-hover-light) !important;
+  }
+
+  &-group[data-tweets-count='single'] {
+    border-bottom: var(--border-line-light);
+
+    .tweet-img {
+      grid-row: 1 !important;
+    }
+  }
+  &-group[data-tweets-count='multiple'] {
+    border-bottom: var(--border-line-light);
+
+    .tweet:not(:last-child) {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 3px;
+        background: var(--background-light);
+
+        position: absolute;
+        top: 6rem;
+        left: 4.26rem;
+      }
+    }
+  }
+
+  .tweet {
+    &-container {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: min-content 1fr;
+      // font-size: $font-size-md;
+      column-gap: $default-gap;
+      padding: $padding-md;
+      padding-top: $padding-md;
+      transition: all 0.3s;
+      position: relative;
+
+      &:hover {
+        background: var(--background-hover-light);
+        cursor: pointer;
+      }
+
+      .grid--collage {
+        &[data-items='2'],
+        &[data-items='4'],
+        &[data-items='3'] {
+          grid-template-rows: repeat(2, 20rem);
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        &[data-items='2'] {
+          grid-template-rows: repeat(1, 20rem);
+        }
+
+        &[data-items='1'] {
+          grid-template-rows: 50rem;
+          grid-template-columns: 45rem;
+        }
+
+        &[data-items='3'] {
+          figure:first-child {
+            grid-row: 1/3;
+            grid-column: 1;
+          }
+        }
+      }
+    }
+
+    &-img {
+      grid-column: 1;
+      grid-row: 2/3;
+      &:hover {
+        transition: all 0.2s;
+
+        filter: brightness(93%);
+      }
+    }
+    &-content {
+    }
+
+    // &-content{} ***********************
+    &-tag {
+      display: inline-block;
+      grid-column: 2;
+      justify-self: flex-start;
+      @include hide;
+      height: 0;
+      // color: var(--text-dim);
+      // font-size: $font-size-sm;
+      // font-weight: 600;
+    }
+
+    &-user__info,
+    &-btns {
+      @include flex-center;
+      justify-content: start;
+    }
+
+    &-user__info {
+      gap: 0.6rem;
+      margin-bottom: $padding-lw;
+    }
+
+    &-btns {
+      justify-content: space-between;
+
+      button {
+        display: flex;
+        gap: 0.7rem;
+
+        .icon-box {
+        }
+      }
+    }
+
+    // &-user__info ******************
+    &-user {
+      &__info > * {
+        display: inline-block;
+        font-size: 1.4rem;
+      }
+
+      &__name {
+        // font-weight: 600;
+        // text-transform: capitalize;
+        @include trunc(14rem);
+      }
+      &__verified {
+        display: none;
+      }
+      &__email {
+        transform: translateY(-0.35rem);
+        // color: var(--text-dim);
+        @include trunc(14rem);
+      }
+      &__postTime {
+        transform: translateY(-0.35rem);
+        // color: var(--text-dim);
+      }
+    }
+
+    // dropdown btn
+    &-options-btn {
+      position: absolute;
+      top: 2rem;
+      right: 0rem;
+    }
+
+    &-message {
+      // font-size: $font-size-md;
+      width: 90%;
+      margin-top: -0.8rem;
+      overflow-wrap: anywhere;
+    }
+
+    // &-btns ((((((((((((((((((((
+  }
+}
+
+.tweet {
+  &-user {
+    &__info > * {
+      display: inline-block;
+      font-size: 1.4rem;
+    }
+
+    &__name {
+      // font-weight: 600;
+      // text-transform: capitalize;
+      @include trunc(14rem);
+    }
+    &__verified {
+      display: none;
+    }
+    &__email {
+      transform: translateY(-0.35rem);
+      // color: var(--text-dim);
+      @include trunc(14rem);
+    }
+    &__postTime {
+      transform: translateY(-0.35rem);
+      // color: var(--text-dim);
+    }
+  }
+}
+
+.postedTweet.tweet-line .tweet-container {
+  border-bottom: none;
+}
+
+// quote
+.postedTweet .quotetweet-posted-tweet {
+  cursor: pointer !important;
+  .tweet-img {
+    height: 2.2rem;
+    width: 2.2rem;
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+// retweet
+.postedTweet {
+  .tweet-retweet-title {
+    margin-bottom: -0.6rem;
+    i {
+      font-size: $font-size-sm;
+      color: var(--text-dim);
+    }
+
+    p {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-dim);
+    }
+
+    padding: 0 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+
+  button[data-dropdown-class='post-options-dropdown'] {
+    margin-top: -2rem;
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="hidden mobile-nav" data-action="show-mobile-navigation">
+      <div class="overlay-primary"></div>
+      <div class="mobile-nav-content">
+        <header class="mobile-nav-header p-sm">
+          <div class="mobile-nav-title f-sm mg-sm">
+            <h7 class="h-7">Account info</h7
+            ><button class="btn--icon-fixed" data-action="hide">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="mobile-nav-user">
+
+
+            <!-- imgs -->
+            <div class="mobile-nav-user-details">
+              <div class="f-sm mg-lw">
+                <a href="/users/rana"
+                  ><img
+                    class="img--bg"
+                    src="/img/users/user-63845ad2e18d9ee53140b22e-1669618721012.jpeg"
+                /></a>
+                <div class="f-lw">
+                  <button
+                    class="btn--icon-fixed btn--outline"
+                    data-action="show-switch-account-modal"
+                  >
+                    <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- name and avatar -->
+            <div class="f-col f-1">
+              <a href="/users/rana"
+                ><h class="h-7 block mg-0 hover-underline"
+                  >Dan Pena student</h
+                ></a
+              ><a href="/users/rana"><p class="t--md mg-sm">@rana</p></a>
+            </div>
+
+            <!-- follow stats -->
+            <div class="mobile-nav-follow-stats f-sm f-3">
+              <div class="f-lw f-1 hover-underline" data-action="show-follow-following-modal">
+                <h8 class="h-8">0</h8>
+                <p class="t--md ">Following</p>
+              </div>
+              <div class="f-lw f-1 hover-underline" data-action="show-follow-following-modal">
+                <h8 class="h-8">0</h8>
+                <p class="t--md ">Followers</p>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="mobile-nav-page-link">
+
+            <!-- direct link -->
+          <div class="mobile-nav-direct-link">
+            <a href="/users/rana">
+              <div class="dropdown-item f-md">
+                <i class="nav__icon fa fa-wpexplorer" aria-hidden="true"></i>
+                <span class="h-5 mg-0"> Profile </span>
+              </div>
+            </a>
+            <a href="/bookmarks">
+              <div class="dropdown-item f-md">
+                <i class="nav__icon fa fa-bookmark-o" aria-hidden="true"></i>
+                <span class="h-5 mg-0"> Bookmarks </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="line-dim"></div>
+
+          <!-- nested links -->
+          <div class="mobile-nav-settings">
+            <div class="dropdown-item" data-child-els="true" data-active="false">
+              <span class="h-6"> Settings </span
+              ><i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-options hidden">
+              <a href="/settings">
+                <div
+                  class="dropdown-item"
+                  data-child-el="true"
+                  data-active="false"
+                >
+                  <i class="fa fa-cog" aria-hidden="true"></i>
+                  <span class="h-7"> Settings and Privacy</span>
+                </div>
+              </a>
+              <div
+                class="dropdown-item"
+                data-child-el="true"
+                data-action="show-customize-twitter-modal"
+              >
+                <i class="fas fa-edit" aria-hidden="true"></i>
+                <span class="h-7"> Display</span>
+              </div>
+
+              <a href="/logout">
+                <div class="dropdown-item" data-child-el="true">
+                  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                  <span class="h-7">Log out @rana</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

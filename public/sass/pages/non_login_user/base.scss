@@ -1,0 +1,21 @@
+body[data-non-login-user='true'] {
+  .non-user-login-container {
+    background: var(--color-primary-light);
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 40rem;
+    justify-items: center;
+  }
+
+  button[data-action='login'] {
+    border: 1px solid rgba(#fff, 0.3);
+    &:hover {
+      filter: brightness(140%);
+    }
+  }
+}

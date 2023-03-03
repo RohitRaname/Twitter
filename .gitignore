@@ -1,0 +1,6 @@
+.cache/*
+dist/*
+node_modules/*
+config.env
+public/.cache/*
+public/node_modules

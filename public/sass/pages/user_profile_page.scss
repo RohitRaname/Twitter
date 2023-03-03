@@ -1,0 +1,40 @@
+@media only screen and (max-width: 43.75em) {
+  .section-user-profile {
+    // profile
+    .user-profile-cover {
+      height: 35vw;
+    }
+
+    .user-img-box img {
+      height: 18vw !important;
+      width: 18vw !important;
+      top: -7rem !important;
+    }
+  }
+
+  .form.edit-profile {
+    // profile modal
+    .edit-profile-cover {
+      height: 35vw;
+    }
+
+    .edit-profile-img-box {
+      height: 18vw;
+      width: 18vw;
+    }
+  }
+}
+@media only screen and (max-width: 29.06em) {
+  .section-user-profile {
+    .user-img-box img {
+      top: -6rem !important;
+    }
+  }
+}
+@media only screen and (max-width: 20em) {
+  .section-user-profile {
+    .user-img-box img {
+      top: -5rem !important;
+    }
+  }
+}

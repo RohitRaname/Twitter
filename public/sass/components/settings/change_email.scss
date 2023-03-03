@@ -1,0 +1,11 @@
+.form[data-form='setting-update-email'] {
+  .form-group {
+    border: var(--border-line) !important;
+    background: var(--color-primary-fade);
+    & > * {
+      color: var(--text-dull);
+      filter: brightness(70%);
+      cursor: default ;
+    }
+  }
+}

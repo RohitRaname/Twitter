@@ -1,0 +1,10 @@
+.popup.hidden(data-tweet-type="multiple-tweets" data-action='discard-tweets' data-click-event="false")
+    .overlay
+    .popup-container
+        h6.h-6.mg-lw Discard Thread
+        p.t--sm.mg-sm
+            | This can&apos;t be undone and you&apos;ll lose your draft.
+        button.btn--tertiary.btn--full.mg-sl(data-action='delete-tweets')
+            | Discard
+        button.btn--outline.btn--full(data-action='hide-popup')
+            | Cancel

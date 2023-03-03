@@ -1,0 +1,27 @@
+.dropdown,
+.dropdown[data-type='post-options-dropdown'],
+.dropdown[data-type='retweet_quote_post'],
+.dropdown[data-type='user-profile-options-dropdown'] {
+  position: unset;
+  .dropdown-list {
+    position: absolute;
+    z-index: 100;
+    transform: translateY(0.6rem);
+  }
+
+  &[data-active='true'] {
+    .dropdown-list {
+      // if dropdown-list is not next to dropdown-btn
+      @include show;
+    }
+  }
+}
+
+.dropdown[data-type='retweet_quote_post'] .dropdown-list {
+  .dropdown-item {
+    padding: 1rem 1.8rem;
+  }
+}
+.dropdown[data-type='user-profile-options-dropdown'] .dropdown-list {
+  width: 25rem;
+}

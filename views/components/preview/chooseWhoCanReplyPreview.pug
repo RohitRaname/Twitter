@@ -1,0 +1,31 @@
+.preview.hidden(data-type="choose-who-can-reply" data-click-event="false")
+    .overlay.overlay-transparent 
+    .preview-container
+        header.preview-header.mg-lw
+            h5.h-7.mg-sl Who can reply?
+            p.t--sm
+                | Choose who can reply to this Tweet. Anyone mentioned can
+                | always reply.
+        .preview-list
+            .preview-item(data-active='true' data-value="everyone")
+                .preview-iconBox.icon-box--primary
+                    i.fas.fa-globe-americas
+                .preview-details
+                    .paragraph--md Everyone
+                p.preview-state
+                    i.fa.fa-check
+            .preview-item(data-active='false' data-value="following")
+                .preview-iconBox.icon-box--primary
+                    i.fa.fa-user
+                .preview-details
+                    .paragraph--md People you follow
+                p.preview-state
+                    i.fa.fa-check
+            .preview-item(data-active='false' data-value="circle")
+                .preview-iconBox.icon-box--primary
+                    i.fa.fa-user-secret
+                .preview-details
+                    .paragraph--md
+                        | Only people you mention
+                p.preview-state
+                    i.fa.fa-check

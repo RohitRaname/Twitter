@@ -1,0 +1,17 @@
+.dropdown(data-type="user-profile-options-dropdown" data-dropdown="fixed" data-post-id=`${post_id}` data-post-user-id=`` post-user-name="Dan pena"
+data-post-type data-active="false" data-media-change="true")
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='' )
+        .dropdown-content
+            .dropdown-item(data-action='mute-user' data-active="false")
+                i.fas.fa-volume-mute
+                span= `Mute name` 
+            .dropdown-item(data-action='block-user' data-active="false")
+                i.fas.fa-user-alt-slash
+                span= `Block name` 
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel
+        
+        
+        

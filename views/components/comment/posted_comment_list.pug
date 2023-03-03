@@ -1,0 +1,364 @@
+footer.comment-list.comment-list-footer(data-page-type=page_type)
+    if(comments.length>0)  
+        each comment in comments
+
+            -const author = comment.author 
+            -const child_comment_count = Number(comment.child_comments_count)
+            -const reply_to = comment.reply_to
+            -const like_count = comment.metadata.like_count
+            -const retweet_count = comment.metadata.retweet_count
+            -const mine_comment=comment.author._id.toString()===cur_user._id.toString()
+
+            .comment-box
+                .comment-group(data-items-count=`${Number(comment.child_comments_count)===0?"single":"multiple"}` )
+                    .comment-item.tweet.p-sm(
+                    data-post=JSON.stringify({_id:comment._id,tweet_id:comment.tweet_id,type:"comment",ts:comment.ts,ts_format:comment.ts_format || "0m",text:comment.text,upload_imgs:comment.upload_imgs,format:"comment",author:author,reply_to:reply_to})
+
+                    data-post-id=comment._id
+                    data-post-type="comment" 
+                    data-post-reply-to=reply_to
+                    data-post-avatar=author.avatar
+                    data-post-format="comment" 
+
+                    )
+                        .preview-item.preview-item-container(
+                            data-hover=""
+                            data-no-hover-change=""
+                            data-name=author.name
+                            data-avatar=author.avatar
+                            data-bio=""
+                            data-user-id=author._id
+                            data-following_count=""
+                            data-followers_count=""
+                            data-user-detail-set="false"
+                        )
+                            img.preview-img.img--lg(src=`/img/users/${author.profilePic}` data-preview-window-target-el='true')
+                            .preview-details
+                                f-sm.f-3.mg-sl
+                                    span.preview-title(data-preview-window-target-el='true')= author.name
+                                    span.t--md(data-preview-window-target-el='true')= author.avatar
+                                    spsn.dot
+                                    span.t--md= comment.ts_format || "0m"
+                                span.preview-extra
+                                    .comment-replying.t--md
+                                        | Replying to 
+                                        a(href=`/users/${author.avatar.slice(1)}` class="blue")= reply_to.join(' ')
+                            .preview-state
+                                button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+                                    .icon-box
+                                        i.fas.fa-ellipsis
+
+
+                        .comment-item-content
+                            .comment-text.mg-sm.word-break=comment.text
+
+                            -const upload_imgs= comment.upload_imgs
+                            if(upload_imgs && upload_imgs.length>0)
+                                .tweet-uploadImg__container.mg-lw
+                                    .tweet-uploadImg__content.grid--collage(data-items=`${upload_imgs.length}`)
+                                        each img in upload_imgs
+                                            figure.tweet-uploadImg__fig
+                                                img.tweet-uploadImg(src=`/img/comments/${img}` alt='tweet img')
+
+                            .tweet-btns.f-s-a
+                                button.tweet-btn.btn--icon-dim-primary(data-action='write-comment' data-active=`${comment.comment_by_cur_user}`)
+                                    .icon-box
+                                        if(comment.comment_by_cur_user)
+                                            i.fa.fa-commenting
+                                        else
+                                            i.fa.fa-commenting-o
+                                    span.tweet-btn__value.btn--icon-value= `${comment.child_comments_count}`
+
+                            
+
+                                button.tweet-btn.btn--icon-dim-tertiary(data-action='like' data-active=`${comment.like_by_cur_user}`)
+
+                                    .icon-box
+                                        if(comment.like_by_cur_user)
+                                            i.fa.fa-heart
+                                        else
+                                            i.fa.fa-heart-o
+
+                                    span.tweet-btn__value.btn--icon-dim-value= `${comment.metadata.like_count}`
+
+                                button.tweet-btn.btn--icon-dim-primary(data-action='bookmark' data-active=`${comment.bookmark_by_cur_user}`)
+                                    div(class=`icon-box ${mine_comment?"hide":""}`)
+                                        if(comment.bookmark_by_cur_user)
+                                            i.fa.fa-bookmark
+                                        else
+                                            i.fa.fa-bookmark-o
+
+                            .btn--text-left Show Replies
+
+
+                    if(child_comment_count>0)
+                        -const child_comment = comment.reply
+                        -const child_comment_mine=child_comment.author._id.toString()===cur_user._id.toString()
+                        .comment-item.tweet.p-sm(
+                            data-post=JSON.stringify({
+                            _id:child_comment._id,
+                            tweet_id:child_comment.tweet_id,
+                            type:"comment",
+                            ts:child_comment.ts,
+                            ts_format:child_comment.ts_format || "0m",
+                            text:comment.text,
+                            upload_imgs:child_comment.upload_imgs,format:"comment",
+                            author:author,
+                            reply_to:child_comment.reply_to
+                            })
+
+                            data-post-id=child_comment._id
+                            data-post-type="comment" 
+                            data-post-reply-to=child_comment.reply_to
+                            data-post-avatar=author.avatar
+                            data-post-format="comment" 
+
+                        )
+                            .preview-item.preview-item-container(
+                                data-hover=""
+                                data-no-hover-change=""
+                                data-name=author.name
+                                data-avatar=author.avatar
+                                data-bio=""
+                                data-user-id
+                                data-following_count=""
+                                data-followers_count=""
+                                data-user-detail-set="false"
+                            )
+                                img.preview-img.img--lg(src=`/img/users/${author.profilePic || "default.png"}` data-preview-window-target-el='true')
+                                .preview-details
+                                    f-sm.f-3.mg-sl
+                                        span.preview-title(data-preview-window-target-el='true')= author.name
+                                        span.t--md(data-preview-window-target-el='true')= author.avatar
+                                        spsn.dot
+                                        span.t--md= comment.ts_format || "0m"
+                                    span.preview-extra
+                                        .comment-replying.t--md
+                                            | Replying to 
+                                            a(href=`/users/${author.avatar.slice(1)}` class="blue")= child_comment.reply_to.join(' ')
+                                .preview-state
+                                    button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+                                        .icon-box
+                                            i.fas.fa-ellipsis
+
+                            .comment-item-content
+                                .comment-text.mg-sm.word-break= child_comment.text
+                                -const upload_imgs= child_comment.upload_imgs
+                                if(upload_imgs && upload_imgs.length>0)
+                                    .tweet-uploadImg__container.mg-lw
+                                        .tweet-uploadImg__content.grid--collage(data-items=`${upload_imgs.length}`)
+                                            each img in upload_imgs
+                                                figure.tweet-uploadImg__fig
+                                                    img.tweet-uploadImg(src=`/img/comments/${img}` alt='tweet img')
+
+                                .tweet-btns.f-s-a
+                                    button.tweet-btn.btn--icon-dim-primary(data-action='write-comment' data-active=`${child_comment.comment_by_cur_user}`)
+                                        .icon-box
+                                            if(child_comment.comment_by_cur_user)
+                                                i.fa.fa-commenting
+                                            else
+                                                i.fa.fa-commenting-o
+                                        span.tweet-btn__value.btn--icon-value= `${child_comment.child_comments_count}`
+
+                                
+
+                                    button.tweet-btn.btn--icon-dim-tertiary(data-action='like' data-active=`${child_comment.like_by_cur_user}`)
+
+                                        .icon-box
+                                            if(child_comment.like_by_cur_user)
+                                                i.fa.fa-heart
+                                            else
+                                                i.fa.fa-heart-o
+
+                                        span.tweet-btn__value.btn--icon-dim-value= `${child_comment.metadata.like_count}`
+
+                                    button.tweet-btn.btn--icon-dim-primary(data-action='bookmark' data-active=`${child_comment.bookmark_by_cur_user}`)
+                                        div(class=`icon-box ${ child_comment_mine ?"hide":""}`)
+                                            if(child_comment.bookmark_by_cur_user)
+                                                i.fa.fa-bookmark
+                                            else
+                                                i.fa.fa-bookmark-o
+
+                            if(Number(child_comment.child_comments_count)>0)
+                                .btn--text-left.show-comment-replies Show Replies
+
+                //- .line-dim
+                //- .comment-item.tweet.p-sm(
+                //- data-post='{"_id":"6359d1bf68004dd9af8e045c","tweet_id":"63586b928edd14c5895dc215"," type":"comment","ts":"2022-10-25T23:05:24.873Z","ts_format":"25h","text":"fb","upload_imgs":[], "format":"comment","author":{"_id":"6334670cb0d772863c7ac1be","avatar":"@rana","name":"jdkjkjf","profilePic":"default.png"}, "reply_to":["@rana"]}'     data-post-user-id="6334670cb0d772863c7ac1be"
+                //- data-post-id="6359d1bf68004dd9af8e045c"
+                //- data-post-type="comment" 
+                //- data-post-reply-to='["@ran"]'
+                //- data-post-avatar="@kalu"
+                //- data-post-format="comment" 
+
+                //- )
+                //-     .preview-item.preview-item-container(
+                //-         data-hover=""
+                //-         data-no-hover-change=""
+                //-         data-name="jdkjkjf"
+                //-         data-avatar="@rana"
+                //-         data-bio=""
+                //-         data-user-id="6334670cb0d772863c7ac1be"
+                //-         data-following_count=""
+                //-         data-followers_count=""
+                //-         data-user-detail-set="false"
+                //-     )
+                //-         img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+                //-         .preview-details
+                //-             f-sm.f-3.mg-sl
+                //-                 span.preview-title(data-preview-window-target-el='true') Rohit rana
+                //-                 span.t--md(data-preview-window-target-el='true') @rohitrana
+                //-                 spsn.dot
+                //-                 span.t--md 5m
+                //-             span.preview-extra
+                //-                 .comment-replying.t--md
+                //-                     | Replying to 
+                //-                     a(href=`/users/${author.avatar.slice(1)}` class="blue")  @rohit 
+                //-         .preview-state
+                //-             button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+                //-                 .icon-box
+                //-                     i.fas.fa-ellipsis
+                //-         .comment-text.mg-sm
+                //-             p It&apos;s been a good day.
+                //-             p I learnt and execute so many things.
+                //-         .tweet-btns.f-s-a.mg-sl
+                //-             button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+                //-                 .icon-box
+                //-                     i.fa.fa-commenting-o
+                //- comment_count.span.tweet-btn__value.btn--icon-value 0
+                //-             button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+                //-                 .icon-box
+                //-                     i.fa.fa-heart-o
+                //-                 .icon-box.hidden
+                //-                     i.fa.fa-heart
+                //-                 span.tweet-btn__value.btn--icon-dim-value 0
+                //-             button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+                //-                 .icon-box
+                //-                     i.fa.fa-bookmark-o
+                //-                 .icon-box.hidden
+                //-                     i.fa.fa-bookmark
+
+                //-     .btn--text-left Show Replies
+
+
+
+
+//- THIS IS WIHOUT VARIABLE PUG (VERY USEFUL)
+//- footer.comment-list
+//-     .comment-box
+//-         .comment-group(data-items-count="multiple")
+//-             .comment-item.tweet.p-sm(
+//-             data-post='{"_id":"6359d1bf68004dd9af8e045c","tweet_id":"63586b928edd14c5895dc215"," type":"comment","ts":"2022-10-25T23:05:24.873Z","ts_format":"25h","text":"fb","upload_imgs":[], "format":"comment","author":{"_id":"6334670cb0d772863c7ac1be","avatar":"@rana","name":"jdkjkjf","profilePic":"default.png"}, "reply_to":["@rana"]}'     data-post-user-id="6334670cb0d772863c7ac1be"
+//-             data-post-id="6359d1bf68004dd9af8e045c"
+//-             data-post-type="comment" 
+//-             data-post-reply-to='["@ran"]'
+//-             data-post-avatar="@kalu"
+//-             data-post-format="comment" 
+
+//-             )
+//-                 .preview-item.preview-item-container(
+//-                     data-hover=""
+//-                     data-no-hover-change=""
+//-                     data-name="jdkjkjf"
+//-                     data-avatar="@rana"
+//-                     data-bio=""
+//-                     data-user-id="6334670cb0d772863c7ac1be"
+//-                     data-following_count=""
+//-                     data-followers_count=""
+//-                     data-user-detail-set="false"
+//-                 )
+//-                     img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+//-                     .preview-details
+//-                         f-sm.f-3.mg-sl
+//-                             span.preview-title(data-preview-window-target-el='true') Rohit rana
+//-                             span.t--md(data-preview-window-target-el='true') @rohitrana
+//-                             spsn.dot
+//-                             span.t--md 5m
+//-                         span.preview-extra
+//-                             .comment-replying.t--md
+//-                                 | Replying to 
+//-                                 a(href=`/users/${author.avatar.slice(1)}` class="blue")  @rohit 
+//-                     .preview-state
+//-                         button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+//-                             .icon-box
+//-                                 i.fas.fa-ellipsis
+//-                     .comment-text.mg-sm
+//-                         p It&apos;s been a good day.
+//-                         p I learnt and execute so many things.
+//-                     .tweet-btns.f-s-a.mg-sl
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+//-                             .icon-box
+//-                                 i.fa.fa-comment_count.commenting-o
+//-                             span.tweet-btn__value.btn--icon-value 0
+//-                         button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+//-                             .icon-box
+//-                                 i.fa.fa-heart-o
+//-                             .icon-box.hidden
+//-                                 i.fa.fa-heart
+//-                             span.tweet-btn__value.btn--icon-dim-value 0
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+//-                             .icon-box
+//-                                 i.fa.fa-bookmark-o
+//-                             .icon-box.hidden
+//-                                 i.fa.fa-bookmark
+//-                 .btn--text-left Show Replies
+
+//-             //- .line-dim
+//-             .comment-item.tweet.p-sm(
+//-             data-post='{"_id":"6359d1bf68004dd9af8e045c","tweet_id":"63586b928edd14c5895dc215"," type":"comment","ts":"2022-10-25T23:05:24.873Z","ts_format":"25h","text":"fb","upload_imgs":[], "format":"comment","author":{"_id":"6334670cb0d772863c7ac1be","avatar":"@rana","name":"jdkjkjf","profilePic":"default.png"}, "reply_to":["@rana"]}'     data-post-user-id="6334670cb0d772863c7ac1be"
+//-             data-post-id="6359d1bf68004dd9af8e045c"
+//-             data-post-type="comment" 
+//-             data-post-reply-to='["@ran"]'
+//-             data-post-avatar="@kalu"
+//-             data-post-format="comment" 
+
+//-             )
+//-                 .preview-item.preview-item-container(
+//-                     data-hover=""
+//-                     data-no-hover-change=""
+//-                     data-name="jdkjkjf"
+//-                     data-avatar="@rana"
+//-                     data-bio=""
+//-                     data-user-id="6334670cb0d772863c7ac1be"
+//-                     data-following_count=""
+//-                     data-followers_count=""
+//-                     data-user-detail-set="false"
+//-                 )
+//-                     img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+//-                     .preview-details
+//-                         f-sm.f-3.mg-sl
+//-                             span.preview-title(data-preview-window-target-el='true') Rohit rana
+//-                             span.t--md(data-preview-window-target-el='true') @rohitrana
+//-                             spsn.dot
+//-                             span.t--md 5m
+//-                         span.preview-extra
+//-                             .comment-replying.t--md
+//-                                 | Replying to 
+//-                                 a(href=`/users/${author.avatar.slice(1)}` class="blue")  @rohit 
+//-                     .preview-state
+//-                         button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+//-                             .icon-box
+//-                                 i.fas.fa-ellipsis
+//-                     .comment-text.mg-sm
+//-                         p It&apos;s been a good day.
+//-                         p I learnt and execute so many things.
+//-                     .tweet-btns.f-s-a.mg-sl
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+//-                             .icon-box
+//-                                 i.fa.fa-comment_count.commenting-o
+//-                             span.tweet-btn__value.btn--icon-value 0
+//-                         button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+//-                             .icon-box
+//-                                 i.fa.fa-heart-o
+//-                             .icon-box.hidden
+//-                                 i.fa.fa-heart
+//-                             span.tweet-btn__value.btn--icon-dim-value 0
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+//-                             .icon-box
+//-                                 i.fa.fa-bookmark-o
+//-                             .icon-box.hidden
+//-                                 i.fa.fa-bookmark
+
+//-                 .btn--text-left Show Replies
+
+//-             //- .line-dim

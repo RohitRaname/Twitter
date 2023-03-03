@@ -1,0 +1,36 @@
+.message-search
+    header.search-header
+        div.f-sm.mg-sm 
+            div.f-bg.f-3.f-5
+                .mobile-nav-btn
+                    img.img--sm(src=`/img/users/${cur_user.profilePic}`)
+                h7.h-7.message-title Messages
+            button.btn--icon-color(data-action="add-chat-user")
+                i.fa.fa-user-plus
+
+        form.search-form.mg-nl(onsubmit='return false;')
+            i.fa.fa-search(aria-hidden='true')
+            input.search-input(type='text' placeholder='Search Direct Messages')
+            
+    .message-search-list
+
+        if(all_recent_chat_message.length>0)
+            each recent_chat in all_recent_chat_message
+                -const {chat_id,message,to_user} = recent_chat;
+
+                .message-search-item(data-chat_id=`${chat_id}` data-chat_message_id=`${message && message._id}` data-active=`${current_chat.chat_id.toString()===chat_id.toString()}`)
+                    .preview-item-content
+                        img.preview-img.img--md(src=`/img/users/${to_user.profilePic || "default.png"}` alt='')
+                        .preview-details
+                            .preview-title
+                                span= to_user.name
+
+                                if(message)
+                                    span.dot
+                                    p.t--lw=message && message.ts || ""
+
+                            p.p--md.preview-text= `${message && message.text || ""} `
+
+                        button.btn--icon-dim-primary.mg-l.hide(data-dropdown-btn='' data-dropdown-class='search-message-dropdown' data-active='false' data-action='show-item-options')
+                            .icon-box
+                                i.fas.fa-ellipsis(aria-hidden='true')

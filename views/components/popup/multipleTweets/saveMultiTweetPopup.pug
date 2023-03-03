@@ -1,0 +1,10 @@
+.popup.hidden(data-tweet-type="multiple-tweets" data-action='save-tweet' data-click-event="false")
+    .overlay
+    .popup-container
+        h6.h-6.mg-lw Save Tweet?
+        p.t--sm.mg-sm
+            | You can save this to send later from your unsent Tweets. 
+        button.btn--white.btn--full.mg-sl(data-action='save-tweet')
+            | Save
+        button.btn--outline.btn--full(data-action='delete-tweets')
+            | Discard

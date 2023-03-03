@@ -1,0 +1,47 @@
+.main-container[data-page='message'] {
+  grid-template-columns: 1fr 9fr;
+
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    // position: fixed;
+    // width: 114rem;
+  }
+}
+
+@media only screen and (max-width: 62.25em) {
+  .message {
+    grid-template-columns: 1fr;
+
+    &-content {
+      display: none;
+
+      button[data-action='back-to-users-list'] {
+        display: block !important;
+      }
+    }
+
+    button[data-action='add-chat-user'] {
+      display: none;
+    }
+  }
+
+  body[data-is_chat_users_list_page_showing='true'] {
+    .message-search button[data-action='add-chat-user'] {
+      display: block !important;
+      position: fixed;
+      right: 2.2rem;
+      bottom: 11rem;
+      height: 6rem;
+      width: 6rem;
+      background: var(--color-primary-light);
+      i {
+        color: #fff;
+        font-size: 1.6rem;
+      }
+    }
+
+    .nav__tweet-btn{display: none !important;}
+  }
+}

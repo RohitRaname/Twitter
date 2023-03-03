@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../../../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="overlay hidden">&nbsp;</div>
+
+    <div class="main-container" data-page="settings">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> settingss </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <section
+          class="section-settings"
+          data-chat_id="1"
+          data-from_id="12"
+          data-to_user_doc='{"name":"rohit rana"}'
+          data-cur_user_id="6334670cb0d772863c7ac1be"
+        >
+          <div class="settings">
+            <header class="p-sm">
+              <div class="f-sm f-3 mg-lw">
+                <button class="btn--icon-fixed">
+                  <i class="fa fa-arrow-left"></i>
+                </button>
+
+                <h6 class="h-7 mg-0">Account information</h6>
+              </div>
+
+              <!-- action heading -->
+              <h5 class="h-6 mg-sm mg-l-lw">Confirm your password</h5>
+
+              <!-- hint -->
+              <p class="t--lw mg-l-lw">
+                Please enter your password in order to get this
+              </p>
+            </header>
+
+            <div class="line-dim mg-sm"></div>
+
+            <form
+              class="form form-static"
+              data-form="setting-confirm-password"
+              data-optional="false"
+              onsubmit="return false;"
+            >
+              <div class="form-container">
+                <div class="form-content">
+                  <div class="form-groups">
+                    <div
+                      class="form-group mg-sm"
+                      data-field="password"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="password" class="form-label">Password</label>
+                      <input
+                        class="form-input"
+                        type="password"
+                        id="password"
+                        name="password"
+                        minlength="8"
+                        maxlength="50"
+                      />
+                      <p class="form-error hidden">Min Length 8</p>
+
+                      <button
+                        class="btn--icon form-hint form-hint--seePassword"
+                        data-active="false"
+                      >
+                        <i class="fas fa-eye"></i>
+                      </button>
+
+                      <button
+                        class="btn--text form-help form-help--left"
+                        data-action="forgot-password"
+                      >
+                        Forgot Password?
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="form-submitBtn mg-l">
+                    <button class="btn--primary btn--sm disable">
+                      Confirm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

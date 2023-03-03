@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="error">
+      <div class="error-content">
+        <div class="error-alert hidden">
+          <p class="error-message">${msg}!</p>
+        </div>
+      </div>
+    </div>
+    <form
+      class="form form--login"
+      data-form="login"
+      data-optional="false"
+      data-action="login-with-email-or-name"
+      data-all-input-fields-valid="false"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <button class="btn--icon form-closeBtn" data-action="close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="form-content">
+          <div class="center mg-sm m-center">
+            <i class="fab fa-twitter icon--simple"></i>
+          </div>
+
+          <h4 class="h-4 mg-bg">Sign in to Twitter</h4>
+
+          <div class="form-groups mg-lg">
+            <div
+              class="form-group"
+              data-field="name,email"
+              data-input-filled="false"
+              data-active="false"
+              data-error="false"
+            >
+              <label for="name" class="form-label"
+                >Username or email address</label
+              >
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="nameOrEmail"
+              />
+              <!-- <p class="form-error hidden">What's your name?</p> -->
+            </div>
+          </div>
+          <button
+            class="btn--primary btn--100 form-submitBtn mg-sm"
+            disabled
+            data-action="next"
+          >
+            Next
+          </button>
+
+          <button
+            class="btn--outline btn--100 form-submitBtn mg-bg"
+            data-action="forgot-password"
+          >
+            Forgot password?
+          </button>
+
+          <p class="text--sm">
+            Don't have an account? <a class="link" href="/signUp">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+.message-content
+
+
+    .message-content-container
+        // user info
+        if(current_chat)
+            -const {messages,to_user}= current_chat
+
+            header.main-header.message-content-header 
+                    .header-content.f-sm.f-3
+                        //- phone media btn
+                        button.btn--icon-fixed.hidden.mg-r-lw(data-action="back-to-users-list")
+                            i.fa.fa-arrow-left
+
+
+
+                        a(href=`/users/${to_user.avatar.slice(1)}`)
+                            img.img--sm(src=`/img/users/${to_user.profilePic || "default.png"} ` alt='')
+                        h.h-7= to_user.name
+
+
+
+            //- user info
+            div.message-user-info
+                div
+                    img.img--md(src=`/img/users/${to_user.profilePic || "default.png"}` alt='')
+                h7.h-7= to_user.name
+                p.t--md.mg-lw= to_user.avatar
+
+            //- //- bio
+            //- p.p--md.mg-lw
+
+            //- .f-c.f-c.f-c-sm
+            //-     p.t--sm Joined May 2009
+            //-     p.t--sm 19.1M followers
+            .line-dim &nbsp;
+
+            // messages
+            ul.message-list.p-lw(data-message-left="true")
+                if(messages.length>0)
+
+                    each message in messages
+                        -const {position,_id,upload_img,ts}= message;
+                        li.message-item.f.mg-sm(data-pos=`${position}`  data-message-id=`${_id}` )
+                            .message-item-box
+                                img(class=`message-item-img mg-lw ${upload_img?"":"hidden"}` src=`${upload_img?`/img/messages/${upload_img}`:""}`)
+                            
+                                .message-item-content
+                                    button(    
+                                        class="btn--icon-dim-tertiary hide"
+                                    
+                                        data-action="delete-message")
+                                        div.icon-box
+                                            i.fas.fa-trash-alt
+
+
+
+                                if(message.text)
+                                    p.message-text.p--md= message.text
+
+                                .message-time.t--lw= message.ts
+                            
+
+
+        
+
+    // submit input
+    .message-submit-container.p-sm(data-upload-img-set='false')
+        .search-box(data-background='grey')
+            button.btn--icon-color(data-action='add-img')
+                label(for='upload-image')  
+                i.fa.fa-file-image-o(aria-hidden='true')
+            input#upload-image.hidden(type='file' accept='image/*' name='upload_image')
+            .message-upload-img-box.hidden
+                button.btn--icon.hidden(data-action='remove-img')
+                    i.fa.fa-times(aria-hidden='true')
+                img.message-upload-img(src='' alt='')
+            textarea#message(name='message' placeholder='Start a new message' value='' maxlength='300')
+            button.btn--icon-color.disable(data-action='send-message')
+                i.fas.fa-paper-plane

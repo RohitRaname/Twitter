@@ -1,0 +1,69 @@
+
+extends ../base_template/_base
+
+block section 
+
+
+
+block common_components
+
+    if(login_user)
+
+        //- common components
+        include ../components/tweet/createMultipleTweets
+
+        //- modal
+        include ../components/form/tweetRelated/scheduleTweetForm.pug
+        include ../components/modal/unsentTweet
+        include ../components/modal/editCircle
+        include ../components/modal/manage_existing_accounts
+
+
+
+
+
+        //- popup
+        include ../components/popup/multipleTweets/discardMultiTweetsPopup
+        include ../components/popup/multipleTweets/saveMultiTweetPopup
+        include ../components/popup/draftTweets/discardDraftTweetsPopup
+
+        //- preview
+        include ../components/preview/chooseAudiencePreview
+        include ../components/preview/chooseWhoCanReplyPreview  
+
+        //- modal
+        include ../components/modal/customize_twitter_modal
+
+        //- dropdown
+        include ../components/dropdown/userlogout
+        include ../components/dropdown/settings_dropdown
+        include ../components/modal/followOrfollowingModal
+
+
+    else
+        .non-user-login-container.f-sm 
+            div.non-user-login-text
+                h6.h-6.mg-0 Don't miss what's happening 
+                p.p--sm People on Twitter are first to know
+
+            div.f-sm.non-user-login-btns 
+                button.btn--outline.btn--sm(data-action="login") Log in
+                button.btn--white.btn--sm(data-action="signup") Sign up
+
+
+        include ../components/modal/login_signup_modal
+
+    //- common
+    include ../components/preview/userPreview
+    include ../components/modal/add_existing_accounts
+
+
+
+        //- common-different-component
+        //- include ../components/common_different_component/search_user_or_tweets
+
+block sidebar 
+    if(login_user)
+        include ../layouts/sidebar/base
+    else  
+        include ../layouts/sidebar/sign_up_container

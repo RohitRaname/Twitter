@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="overlay hidden">&nbsp;</div>
+
+    <div class="main-container" data-page="message">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> Messages </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+
+          <div class="user__nav-box preview-parent-abs" data-active="false">
+            <div class="preview">
+              <div class="preview-list">
+                <div
+                  class="preview-item preview-item-no-hover"
+                  data-active="true"
+                >
+                  <img
+                    src="../../img/users/default.png"
+                    class="preview-img"
+                    alt=""
+                  />
+                  <div class="preview-details">
+                    <div class="preview-title">rtr</div>
+                    <div class="preview-extra">@RohitRa19327711</div>
+                  </div>
+
+                  <p class="preview-state">
+                    <i class="fa fa-check"></i>
+                  </p>
+                </div>
+                <div class="line-dim"></div>
+
+                <div class="dropDown-item">Add an existing account</div>
+                <div class="dropDown-item">
+                  Log out <span>@cool_mclarent</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="" class="user__nav-link">
+              <img
+                class="user__nav-img img--sm"
+                src="../../img/users/default.png"
+                alt="User gmail photo"
+              />
+              <p class="user__nav-name">Somesh Rawat</p>
+              <p class="user__nav-gmail">@SomeshR9984sfddfhjfdh</p>
+              <i class="nav__icon user__nav-icon fa fa-ellipsis-h"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <section
+          class="section-message"
+          data-chat_id="1"
+          data-from_id="12"
+          data-to_user_doc='{"name":"rohit rana"}'
+          data-cur_user_id="6334670cb0d772863c7ac1be"
+        >
+          <div class="message">
+            <!-- to search messages  -->
+            <div class="message-search">
+              <header class="search-header">
+                <h7 class="h-7 message-title mg-sm">Messages</h7>
+                <form class="search-form mg-nl" onsubmit="return false;">
+                  <i class="fa fa-search" aria-hidden="true"></i
+                  ><input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search Direct Messages"
+                  />
+                </form>
+              </header>
+
+              <div class="message-search-list">
+                <div class="message-search-item">
+                  <div class="preview-item-content">
+                    <img
+                      class="preview-img img--md"
+                      src="../../img/users/default.png"
+                      alt=""
+                    />
+
+                    <div class="preview-details">
+                      <div class="preview-title">
+                        rduri
+                        <span class="dot"></span>
+
+                        <t class="t--md">Nov 11</t>
+                      </div>
+                      <p class="p--md preview-text">
+                        <span> gg </span>
+                        <span> gg </span>
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+                        <span class="yellow"> gg </span>
+                      </p>
+                    </div>
+                    <button
+                      class="btn--icon-dim-primary mg-l hide"
+                      data-dropdown-btn=""
+                      data-dropdown-class=""
+                      data-active="false"
+                      data-action="show-item-options"
+                    >
+                      <div class="icon-box">
+                        <i class="fas fa-ellipsis" aria-hidden="true"></i>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="message-content">
+              <!-- user info -->
+              <div class="message-user-info">
+                <div>
+                  <img
+                    src="../../img/users/default.png"
+                    class="img--md"
+                    alt=""
+                  />
+                </div>
+                <h7 class="h-7">AajTak</h7>
+                <p class="t--md mg-lw">@aajtak</p>
+
+                <p class="p--md mg-lw">
+                  Aajtak cover breaking news,latest news in
+                  poloitics,sports,buniness.cinema
+                </p>
+
+                <div class="f-c f-c f-c-sm">
+                  <p class="t--sm">Joined May 2009</p>
+                  <p class="t--sm">19.1M followers</p>
+                </div>
+              </div>
+
+              <div class="line-dim">&nbsp;</div>
+
+              <!-- messages -->
+              <ul class="message-list p-lw">
+                <li class="message-item f mg-sm" data-pos="left">
+                  <div class="message-item-box">
+                    <div class="message-item-content">
+                      <p class="message-text p--md">what is your name</p>
+                    </div>
+
+                    <!-- <div class="message-time t--lw">Fri 4:54 PM</div> -->
+                  </div>
+                </li>
+                <li class="message-item f mg-sm" data-pos="right">
+                  <div class="message-item-box">
+                    <div class="message-item-content">
+                      <button
+                        class="btn--icon-dim-tertiary hide"
+                        data-dropdown-btn=""
+                        data-dropdown-class="cur-user-post-options-dropdown"
+                        data-active="false"
+                        data-action="delete-message"
+                      >
+                        <div class="icon-box">
+                          <i class="fas fa-trash-alt"></i>
+                        </div>
+                      </button>
+
+                      <p class="message-text p--md">what is your name</p>
+                    </div>
+
+                    <p class="message-time t--lw">Fri 4:54 PM</p>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- submit input -->
+              <div
+                class="message-submit-container p-sm"
+                data-upload-img-set="false"
+              >
+                <div class="search-box" data-background="grey">
+                  <button class="btn--icon-color" data-action="add-img">
+                    <label for="upload-image"> </label>
+                    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                    <input
+                      class="hidden"
+                      id="upload-image"
+                      type="file"
+                      accept="image/*"
+                      name="upload_image"
+                    />
+                  </button>
+
+                  <div class="message-upload-img-box hidden">
+                    <button class="btn--icon hidden" data-action="remove-img">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                    <img
+                      class="message-upload-img"
+                      src="../../img/tweets/tweet-6334670cb0d772863c7ac1be-1667086108022.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Start a new message"
+                    value=""
+                    maxlength="300"
+                  >
+                  </textarea>
+
+                  <button
+                    class="btn--icon-color disable"
+                    data-action="send-message"
+                  >
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div
+      class="dropdown"
+      data-type="search-message-dropdown"
+      data-dropdown="fixed"
+      data-message_id="undefined"
+      data-chat_id="undefined"
+      data-active="false"
+    >
+      <div class="dropdown-list" data-top="">
+        <div class="dropdown-item" data-action="pin-chat" data-active="false">
+          <i class="fas fa-map-pin"></i><span>Pin conversation</span>
+        </div>
+        <div
+          class="dropdown-item"
+          data-action="snooze-chat"
+          data-active="false"
+        >
+          <i class="fas fa-bell-slash"></i><span>Snooze conversation</span>
+        </div>
+        <div
+          class="dropdown-item"
+          data-action="delete-conversation"
+          data-active="false"
+        >
+          <i class="fas fa-trash-alt"></i><span>Delete conversation</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

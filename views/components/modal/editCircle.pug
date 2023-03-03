@@ -1,0 +1,61 @@
+.modal.hidden(data-modal='edit-circle' data-sections='2' data-action='edit-your-circle' data-click-event="false" )
+    .overlay 
+    .modal-container(data-height='fixed-height')
+        header.modal-header.p-lw.f-md.f-3.f-1
+            
+            button.btn--icon.modal-backBtn(data-action='back')
+                i.fas.fa-arrow-left
+            h6.h-6.w-600 Edit your twitter circle
+            //- button.btn--primary-dull.btn--sm.pos-tr.modal-topRightBtn.hidden(data-action='done-with-editing-items')
+            //-     | Done
+            //- button.btn--primary-dull.btn--sm.pos-tr.modal-topRightBtn(data-action='allow-to-edit-items')
+            //-     | Edit
+        .c-boxed.modal-change-section-btns
+            button.btn--text-white.h-5(data-section='my-circle' data-btn="change-section-btn" data-active=`active`)
+                span Twitter circle
+            button.btn--text-white.h-5(data-section='recommend-circle' data-btn="change-section-btn" data-active=`false`)
+                span Recommend
+        .line
+        .modal-sections
+
+            section.modal-section.display(data-section='my-circle'  data-no-more-docs="false" data-docs-loading="false" data-page="0")
+                ul.modal-list
+                    //- if(circle_users.length>0)
+                    //-     each user in circle_users
+                    //-         .modal-item.preview-item-container.preview-item(data-state      data-user-id=`${user._id}` data-name=`${user.name}` data-avatar=`${user.avatar}` data-description=`${user.bio}` data-following_count=`${user.following_count}` data-followers_count=`${user.followers_count}` data-user-detail-set="false")
+                    //-             .preview-item-content
+                    //-                 img.preview-img(src=`../../img/users/${user.profilePic}`   onerror="this.src='/img/users/default.png'" alt='' data-preview-window-target-el='true')
+                    //-                 .preview-details
+                    //-                     .preview-title(data-preview-window-target-el='true') #{user.name}
+                    //-                     .preview-extra(data-preview-window-target-el='true') #{user.avatar}
+
+                                p.preview-state
+                                    button.btn--outline.btn--sm(data-action='remove') Remove
+
+            section.modal-section.hidden(data-section='recommend-circle' data-no-more-docs="false" data-docs-loading="false" data-page="0")
+                form.search-form.mg-v-sl.mg-sl(onsubmit='return false;')
+                    i.fa.fa-search
+                    input.search-input(type='text' placeholder='Search people')
+                    i.fa.fa-times.btn--icon-white
+                ul.modal-list
+                    //- if( recommend_users.length>0)
+                    //-     each user in recommend_users
+                    //-         .modal-item.preview-item-container.preview-item(data-state data-user-id=`${user._id}` data-name=`${user.name}` data-avatar=`${user.avatar}` data-description=`${user.bio}` data-following_count=`${user.following_count}` data-followers_count=`${user.followers_count}` )
+                    //-             .preview-item-content
+                    //-                 img.preview-img(src=`../../img/users/${user.profilePic}`  onerror="this.src='/img/users/default.png'"  alt='' data-preview-window-target-el='true')
+                    //-                 .preview-details
+                    //-                     .preview-title(data-preview-window-target-el='true') #{user.name}
+                    //-                     .preview-extra(data-preview-window-target-el='true') #{user.avatar}
+                    //-             p.preview-state
+                    //-                 button.btn--outline.btn--sm(data-action='add') Add
+                    //-                 button.btn--outline.btn--sm.hidden(data-action='Remove')
+                    //-                    Remove
+                    //-                 .modal-item.preview-item-container.preview-item(data-state data-id="12" data-name="bjp" data-avatar="@InJBP" data-description="this is me we are going to try something new" data-following_count="2,300" data-followers_count="8.8M" )
+                    //-                     .preview-item-content
+                    //-                         img.preview-img(src='default.png' alt='' data-preview-window-target-el='true')
+                    //-                         .preview-details
+                    //-                             .preview-title(data-preview-window-target-el='true') rtr
+                    //-                             .preview-extra(data-preview-window-target-el='true') @RohitRa19327711
+                    //-                     p.preview-state
+                    //-                         button.btn--outline.btn--sm(data-action='add')
+                    //-                             | Add

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="quotetweet" data-qoute-tweet='JSON.stringify({_id:"df",name:"rohit",avatar:"@rana",ts:"10hr",text:"I am high performance and have good habits",profilePic:"kjfk"})'>
+      <div class="overlay"></div>
+      <div
+        class="quotetweet-container modal-container"
+        data-height="auto-height"
+        data-sticky-header="false"
+        data-tweet-id="data-tweet-id"
+      >
+        <header class="createTweets-header">
+          <div class="createTweets-header-content f-s">
+            <button class="btn--icon" data-action="close-modal">
+              <i class="fa fas-long-arrow-alt-left"></i>
+            </button>
+            <div class="f-lw f-4">
+              <button
+                class="btn--primary-text btn--sm"
+                data-action="show-unsent-tweets"
+              >
+                Unsent Tweets
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <form
+          class="form form--createTweet"
+          onsubmit="return false;"
+          data-action="create-tweet"
+          data-active="true"
+          data-tweet-schedule="false"
+          data-multiple-tweets="false"
+          data-tweet-empty="false"
+        >
+          <div class="createTweet">
+            <div class="createTweet-container">
+              <a href="/me"
+                ><img
+                  class="createTweet-user__img img--md"
+                  src="../../img/users/default.png"
+                  alt="user photo"
+              /></a>
+              <div class="createTweet-schedule-timing t--sm f-sm f-3 hidden">
+                <i class="fas fa-calendar"></i>
+                <p>
+                  Will send
+                  <span class="createTweet-schedule-timing-value"></span>
+                </p>
+              </div>
+              <button
+                class="btn--inline preview-parent"
+                data-action="choose-audience"
+                data-active="false"
+              >
+                <span class="preview-parent-text"> Everyone </span>
+                <input
+                  class="hidden preview-parent-input"
+                  type="text"
+                  name="target_audience"
+                  value="everyone"
+                />
+                <i class="fas fa-angle-down"></i>
+                <div
+                  class="preview"
+                  data-type="choose-audience"
+                  data-click-event="false"
+                >
+                  <div class="overlay-transparent"></div>
+                  <div class="preview-container">
+                    <header class="preview-header">
+                      <h6 class="h-6 mg-lw">Choose audience</h6>
+                    </header>
+                    <div class="preview-list">
+                      <div
+                        class="preview-item"
+                        data-active="true"
+                        data-value="everyone"
+                      >
+                        <div class="preview-iconBox icon-box--primary">
+                          <i class="icon fas fa-globe-americas"></i>
+                        </div>
+                        <div class="preview-details">
+                          <div class="preview-title">Everyone</div>
+                        </div>
+                        <p class="preview-state"><i class="fa fa-check"></i></p>
+                      </div>
+                      <div
+                        class="preview-item"
+                        data-active="false"
+                        data-value="circle"
+                      >
+                        <div class="preview-iconBox icon-box--secondary">
+                          <i class="icon fas fa-users"></i>
+                        </div>
+                        <div class="preview-details">
+                          <div class="preview-title">Twitter Circle</div>
+                          <div class="preview-extra">
+                            <h8 class="h-8">1</h8> Person<a
+                              class="btn--text-white preview-option__link preview-open-component"
+                              data-action="open-user-edit-circle"
+                              >Edit</a
+                            >
+                          </div>
+                        </div>
+                        <p class="preview-state"><i class="fa fa-check"></i></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              <header class="createTweet-header mg-v-sl">
+                <div class="form-group mg-sm">
+                  <textarea
+                    class="createTweet-textarea"
+                    placeholder="Add a comment"
+                    name="text"
+                    data-scroll-event="false"
+                    data-input-change-event="false"
+                    maxlength="200"
+                  ></textarea>
+                </div>
+           
+                <div class="tweet-uploadImg__container mg-lw hidden">
+                  <div
+                    class="tweet-uploadImg__content grid--collage"
+                    data-items="0"
+                  >
+                    <figure class="tweet-uploadImg__fig hidden">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i></button
+                      ><img class="tweet-uploadImg" src="undefined" alt="" />
+                    </figure>
+                    <figure class="tweet-uploadImg__fig hidden">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i></button
+                      ><img class="tweet-uploadImg" src="undefined" alt="" />
+                    </figure>
+                    <figure class="tweet-uploadImg__fig hidden">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i></button
+                      ><img class="tweet-uploadImg" src="undefined" alt="" />
+                    </figure>
+                    <figure class="tweet-uploadImg__fig hidden">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i></button
+                      ><img class="tweet-uploadImg" src="undefined" alt="" />
+                    </figure>
+                  </div>
+                </div>
+                <article class="quotetweet-posted-tweet p-sm" data-tweet-id="">
+                    <img
+                      class="tweet-img img--lw"
+                      src="../../img/users/default.png"
+                      onerror="this.src"
+                    />
+                    <div class="tweet-content">
+                      <div class="tweet-user__info f-sl f-3">
+                        <p class="tweet-user__name h-8 mg-0" href="">rohit</p>
+                        <p class="tweet-user__verified"></p>
+                        <p class="tweet-user__email t--md" href="/">@rohit</p>
+                        <p class="tweet-user__postTime t--md">8hr</p>
+                      </div>
+                    </div>
+                    <div class="tweet-message p--md">
+                      i am high performance person i am discipline and good hobby
+                      person
+                    </div>
+                    <div class="tweet-uploadImg__container mg-lw hidden">
+                        <div
+                          class="tweet-uploadImg__content grid--collage"
+                          data-items="0"
+                        >
+                          <figure class="tweet-uploadImg__fig hidden">
+                            <button
+                              class="btn--icon-dull pos-tl"
+                              data-action="remove-img"
+                            >
+                              <i class="fa fa-times"></i></button
+                            ><img class="tweet-uploadImg" src="undefined" alt="" />
+                          </figure>
+                          <figure class="tweet-uploadImg__fig hidden">
+                            <button
+                              class="btn--icon-dull pos-tl"
+                              data-action="remove-img"
+                            >
+                              <i class="fa fa-times"></i></button
+                            ><img class="tweet-uploadImg" src="undefined" alt="" />
+                          </figure>
+                          <figure class="tweet-uploadImg__fig hidden">
+                            <button
+                              class="btn--icon-dull pos-tl"
+                              data-action="remove-img"
+                            >
+                              <i class="fa fa-times"></i></button
+                            ><img class="tweet-uploadImg" src="undefined" alt="" />
+                          </figure>
+                          <figure class="tweet-uploadImg__fig hidden">
+                            <button
+                              class="btn--icon-dull pos-tl"
+                              data-action="remove-img"
+                            >
+                              <i class="fa fa-times"></i></button
+                            ><img class="tweet-uploadImg" src="undefined" alt="" />
+                          </figure>
+                        </div>
+                      </div>
+                  </article>
+                <button
+                  class="btn--span preview-parent"
+                  data-action="choose-whocan-reply"
+                  data-active="false"
+                  data-restrict="false"
+                >
+                  <i class="fas fa-globe-americas"></i
+                  ><i class="hidden fas fa-lock"> </i
+                  ><span class="preview-parent-text">Everyone can reply</span>
+                  <input
+                    class="hidden preview-parent-input"
+                    type="text"
+                    name="audience_can_reply"
+                    value="everyone"
+                  />
+                  <div
+                    class="preview"
+                    data-type="choose-who-can-reply"
+                    data-click-event="false"
+                  >
+                    <overlay class="overlay-transparent"> </overlay>
+                    <div class="preview-container">
+                      <header class="preview-header mg-lw">
+                        <h5 class="h-7 mg-sl">Who can reply?</h5>
+                        <p class="t--md">
+                          Choose who can reply to this Tweet. Anyone mentioned
+                          can always reply.
+                        </p>
+                      </header>
+                      <div class="preview-list">
+                        <div
+                          class="preview-item"
+                          data-active="true"
+                          data-value="everyone"
+                        >
+                          <div class="preview-iconBox icon-box--primary">
+                            <i class="fas fa-globe-americas"></i>
+                          </div>
+                          <div class="preview-details">
+                            <div class="paragraph--md">Everyone</div>
+                          </div>
+                          <p class="preview-state">
+                            <i class="fa fa-check"></i>
+                          </p>
+                        </div>
+                        <div
+                          class="preview-item"
+                          data-active="false"
+                          data-value="following"
+                        >
+                          <div class="preview-iconBox icon-box--primary">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="preview-details">
+                            <div class="paragraph--md">People you follow</div>
+                          </div>
+                          <p class="preview-state">
+                            <i class="fa fa-check"></i>
+                          </p>
+                        </div>
+                        <div
+                          class="preview-item"
+                          data-active="false"
+                          data-value="circle"
+                        >
+                          <div class="preview-iconBox icon-box--primary">
+                            <i class="fa fa-user-secret"></i>
+                          </div>
+                          <div class="preview-details">
+                            <div class="paragraph--md">
+                              Only people you mention
+                            </div>
+                          </div>
+                          <p class="preview-state">
+                            <i class="fa fa-checkboxes"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                <div class="line-col-end line-dim">&nbsp;</div>
+              </header>
+
+              <footer class="createTweet-footer">
+                <div class="createTweet-btns">
+                  <button
+                    class="createTweet-btn btn--icon-color"
+                    data-action="add-img"
+                  >
+                    <label for="tweet-upload-image"></label
+                    ><i class="fa fa-file-image-o"></i>
+                    <input
+                      class="createTweet-input hidden"
+                      id="tweet-upload-image"
+                      type="file"
+                      accept="image/*"
+                      name="upload_image"
+                      data-change-event="false"
+                      multiple="multiple"
+                    />
+                  </button>
+                  <button
+                    class="createTweet-btn btn--icon-color"
+                    data-action="schedule-post"
+                  >
+                    <label for="tweet-schedule-input"
+                      ><i class="fa fa-clock-o"></i
+                    ></label>
+                    <input
+                      class="createTweet-input hidden"
+                      id="tweet-schedule-input"
+                      name="schedule_post_time"
+                    />
+                  </button>
+                </div>
+                <div class="createTweet-btns createTweet-btns--submit">
+                  <button
+                    class="btn--percent-box"
+                    data-action="tweet-text-limit"
+                  >
+                    <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg class="circular-chart orange" viewbox="0 0 36 36">
+                          <path
+                            class="circle-bg"
+                            d="M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                          ></path>
+                          <path
+                            class="circle"
+                            stroke-dasharray="2, 100"
+                            d="M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    class="btn--primary btn--sm"
+                    data-action="save-tweet"
+                    disabled=""
+                  >
+                    Tweet
+                  </button>
+                  <button
+                    class="btn--primary btn--sm hidden"
+                    data-action="save-schedule-tweet"
+                  >
+                    Schedule
+                  </button>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

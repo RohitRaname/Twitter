@@ -1,0 +1,261 @@
+// Img *************************************************
+.img {
+  border-radius: 50%;
+}
+
+.img {
+  @extend .img;
+  height: 5.2rem;
+  width: 5.2rem;
+}
+
+.img--lw {
+  @extend .img;
+  height: 2.7rem;
+  width: 2.7rem;
+}
+
+.img--sm {
+  @extend .img;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+.img--md {
+  @extend .img;
+  height: 4.7rem;
+  width: 4.7rem;
+}
+.img--bg {
+  @extend .img;
+  height: 5.2rem;
+  width: 5.2rem;
+}
+.img--lg {
+  @extend .img;
+  height: 6.4rem;
+  width: 6.4rem;
+}
+
+.img {
+  &-100 {
+    width: 100%;
+  }
+}
+
+// line *************************************************
+.line {
+  width: 100%;
+  border-bottom: var(--border-line);
+  grid-column: 1/-1;
+  height: 0;
+}
+
+.line-col-start {
+  @extend .line;
+  grid-column: 1;
+}
+.line-col-end {
+  @extend .line;
+  grid-column: 2/-1;
+}
+
+.line-dim {
+  @extend .line;
+  grid-column: 1/-1;
+  border-bottom: var(--border-line-dark);
+}
+
+// line vertical
+.line-v {
+  @extend .line;
+  height: 3rem;
+  width: 0.15rem;
+  border-bottom: none;
+  background: var(--background-dark);
+}
+
+// icon *************************************************
+.icon {
+  font-size: $default-font-size;
+  border-radius: 50%;
+  display: inline-block;
+  color: var(--default-text);
+  background: var(--defalut-background);
+  padding: 1rem;
+}
+
+.icon {
+  &--verify {
+    @extend .icon;
+    font-size: 1rem;
+    background: var(--color-primary);
+    padding: 0.5rem;
+  }
+
+  &--sm {
+    @extend .icon;
+    font-size: 2rem;
+  }
+  &--md {
+    @extend .icon;
+    font-size: 2.2rem;
+  }
+  &--bg {
+    @extend .icon;
+    font-size: 2.4rem;
+  }
+  &--lg {
+    @extend .icon;
+    font-size: 2.6rem;
+  }
+}
+
+.icon--simple {
+  font-size: 2.8rem;
+  display: inline-block;
+  color: var(--default-text);
+}
+
+.icon-box {
+  @include flex-center;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  padding: 1rem;
+  i {
+    font-size: $font-size-bg;
+    // font-size: $default-font-size;
+    display: inline-block;
+    color: var(--default-text);
+    border-radius: 50%;
+    background: transparent;
+  }
+}
+
+.icon-box {
+  &--primary,
+  &--secondary,
+  &--tertiary {
+    @extend .icon-box;
+  }
+
+  &--primary {
+    background: var(--color-primary);
+  }
+  &--secondary {
+    background: var(--color-secondary);
+  }
+  &--tertiary {
+    background: var(--color-tertiary);
+  }
+}
+
+// PERCENT CIRCLE *********************************
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.circular-chart {
+  display: block;
+
+  height: 100%;
+  width: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--background-dull);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: var(--color-primary);
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+///////////////////////////////////////
+.dot {
+  display: inline-block;
+  height: 0.4rem;
+  width: 0.4rem;
+  background: var(--background-dim);
+  border-radius: 50%;
+}
+
+.dot-m {
+  @extend .dot;
+  margin: 0 0.8rem;
+}
+
+//////////////////////////////////////////////////////////////@at-root
+// input
+.search-box {
+  font-size: $font-size-md;
+  border-radius: $radius-round;
+  border: var(--border-line);
+  padding: $padding-lw;
+  @include flex-center;
+  gap: $gap-sm;
+  width: 100%;
+
+  &[data-background='grey'] {
+    background: var(--background-dark);
+    border: none;
+  }
+  &[data-background='transparent'] {
+    background: transparent;
+    border: none;
+  }
+
+  &-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    display: inline-block;
+  }
+  input,
+  textarea {
+    background: transparent;
+    border: none;
+    font-size: inherit;
+    color: var(--defalut-text);
+    width: 100%;
+    resize: none;
+
+    &::placeholder {
+      color: var(--text-dark);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+:root[data-theme='light'] {
+  .icon,
+  .icon-box i {
+    color: #fff;
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <!-- <script defer type="module" src="../public/js/common/dropDown.js"></script> -->
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> Messages </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+
+          <div class="user__nav-box">
+            <a href="" class="user__nav-link">
+              <img
+                class="user__nav-img img--sm"
+                src="/public/img/users/default.png"
+                alt="User gmail photo"
+              />
+              <p class="user__nav-name">Somesh Rawat</p>
+              <p class="user__nav-gmail">@SomeshR9984sfddfhjfdh</p>
+              <i class="nav__icon user__nav-icon fa fa-ellipsis-h"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="header">
+          <a href="/" class="h-4">Home</a>
+        </div>
+      </main>
+
+      <div class="sidebar"></div>
+    </div>
+
+    <script>
+      function auto_grow(element) {
+        element.style.height = '5px';
+        element.style.height = element.scrollHeight + 'px';
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <button
+class="btn--icon-dim createPost-btn"
+data-action="schedule-post"
+>
+<label for="schedule-post"></label>
+<input
+  type="file"
+  accept="image/*"
+  id="schedule-post"
+  class="createPost-input hidden"
+/>
+</button> -->

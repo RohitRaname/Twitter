@@ -1,0 +1,59 @@
+include ../../../common/_dropDown
+
+form.form.form--schedule-tweet.hidden(data-action='schedule-post' data-all-fields-valid='false' onsubmit='return false;' data-click-event="false" data-date-set="false")
+    .form-overlay.overlay &nbsp;
+    .form-container.abs-center
+        .form-finish-line(data-active="false")
+        button.btn--icon.form-closeBtn
+            i.fa.fa-times
+        button.btn--text-white(data-action="clear") Clear 
+        .form-content
+            h5.h-5.mg-sm.form-heading Schedule
+            .t--md.form-description.mg-sm
+                i.fas.fa-calendar
+                p.form-schedule-label
+                    | Will send on 
+                    span Mon, Sep 5, 2022 at 5:12 PM
+            .form-groups
+                .form-group(data-type='date')
+                    h8.t-md.mg-sm.form-group__heading Date
+                    .form-boxs
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') Month
+                            input#month.form-input(type='text' name='month')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') Day
+                            input#day.form-input(type='text' name='day')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31])
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') Year
+                            input#year.form-input(type='text' name='year')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown([2022,2023,2024],"auto")
+                        h8.t-md.form-group__heading(data-type='time') Time
+                        // 
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') Hour
+                            input#hour.form-input(type='text' name='hour')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown([1,2,3,4,5,6,7,8,9,10,11,12])
+                        // 
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') Minute
+                            input#minute.form-input(type='text' name='minute')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59])
+
+                        .form-group.form-group--dropDown.dropDown-parent(data-input-filled='false' data-active='false' data-error='false')
+                            label.form-box__label(for='') AM/PM
+                            input.form-input(type='text' id='am/pm' name='am_pm')
+                            i.fa.fa-angle-down.form-icon
+                            +dropDown(["AM","PM"],"auto")
+            
+                button.form-submitBtn.btn--white.btn--sm(disabled='') Confirm
+        .line-dim.mg-lw.mg-v-sm
+        button.btn--primary-text.mg-lw(data-action='scheduled-tweets')
+            | Scheduled Tweets

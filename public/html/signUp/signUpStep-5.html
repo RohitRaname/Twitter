@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-optional="false"
+      data-action="set-password"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <!-- <button class="btn--icon form-nextBtn">
+          <i class="fa fa-times"></i>
+        </button> -->
+        <div class="form-content">
+          <h6 class="h-6 mg-sm">Step 5 of 5</h6>
+
+          <h4 class="h-4 mg-lw">You'll need a password</h4>
+          <p class="t--md mg-md">Make sure it's 8 character or more.</p>
+
+          <div
+            class="form-group"
+            data-field="password"
+            data-input-filled="false"
+            data-active="true"
+            data-error="false"
+          >
+            <label for="password" class="form-label">Password</label>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              minlength="8"
+              maxlength="50"
+            />
+            <p class="form-error hidden">Min Length 8</p>
+
+            <button
+              class="btn--icon form-hint form-hint--seePassword"
+              data-active="false"
+            >
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="form-submitBtn__box">
+            <button class="btn--white form-submitBtn" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

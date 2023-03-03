@@ -1,0 +1,277 @@
+.createTweets {
+  &-container {
+    padding: 0.8rem 1rem;
+    padding-right: 0;
+    padding-top: 0;
+    padding-left: 0;
+    overflow: hidden;
+
+    // overflow-y: scroll !important;
+    overflow-y: visible;
+    // max-height: 90vh;
+  }
+
+  // header should always have fixed height
+  &-header {
+    height: 4.8rem;
+    padding: 1.3rem 0;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+
+    button[data-action='close-modal'] {
+      margin-left: 1.4rem;
+    }
+
+    .form-group {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &-container[data-sticky-header='true'] {
+    overflow-y: scroll;
+    .createTweets {
+      &-header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+
+        &-content {
+          position: relative;
+          z-index: 200;
+        }
+
+        &::before {
+          height: 100%;
+          content: '';
+          display: inline-block;
+          width: 100%;
+          background: rgba(#fff, 0.005);
+          -moz-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+          // opacity: .7;
+          z-index: 10;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .tweet-uploadImg__container {
+    // margin-top: -3.7rem;
+    margin-top: 2.7rem;
+  }
+  &-list {
+    padding-left: 1rem;
+
+    &[data-multiple-tweets='false'] {
+      .createTweets-item:first-child .createTweet::before {
+        display: none;
+      }
+
+      button[data-action='save-tweet'] {
+        display: block !important;
+      }
+
+      button[data-action='save-all-tweets'] {
+        display: none !important;
+      }
+    }
+
+    &[data-multiple-tweets='true'] {
+      .form--createTweet[data-active='true'][data-tweet-empty='false']
+        .createTweet
+        button[data-action='save-tweet'] {
+        display: none !important;
+      }
+
+      button[data-action='save-tweet'] {
+        display: none !important;
+      }
+
+      button[data-action='save-all-tweets'] {
+        display: block !important;
+      }
+    }
+  }
+
+  // we can use transition on height as well width
+  // use transition on height and width as well
+  &-item {
+    .createTweet {
+      & {
+        position: relative;
+      }
+
+      &-container::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 1.5px;
+        background: var(--background-light);
+
+        position: absolute;
+        top: 1rem;
+        left: 3rem;
+        z-index: -1;
+      }
+
+      .form-group {
+      }
+
+      textarea {
+        transition: height 0.04s ease-in;
+      }
+
+      button[data-action='remove-tweet'] {
+        position: absolute;
+        top: 0rem;
+        right: 1.5rem;
+      }
+
+      &-container {
+        border-bottom: none;
+        padding-left: 1rem;
+        padding-top: 0;
+        border-bottom: none;
+      }
+
+      &-user__img {
+        // outline: 1.4rem solid var(--default-background);
+      }
+    }
+  }
+
+  &-item[data-active='true'] {
+    .tweet-uploadImg__container {
+      // margin-top: -3.7rem;
+      margin-top: 0rem;
+    }
+  }
+
+  &-item[data-tweet-empty='true'][data-tweet-new='true']
+    .createTweet
+    button[data-action='remove-tweet'] {
+    display: block !important;
+  }
+
+  &-item[data-tweet-mini='true'] {
+    button[data-action='choose-audience'] {
+      display: none;
+    }
+  }
+
+  &-item[data-tweet-mini='false'][data-active='true'] {
+    .createTweet {
+      textarea {
+        height: 4rem;
+      }
+    }
+  }
+  &-item[data-tweet-mini='true'][data-active='false'] {
+    .createTweet {
+      textarea {
+        height: 4rem;
+      }
+    }
+  }
+
+  &-item[data-multiple-tweets='true'] {
+    .createTweet {
+      // button[data-action='save-tweet'] {
+      //   display: none !important;
+      // }
+      // button[data-action='save-all-tweets'] {
+      //   display: block !important;
+      // }
+    }
+  }
+
+  &-item[data-tweet-new='true'] {
+    button[data-action='choose-audience'] {
+      display: none;
+    }
+  }
+
+  &-item[data-active='false'] {
+    .createTweet {
+      filter: brightness(0.6);
+
+      .form-group {
+        margin-bottom: 0 !important;
+      }
+
+      button[data-action='remove-tweet'],
+      button[data-action='choose-audience'] {
+        display: none !important;
+      }
+
+      footer,
+      header button,
+      .line-dim {
+        display: none;
+      }
+    }
+  }
+  &-item[data-tweet-new='true'][data-active='false'] .createTweet-container,
+  &-item[data-tweet-new='false'][data-active='false'] .createTweet-container,
+  &-item[data-hide-tweet-track-line='true'] .createTweet-container {
+    &::before {
+      display: none !important;
+    }
+  }
+
+  &-item[data-tweet-img-set='true'] .createTweet textarea {
+    height: 4rem !important;
+  }
+
+  // &-item[data-tweet-new="true"][data-active="true"] .createTweet-container{
+
+  // }
+}
+
+// CREATWEETS => COMMENT TYPE
+
+.createTweets-item[data-tweet-type='comment'] {
+  .postedTweet {
+    .tweet-img {
+      grid-row: 1;
+    }
+
+    & .tweet-user__info,
+    & .tweet-message span {
+      cursor: default !important;
+    }
+
+    & .tweet-container {
+      padding: 0;
+      padding-left: 1.3rem;
+      cursor: default !important;
+
+      &::before {
+        top: 4rem;
+        left: 3.26rem;
+        z-index: -1;
+      }
+    }
+  }
+
+  .createTweets-item .createTweet-user__img {
+    outline: 0.2rem solid var(--default-background);
+  }
+
+  &[data-tweet-empty='true'] button[data-action='remove-tweet'] {
+    display: none !important;
+  }
+
+  button[data-action='choose-audience'],
+  button[data-action='choose-whocan-reply'],
+  button[data-action='add-another-tweet'],
+  .createTweet-header .line-dim,
+  .createTweet-btns .line-v {
+    display: none !important;
+  }
+}

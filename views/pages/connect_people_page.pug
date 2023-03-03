@@ -1,0 +1,60 @@
+extends ./common_page
+
+block section 
+
+    .section.section-connect-people(
+        data-section="message"
+        data-cur_user=JSON.stringify(cur_user)
+        data-cur_user_id=cur_user._id
+
+  
+        )
+            header.main-header
+                .header-content(data-type="flex")
+                    a(href="/")
+                        button.btn--icon.modal-backBtn(data-action='back')
+                            i.fas.fa-arrow-left
+                    h6.h-6.w-600 Connect
+
+            h5.h-5.mg-b-lw.mg-l-sm Suggested for you 
+
+            div.connect-people-list(      
+                data-page="0"
+                data-docs_loading="false"
+                data-no_more_docs="false"
+        )
+
+                if(follow_users && follow_users.length>0)
+                    each user in follow_users
+                        .preview-item.preview-item-container(data-state 
+                        data-follow-user="true"
+                        data-user-id=`${user._id}`
+                        data-user=JSON.stringify(user)
+                        data-user-detail-set="false"
+                        data-follow_by_cur_user=user.follow_by_cur_user
+                            data-id=user._id
+                            data-name=user.name
+                            data-avatar=user.avatar
+                            data-description=user.bio
+                            data-profilePic=user.profilePic
+                            data-following_count
+                            data-followers_count
+
+                        )
+                            .preview-item-content(data-preview-window-target)
+                                img.preview-img(src=`/img/users/${user.profilePic || "default.png"}`  alt='' data-preview-window-target-el="true")
+                                .preview-details-col
+                                    .preview-title.hover-underline(data-preview-window-target-el="true") #{user.name}
+                                    .preview-extra(data-preview-window-target-el="true") #{user.avatar}
+                                    p.p--md.preview-text #{user.bio}
+                            div.preview-state.toggle-child(data-active="false")
+                                button.btn--outline.btn--sm.el-1(data-follow='false' )
+                                    | Following
+                                button.btn--outline.btn--sm.el-2(data-follow='true')
+                                    | Follow
+
+
+  
+
+
+

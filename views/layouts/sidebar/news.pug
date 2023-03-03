@@ -1,0 +1,14 @@
+
+if(side_news && side_news.length>0)
+    aside.sidebar-box.mg-lw(data-type="news")
+        h4.h-6.p-sm.mg-0 What&apos;s happening
+        ul.sidebar-list
+            each new_el in side_news
+                li.preview-item(data-word=new_el.description.split(" ")[0] data-category="business")
+                    .preview-details
+                        .preview-extra= new_el.source
+                        .preview-title= new_el.description
+                    .preview-upload-img
+                        img(src=`${new_el.urlToImage}` alt='')
+        footer.p-sm
+            button.btn--primary-text.more-news Show more

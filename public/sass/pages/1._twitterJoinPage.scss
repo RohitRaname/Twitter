@@ -1,0 +1,52 @@
+.twitter__joinPage {
+  &-content {
+    height: 100vh;
+    width: 100vw;
+    column-gap: $gap-lg !important ;
+    align-items: center;
+    grid-template-columns: 5.5fr 4.5fr;
+  }
+  &-left {
+    width: 100%;
+    position: relative;
+    align-self: stretch;
+  }
+  &-right {
+    width: 100%;
+  }
+
+  // common ***********************
+  &-icon {
+    display: inline-block;
+    fill: var(--text-light);
+  }
+
+  // &-left{}
+  &-img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  &-icon--bg {
+    height: 24.6rem;
+    width: 24.6rem;
+  }
+
+  // &-right{}
+  &-icon--sm {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  &-right__content {
+    max-width: 30rem;
+    width: 100%;
+
+    & > * {
+      width: 100%;
+    }
+  }
+  &-signInBtn[data-action='signIn'] {
+    margin-top: 1.6rem;
+  }
+}

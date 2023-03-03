@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-optional="false"
+      data-action="customise-experience"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <button class="btn--icon form-backBtn">
+          <i class="fas fa-long-arrow-alt-left"></i>
+        </button>
+        <div class="form-content">
+          <h7 class="h-7 mg-sm">Step 2 of 5</h7>
+
+          <h4 class="h-4 mg-md">Customize your experience</h4>
+
+          <h5 class="h-5">
+            Track where you see Twitter content across the web
+          </h5>
+
+          <div class="form-checkbox">
+            <p class="p--md mg-md">
+              twitter used this data to personalize your experiece.This web
+              browsing history will never be stored with your name,email,or
+              phone number
+            </p>
+
+            <button class="btn--checkbox" data-checked="false">
+              <i class="fas fa-check"></i>
+            </button>
+
+            <input type="text" class="hidden" name="track_user_content" value="true">
+          </div>
+
+          <p class="t--md mg-bg">
+            By signing up, you agree to our Terms,Privacy Policy and Cookie Use.
+            Twitter may use your contact imformation, including your email
+            address and phone number for purposes outlined in our Privacy
+            Policy,
+          </p>
+
+          <div class="form-submitBtn__box">
+            <button class="btn--white form-submitBtn" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

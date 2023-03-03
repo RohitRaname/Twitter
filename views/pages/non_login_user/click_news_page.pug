@@ -1,0 +1,20 @@
+extends ./base_page
+
+block section-content 
+    section.section.section-news.section-non-login-user-click-news(data-section="news")
+        .news 
+            header.main-header
+                .header-content.f-sm.f-3
+                    a(href=`/n/explore/${category || "general"}`)
+                        button.btn--icon.btn--back
+                            i.fas.fa-arrow-left
+                    h.h-7.mg-0=news.description
+
+            .news-content
+                .news-img 
+                    img(src=`${news.urlToImage}`)
+
+                .news-content.p-sm
+                    p.t--lw.news-source= news.source
+                    h3.h-3= news.title
+                    p.p--md= `${news.content}`

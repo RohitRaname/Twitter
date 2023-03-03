@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-action="confirm-account-credentials"
+      data-optional="false"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <button class="btn--icon form-backBtn">
+          <i class="fas fa-long-arrow-alt-left"></i>
+        </button>
+        <div class="form-content">
+          <h7 class="h-7 mg-sm">Step 3 of 5</h7>
+
+          <h3 class="h-4 mg-md">Create your account</h3>
+          <div class="form-groups mg-bg">
+            <div class="form-group" data-submitted="true" data-field="name">
+              <label for="name" class="form-label">Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                minlength="0"
+                maxlength="50"
+                value="rohitrana"
+              />
+            </div>
+            <div class="form-group" data-submitted="true" data-field="phone">
+              <label for="phone" class="form-label">Phone</label>
+              <input
+                class="form-input"
+                type="text"
+                value="8057540756"
+                maxlength="9"
+                id="phone"
+              />
+            </div>
+            <div class="form-group" data-submitted="true" data-field="date">
+              <label for="date" class="form-label">Birth date</label>
+              <input
+                class="form-input"
+                type="text"
+                value="17/10/2003"
+                id="date"
+              />
+            </div>
+          </div>
+
+          <div class="form-submitBtn__box">
+            <p class="t--sm mg-sm">
+              By signing up, you agree to our Terms,Privacy Policy and Cookie
+              Use. Twitter may use your contact imformation, including your
+              email address and phone number for purposes outlined in our
+              Privacy Policy,
+            </p>
+          </div>
+          <button class="btn--primary btn--100 form-submitBtn">Sign up</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

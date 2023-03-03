@@ -1,0 +1,10 @@
+mixin uploadImg(imgs)
+    .createPost-uploadImg__container.mg-lw
+        .createPost-uploadImg__content.grid--collage
+            each imgUrl in imgsUrl
+                figure.createPost-uploadImg__fig
+                    button.btn--icon-dull.pos-tl(data-action='remove-img')
+                        i.fa.fa-times
+                    button.btn--dull.btn--sm.pos-br(data-action='modify-img')
+                        | Edit
+                    img.createPost-uploadImg(src=`${imgUrl}` alt='')

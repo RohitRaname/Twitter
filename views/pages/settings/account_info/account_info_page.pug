@@ -1,0 +1,58 @@
+extends ../base_settings_page
+
+block content
+    .settings
+        header.p-sm.f-sm.f-1.f-3
+
+            a(href="/settings")
+                button.btn--icon-fixed
+                    i.fa.fa-arrow-left
+            h6.h-6.mg-sm Account information
+        .settings-content
+            // user info
+            ul.settings-list
+
+                a(href='/settings/account/change-username')
+                    li.settings-item.preview-item(data-active='true' data-col="2")
+                        .preview-details
+                            p.p--md Username
+                            p.t--sm= user.avatar
+
+                        .preview-state
+                            i.fa.fa-angle-right
+
+                a(href='/settings/account/change-email')
+                    li.settings-item.preview-item(data-active='true' data-col="2")
+                        .preview-details
+                            p.p--md Email
+                            p.t--sm= user.email
+
+                        .preview-state
+                            i.fa.fa-angle-right
+                        
+
+                li.settings-item.preview-item(data-active='true' data-col="2")
+                    .preview-details
+                        p.p--md Account creation
+                        p.t--sm= new Date(user.createdAt).toLocaleString() 
+
+                    .preview-state
+                    
+
+                a(href=`/users/${user.avatar.slice(1)}`)     
+                    li.settings-item.preview-item(data-active='true' data-col="2")
+                        .preview-details
+                            p.p--md Birth date
+                            p.t--sm= user.birthDate && user.birthDate.toLocaleString() || ""
+
+                        .preview-state
+                            i.fa.fa-angle-right
+                            
+
+                li.settings-item.preview-item(data-active='true' data-col="2")
+                    .preview-details
+                        p.p--md Age
+                        p.t--sm= user.birthDate &&  new Date().getFullYear() - new Date(user.birthDate).getFullYear() || ""
+
+                    .preview-state
+                        

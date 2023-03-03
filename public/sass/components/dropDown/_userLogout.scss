@@ -1,0 +1,55 @@
+.dropdown[data-type='user-logout'] {
+  .dropdown-list {
+    position: fixed;
+    max-width: 33rem;
+  }
+
+  &[data-active='false'] .overlay {
+    display: none;
+  }
+
+  .preview-container {
+  }
+
+  a {
+    text-align: center;
+    color: var(--default-text);
+
+    .dropdown-item {
+      justify-content: center;
+    }
+  }
+
+  // &__header {
+  //   display: grid;
+  //   grid-template-columns: min-content max-content 1fr;
+  //   padding: $padding-md;
+  //   column-gap: $gap-sm;
+  // }
+
+  // &__footer {
+  //   font-size: $font-size-md;
+  //   padding-bottom: $padding-sm;
+  // }
+
+  // &__img {
+  //   grid-row: 1/3;
+  // }
+  // &__name,
+  // &__gmail {
+  //   grid-column: 2;
+  // }
+  // &__name {
+  // }
+  // &__gmail {
+  //   margin-top: -1rem;
+  // }
+  // &__icon {
+  //   grid-column: 3;
+  //   grid-row: 1/3;
+  //   justify-self: end;
+  //   align-self: center;
+  //   font-size: 2.4rem;
+  //   color: var(--color-primary);
+  // }
+}

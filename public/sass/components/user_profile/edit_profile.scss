@@ -1,0 +1,140 @@
+.edit-profile {
+  .main-header {
+    padding-top: 1.6rem;
+    padding-bottom: 0;
+  }
+
+  &-header {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    gap: 4.8rem;
+    align-items: flex-end;
+
+
+
+    button[data-action='close'] {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  .form-container {
+    overflow-y: scroll;
+    padding: 0;
+    position: fixed;
+  }
+
+  .form-content {
+    padding: 1.6rem 1.6rem;
+    padding-bottom: 2.8rem;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .btn--icon {
+    background: var(--background-hover) !important;
+    transition: all 0.24s;
+    @include flex-center;
+
+    height: 4rem;
+    width: 4rem;
+    padding: 1rem;
+
+    background: var(--background-dull) !important;
+
+    &:hover {
+      background: var(--background-dim) !important;
+    }
+  }
+
+  button[data-action='close-form'] {
+    background: none !important;
+    transform: translate(-1rem, -1rem);
+  }
+  .profile-img-box {
+    .btn--icon {
+      height: 4rem;
+      width: 4rem;
+      background: var(--background-hover);
+    }
+  }
+
+  &-cover {
+    height: 23rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border: none;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    &-img-options {
+      @include abs-center;
+    }
+  }
+
+  &-img-box {
+    height: 11rem;
+    width: 11rem;
+    position: relative;
+    margin-top: -5.5rem;
+    margin-left: 2.5rem;
+    background: var(--background-hover);
+    border-radius: 50%;
+
+    label {
+      @include abs-center;
+      z-index: 20;
+    }
+
+    img {
+      outline: 0.5rem solid var(--default-background);
+      background: var(--background-hover);
+      object-fit: cover;
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  .form {
+    &-groups {
+      margin-top: 0;
+      padding: 1.6rem;
+    }
+
+    &-group {
+      // padding: 1.4rem;
+    }
+
+    &-hint {
+      width: 5rem;
+    }
+  }
+
+  // birthdata
+  .set-profile-birthdate[data-active='true'] {
+    span[data-action='cancel'] {
+      display: block !important;
+    }
+    span[data-action='edit'] {
+      display: none;
+    }
+
+    .profile-date {
+      display: none;
+    }
+
+    .form-boxs {
+      display: flex !important;
+    }
+  }
+}

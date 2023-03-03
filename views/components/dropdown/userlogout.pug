@@ -1,0 +1,31 @@
+.dropdown(data-type="user-logout" data-dropdown="fixed" data-position="fixed" data-user-id="23" data-active="false" data-media-change="true")
+    .overlay.overlay-transparent 
+    .dropdown-list
+        //- existing accounts
+        .dropdown-content
+            .dropdown-item.preview-item.preview-item-no-hover(data-active='true' data-action="")
+                img.preview-img(src=`/img/users/${cur_user.profilePic}` alt='')
+                .preview-details
+                    .preview-title= cur_user.name
+                    .preview-extra=cur_user.avatar
+                p.preview-state
+                    i.fa.fa-check
+
+            div.dropdown-user-other-accounts
+                if(cur_user_other_accounts.length>0)
+                    each other_account in cur_user_other_accounts 
+                        .dropdown-item.preview-item(data-active='false' data-action="switch-account" data-data=JSON.stringify({avatar:other_account.avatar}))
+                            img.preview-img(src=`/img/users/${other_account.profilePic}` alt='')
+                            .preview-details
+                                .preview-title= other_account.name
+                                .preview-extra=other_account.avatar
+                            p.preview-state
+                        
+
+            .line
+            .dropdown-item(data-action="show-add-existing-account-modal") Add an existing account
+            .dropdown-item(data-action="show-manage-existing-accounts") Manage existing accounts
+            .dropdown-item(data-action="logout-user")= `Log out ${cur_user.avatar}`
+
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel

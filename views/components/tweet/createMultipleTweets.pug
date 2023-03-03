@@ -1,0 +1,433 @@
+.createTweets.hidden
+    .overlay
+    .createTweets-container.modal-container(data-height='auto-height' data-sticky-header="false")
+
+        //- progress line
+        div.progress-line(data-progress-state='intial')
+
+        //- header
+        header.createTweets-header
+            .createTweets-header-content.f-s
+                button.btn--icon-fixed(data-action='close-modal')
+                    i.fa.fa-arrow-left
+                .f-lw.f-4
+                    button.btn--primary-text.btn--sm(data-action='show-unsent-tweets')
+                        | Unsent Tweets
+          
+        //-   list
+        .createTweets-list(data-multiple-tweets="false")
+                //- form(class="form form--createTweet createTweets-item" onsubmit="return false;" 
+                //- data-action="create-tweet" 
+                //- data-active="false" 
+                //- data-tweet-schedule="false" 
+                //- data-tweet-empty="false" 
+                //- data-tweet-new="false" 
+                //- data-tweet-in-use="true"
+                //- data-tweet-mini="true"
+                //- data-tweet-num="0"
+                //- data-tweet-img-set="false"
+                //- data-hide-tweet-track-line="true"
+              
+                //- )
+                //-     .createTweet
+                //-         button.btn--icon-color.hidden(data-action="remove-tweet")
+                //-             i.fa.fa-times
+                //-         .createTweet-container
+                //-             a(href='/me')
+                //-                 img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                            
+                            
+                //-             .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden             
+                //-                 i.fas.fa-calendar
+                //-                 p
+                //-                     | Will send 
+                //-                     span.createTweet-schedule-timing-value
+
+
+                //-             button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                //-                 span.preview-parent-text  Everyone 
+                //-                 input.hidden.preview-parent-input(type="text" name="target_audience" value="everyone")
+                //-                 i.fas.fa-angle-down
+                                
+
+                //-             header.createTweet-header.mg-v-sl
+                //-                 .form-group.mg-lw
+                //-                     textarea.createTweet-textarea(placeholder="What's happening?"  data-scroll-event="false" 
+                //-                     data-input-change-event="false" name='text' maxlength='200')
+
+                //-                 include ../uploadImgs/tweetImgs 
+
+                //-                 button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict="false")
+                //-                     i.fas.fa-globe-americas
+                //-                     i.hidden.fas.fa-lock                    	
+
+                //-                     span.preview-parent-text Everyone can reply
+                //-                     input.hidden.preview-parent-input(type="text" name="audience_can_reply" value="everyone")
+
+                                    
+
+                //-                 .line-col-end.line-dim &nbsp;
+
+                //-             footer.createTweet-footer
+                //-                 .createTweet-btns
+                //-                     button.createTweet-btn.btn--icon-color(data-action='add-img')
+                //-                         label(for='tweet-upload-image-1')
+                //-                         i.fa.fa-file-image-o
+                //-                         input#tweet-upload-image-1.createTweet-input.hidden(type='file' accept='image/*'      data-change-event="false" name='upload_image' multiple )
+                //-                     button.createTweet-btn.btn--icon-color(data-action='schedule-post' disabled)
+                //-                         label()
+                //-                             i.fa.fa-clock-o
+                //-                         input.createTweet-input.hidden(name='schedule_post')
+                //-                 .createTweet-btns.createTweet-btns--submit
+                //-                     button.btn--percent-box(data-action='tweet-text-limit')
+                //-                         .flex-wrapper
+                //-                             .single-chart
+                //-                                 svg.circular-chart.orange(viewbox='0 0 36 36')
+                //-                                     path.circle-bg(d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                                     path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                     .line-v
+                //-                     button.btn--icon-color(data-action='add-another-tweet')
+                //-                         i.fa.fa-plus
+                //-                     button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                //-                         | Tweet
+                //-                     button.btn--primary.hidden.btn--sm.hidden(data-action='save-all-tweets' disabled)
+                //-                         | Tweet all
+                //-                     button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                //-                         | Schedule
+
+                //- form(class="form form--createTweet createTweets-item" onsubmit="return false;" 
+                //- data-action="create-tweet" 
+                //- data-active="true" 
+                //- data-tweet-new="true" 
+                //- data-tweet-schedule="false" 
+                //- data-tweet-empty="true"
+                //- data-tweet-in-use="true"
+                //- data-tweet-mini="false"
+                //- data-tweet-num="1"
+                //- data-hide-tweet-track-line="true"
+                //- data-tweet-img-set="false"
+                //- )
+                    
+                //-     .createTweet
+                //-         button.btn--icon-color.hidden(data-action="remove-tweet")
+                //-             i.fa.fa-times
+                //-         .createTweet-container
+                //-             a(href='/me')
+                //-                 img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                            
+                            
+                //-             .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden             
+                //-                 i.fas.fa-calendar
+                //-                 p
+                //-                     | Will send 
+                //-                     span.createTweet-schedule-timing-value
+
+
+                //-             button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                //-                 span.preview-parent-text  Everyone 
+                //-                 input.hidden.preview-parent-input(type="text" name="target_audience" value="everyone")
+                //-                 i.fas.fa-angle-down
+                                
+
+                //-             header.createTweet-header.mg-v-sl
+                //-                 .form-group.mg-lw
+                //-                     textarea.createTweet-textarea(placeholder="Add another Tweet?" name='text'  data-scroll-event="false" 
+                //-                     data-input-change-event="false" maxlength='200')
+
+                //-                 include ../uploadImgs/tweetImgs 
+
+                //-                 button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict="false")
+                //-                     i.fas.fa-globe-americas
+                //-                     i.hidden.fas.fa-lock                    	
+
+                //-                     span.preview-parent-text Everyone can reply
+                //-                     input.hidden.preview-parent-input(type="text" name="audience_can_reply" value="everyone")
+
+                                    
+
+                //-                 .line-col-end.line-dim &nbsp;
+
+                //-             footer.createTweet-footer
+                //-                 .createTweet-btns
+                //-                     button.createTweet-btn.btn--icon-color(data-action='add-img')
+                //-                         label(for='tweet-upload-image-2')
+                //-                         i.fa.fa-file-image-o
+                //-                         input#tweet-upload-image-2.createTweet-input.hidden(type='file' data-change-event="false"  accept='image/*'  name='upload_image' multiple )
+                //-                     button.createTweet-btn.btn--icon-color(data-action='schedule-post' disabled)
+                //-                         label()
+                //-                             i.fa.fa-clock-o
+                //-                         input.createTweet-input.hidden(name='schedule_post')
+                //-                 .createTweet-btns.createTweet-btns--submit
+                //-                     button.btn--percent-box(data-action='tweet-text-limit')
+                //-                         .flex-wrapper
+                //-                             .single-chart
+                //-                                 svg.circular-chart.orange(viewbox='0 0 36 36')
+                //-                                     path.circle-bg(d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                                     path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                     .line-v
+                //-                     button.btn--icon-color(data-action='add-another-tweet')
+                //-                         i.fa.fa-plus
+                //-                     button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                //-                         | Tweet
+                //-                     button.btn--primary.hidden.btn--sm.hidden(data-action='save-all-tweets' disabled)
+                //-                         | Tweet all
+                //-                     button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                //-                         | Schedule
+            
+                //- form(class="form form--createTweet createTweets-item hidden" onsubmit="return false;" 
+                //- data-action="create-tweet" 
+                //- data-active="true" 
+                //- data-tweet-new="true" 
+                //- data-tweet-schedule="false" 
+                //- data-tweet-empty="true"
+                //- data-tweet-in-use="false"
+                //- data-tweet-mini="false"
+                //- data-tweet-num="2"
+                //- data-hide-tweet-track-line="false"
+                //- data-tweet-img-set="false"
+                //- )
+                    
+                //-     .createTweet
+                //-         button.btn--icon-color.hidden(data-action="remove-tweet")
+                //-             i.fa.fa-times
+                //-         .createTweet-container
+                //-             a(href='/me')
+                //-                 img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                            
+                            
+                //-             .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden             
+                //-                 i.fas.fa-calendar
+                //-                 p
+                //-                     | Will send 
+                //-                     span.createTweet-schedule-timing-value
+
+
+                //-             button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                //-                 span.preview-parent-text  Everyone 
+                //-                 input.hidden.preview-parent-input(type="text" name="target_audience" value="everyone")
+                //-                 i.fas.fa-angle-down
+                                
+
+                //-             header.createTweet-header.mg-v-sl
+                //-                 .form-group.mg-lw
+                //-                     textarea.createTweet-textarea(placeholder="Add another Tweet?" name='text'  data-scroll-event="false" 
+                //-                     data-input-change-event="false" maxlength='200')
+
+                //-                 include ../uploadImgs/tweetImgs 
+
+                //-                 button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict="false")
+                //-                     i.fas.fa-globe-americas
+                //-                     i.hidden.fas.fa-lock                    	
+
+                //-                     span.preview-parent-text Everyone can reply
+                //-                     input.hidden.preview-parent-input(type="text" name="audience_can_reply" value="everyone")
+
+                                    
+
+                //-                 .line-col-end.line-dim &nbsp;
+
+                //-             footer.createTweet-footer
+                //-                 .createTweet-btns
+                //-                     button.createTweet-btn.btn--icon-color(data-action='add-img')
+                //-                         label(for='tweet-upload-image-3')
+                //-                         i.fa.fa-file-image-o
+                //-                         input#tweet-upload-image-3.createTweet-input.hidden(type='file' data-change-event="false"  accept='image/*'  name='upload_image' multiple )
+                //-                     button.createTweet-btn.btn--icon-color(data-action='schedule-post' disabled)
+                //-                         label()
+                //-                             i.fa.fa-clock-o
+                //-                         input.createTweet-input.hidden(name='schedule_post')
+                //-                 .createTweet-btns.createTweet-btns--submit
+                //-                     button.btn--percent-box(data-action='tweet-text-limit')
+                //-                         .flex-wrapper
+                //-                             .single-chart
+                //-                                 svg.circular-chart.orange(viewbox='0 0 36 36')
+                //-                                     path.circle-bg(d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                                     path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                     .line-v
+                //-                     button.btn--icon-color(data-action='add-another-tweet')
+                //-                         i.fa.fa-plus
+                //-                     button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                //-                         | Tweet
+                //-                     button.btn--primary.hidden.btn--sm.hidden(data-action='save-all-tweets' disabled)
+                //-                         | Tweet all
+                //-                     button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                //-                         | Schedule
+            
+                //- form(class="form form--createTweet createTweets-item hidden" onsubmit="return false;" 
+                //- data-action="create-tweet" 
+                //- data-active="true" 
+                //- data-tweet-new="true" 
+                //- data-tweet-schedule="false" 
+                //- data-tweet-empty="true"
+                //- data-tweet-in-use="false"
+                //- data-tweet-mini="false"
+                //- data-tweet-num="3"
+                //- data-hide-tweet-track-line="false"
+                //- data-tweet-img-set="false"
+                //- )
+                    
+                //-     .createTweet
+                //-         button.btn--icon-color.hidden(data-action="remove-tweet")
+                //-             i.fa.fa-times
+                //-         .createTweet-container
+                //-             a(href='/me')
+                //-                 img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                            
+                            
+                //-             .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden             
+                //-                 i.fas.fa-calendar
+                //-                 p
+                //-                     | Will send 
+                //-                     span.createTweet-schedule-timing-value
+
+
+                //-             button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                //-                 span.preview-parent-text  Everyone 
+                //-                 input.hidden.preview-parent-input(type="text" name="target_audience" value="everyone")
+                //-                 i.fas.fa-angle-down
+                                
+
+                //-             header.createTweet-header.mg-v-sl
+                //-                 .form-group.mg-lw
+                //-                     textarea.createTweet-textarea(placeholder="Add another Tweet?" name='text'  data-scroll-event="false" 
+                //-                     data-input-change-event="false" maxlength='200')
+
+                //-                 include ../uploadImgs/tweetImgs 
+
+                //-                 button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict="false")
+                //-                     i.fas.fa-globe-americas
+                //-                     i.hidden.fas.fa-lock                    	
+
+                //-                     span.preview-parent-text Everyone can reply
+                //-                     input.hidden.preview-parent-input(type="text" name="audience_can_reply" value="everyone")
+
+                                    
+
+                //-                 .line-col-end.line-dim &nbsp;
+
+                //-             footer.createTweet-footer
+                //-                 .createTweet-btns
+                //-                     button.createTweet-btn.btn--icon-color(data-action='add-img')
+                //-                         label(for='tweet-upload-image-4')
+                //-                         i.fa.fa-file-image-o
+                //-                         input#tweet-upload-image-4.createTweet-input.hidden(type='file' data-change-event="false"  accept='image/*'  name='upload_image' multiple )
+                //-                     button.createTweet-btn.btn--icon-color(data-action='schedule-post' disabled)
+                //-                         label()
+                //-                             i.fa.fa-clock-o
+                //-                         input.createTweet-input.hidden(name='schedule_post')
+                //-                 .createTweet-btns.createTweet-btns--submit
+                //-                     button.btn--percent-box(data-action='tweet-text-limit')
+                //-                         .flex-wrapper
+                //-                             .single-chart
+                //-                                 svg.circular-chart.orange(viewbox='0 0 36 36')
+                //-                                     path.circle-bg(d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                                     path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                     .line-v
+                //-                     button.btn--icon-color(data-action='add-another-tweet')
+                //-                         i.fa.fa-plus
+                //-                     button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                //-                         | Tweet
+                //-                     button.btn--primary.hidden.btn--sm.hidden(data-action='save-all-tweets' disabled)
+                //-                         | Tweet all
+                //-                     button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                //-                         | Schedule
+            
+                //- form(class="form form--createTweet createTweets-item hidden" onsubmit="return false;" 
+                //- data-action="create-tweet" 
+                //- data-active="true" 
+                //- data-tweet-new="true" 
+                //- data-tweet-schedule="false" 
+                //- data-tweet-empty="true"
+                //- data-tweet-in-use="false"
+                //- data-tweet-mini="false"
+                //- data-tweet-num="4"
+                //- data-hide-tweet-track-line="false"
+                //- data-tweet-img-set="false"
+                //- )
+                    
+                //-     .createTweet
+                //-         button.btn--icon-color.hidden(data-action="remove-tweet")
+                //-             i.fa.fa-times
+                //-         .createTweet-container
+                //-             a(href='/me')
+                //-                 img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                            
+                            
+                //-             .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden             
+                //-                 i.fas.fa-calendar
+                //-                 p
+                //-                     | Will send 
+                //-                     span.createTweet-schedule-timing-value
+
+
+                //-             button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                //-                 span.preview-parent-text  Everyone 
+                //-                 input.hidden.preview-parent-input(type="text" name="target_audience" value="everyone")
+                //-                 i.fas.fa-angle-down
+                                
+
+                //-             header.createTweet-header.mg-v-sl
+                //-                 .form-group.mg-lw
+                //-                     textarea.createTweet-textarea(placeholder="Add another Tweet?" name='text'  data-scroll-event="false" 
+                //-                     data-input-change-event="false" maxlength='200')
+
+                //-                 include ../uploadImgs/tweetImgs 
+
+                //-                 button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict="false")
+                //-                     i.fas.fa-globe-americas
+                //-                     i.hidden.fas.fa-lock                    	
+
+                //-                     span.preview-parent-text Everyone can reply
+                //-                     input.hidden.preview-parent-input(type="text" name="audience_can_reply" value="everyone")
+
+                                    
+
+                //-                 .line-col-end.line-dim &nbsp;
+
+                //-             footer.createTweet-footer
+                //-                 .createTweet-btns
+                //-                     button.createTweet-btn.btn--icon-color(data-action='add-img')
+                //-                         label(for='tweet-upload-image')
+                //-                         i.fa.fa-file-image-o
+                //-                         input#tweet-upload-image.createTweet-input.hidden(type='file' data-change-event="false"  accept='image/*'  name='upload_image' multiple )
+                //-                     button.createTweet-btn.btn--icon-color(data-action='schedule-post' disabled)
+                //-                         label()
+                //-                             i.fa.fa-clock-o
+                //-                         input.createTweet-input.hidden(name='schedule_post')
+                //-                 .createTweet-btns.createTweet-btns--submit
+                //-                     button.btn--percent-box(data-action='tweet-text-limit')
+                //-                         .flex-wrapper
+                //-                             .single-chart
+                //-                                 svg.circular-chart.orange(viewbox='0 0 36 36')
+                //-                                     path.circle-bg(d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                                     path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                //-                                     a 15.9155 15.9155 0 0 1 0 31.831\
+                //-                                     a 15.9155 15.9155 0 0 1 0 -31.831')
+                //-                     .line-v
+                //-                     button.btn--icon-color(data-action='add-another-tweet')
+                //-                         i.fa.fa-plus
+                //-                     button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                //-                         | Tweet
+                //-                     button.btn--primary.hidden.btn--sm.hidden(data-action='save-all-tweets' disabled)
+                //-                         | Tweet all
+                //-                     button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                //-                         | Schedule
+            

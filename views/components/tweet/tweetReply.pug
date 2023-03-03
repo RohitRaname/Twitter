@@ -1,0 +1,81 @@
+.tweet-reply.hide(data-tweet-id='data-tweet-id')
+    .overlay
+    .tweet-container.modal-container(data-height='auto-height' data-sticky-header='false' )
+        header.tweet-reply-header
+            .tweet-reply-header-content.f-s
+                button.btn--icon(data-action='close-modal')
+                    i.fa.fas-long-arrow-alt-left
+                .f-lw.f-4
+                    button.btn--primary-text.btn--sm(data-action='show-unsent-tweets')
+                        | Unsent Tweets
+        .createTweetReply
+            form.form.form--createTweet(onsubmit='return false;' data-action='create-tweet-reply' data-active='false' data-tweet-schedule='false' data-multiple-tweets='false' data-tweet-empty='true')
+                .tweet.postedTweet.mg-sm
+                    .tweet-container.tweet-reply-content.tweet-line
+                        img.tweet-img.img--md(src='/img/users/default.png')
+                        .tweet-content.tweet-reply-detail
+                            .tweet-user__info.preview-item(data-no-hover-change='')
+                                p.tweet-user__name.h-8.hover-underline Rohit
+                                p.tweet-user__verified
+                                p.tweet-user__email.t--md Rana
+                                p.tweet-user__postTime.t--md.hover-underline 10h
+                            p.p--md.mg-sm
+                                | Manifesting a dream placement in final year of college.&#x1F97A;&#x1F648;
+                            .tweet-message.mg-lw.t--md
+                                | Replying to 
+                                span.blue  @rohit 
+                .createTweet
+                    .createTweet-container
+                        img.createTweet-user__img.tweet-user-img.img--md(src='/img/users/default.png' alt='user photo')
+                        .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden
+                            i.fas.fa-calendar
+                            p
+                                | Will send
+                                span.createTweet-schedule-timing-value
+                        header.createTweet-header.mg-v-sl
+                            .form-group.mg-lw
+                                textarea.createTweet-textarea(placeholder="What's happening?" name='text' data-scroll-event='false' data-input-change-event='false' maxlength='200')
+                            .tweet-uploadImg__container.mg-lw.hidden
+                                .tweet-uploadImg__content.grid--collage(data-items='0')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                        footer.createTweet-footer
+                            .createTweet-btns
+                                button.createTweet-btn.btn--icon-color(data-action='add-img')
+                                    label(for='tweet-upload-image-reply')
+                                    i.fa.fa-file-image-o
+                                    input#tweet-upload-image-reply.createTweet-input.hidden(type='file' accept='image/*' name='upload_image' data-change-event='false' multiple='multiple')
+                                button.createTweet-btn.btn--icon-color(data-action='schedule-post')
+                                    label(for='tweet-schedule-input')
+                                    i.fa.fa-clock-o
+                                    input#tweet-schedule-input.createTweet-input.hidden(name='schedule_post_time')
+                            .createTweet-btns.createTweet-btns--submit
+                                button.btn--percent-box(data-action='tweet-text-limit')
+                                    .flex-wrapper
+                                        .single-chart
+                                            svg.circular-chart.orange(viewbox='0 0 36 36')
+                                                path.circle-bg(d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                                path.circle(stroke-dasharray='2, 100' d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                .line-v
+                                button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                                    | Reply
+                                button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                                    | Schedule
+
+
+
+

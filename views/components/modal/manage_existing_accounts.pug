@@ -1,0 +1,41 @@
+.modal.hidden(data-modal='manage-existing-accounts' data-sections='1' data-action='manage-existing-accounts' data-click-event="false")
+    .overlay 
+    .modal-container(data-height='fixed-height')
+        header.modal-header.p-lw.f-md.f-3.f-1
+
+            button.btn--icon-fixed(data-action="back")
+                i.fa.fa-arrow-left
+            h6.h-6.w-600 Accounts
+
+
+        article.modal-list
+            .dropdown-item.preview-item.preview-item-no-hover(data-active='true')
+                img.preview-img(src=`/img/users/${cur_user.profilePic}` alt='')
+                .preview-details
+                    .preview-title= cur_user.name
+                    .preview-extra= cur_user.avatar
+                p.preview-state
+                    i.fa.fa-check
+
+            if(cur_user_other_accounts.length>0)
+                each other_account in cur_user_other_accounts 
+
+                    .dropdown-item.preview-item(data-active='false' data-action="switch-account" data-data=JSON.stringify({avatar:other_account.avatar}))
+                        img.preview-img(src=`/img/users/${other_account.profilePic}` alt='')
+                        .preview-details
+                            .preview-title= other_account.name
+                            .preview-extra= other_account.avatar
+                        p.preview-state
+                            i.fa.fa-check
+        
+        div.p-sm
+            button.btn--primary-text.mg-sm(data-action="show-add-existing-account-modal") Add an existing account
+
+            p.t--md.mg-sl If you have more than one Twitter account, you can add them and easily switch between. You can add up to 5 accounts
+
+
+        .line-dim.mg-sl
+
+        div.p-sm.f-c
+            button.btn--tertiary-text(data-action="log-all-accounts") Log out of all accounts
+

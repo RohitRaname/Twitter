@@ -1,0 +1,46 @@
+.sidebar {
+  font-size: $font-size-md;
+  &-box {
+    width: 100%;
+    border-radius: $radius-hg;
+    background: var(--color-primary-dim);
+    // border: var(--border-line-dull);
+
+    button.more-news {
+      font-weight: 500;
+    }
+
+    .preview-item {
+      width: 100%;
+      grid-template-columns: 1fr min-content;
+      transition: all 0.25s;
+    }
+
+    .preview-extra {
+      font-size: 1.3rem;
+    }
+
+    .preview-title {
+      color: var(--text-light);
+      font-size: 1.49rem;
+    }
+
+    .preview-upload-img img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: $radius-lg;
+    }
+
+    button.more-news {
+      margin-left: -0.8rem;
+    }
+
+    .preview-state {
+      display: block;
+    }
+
+    footer {
+      padding-top: 0.8rem !important;
+    }
+  }
+}

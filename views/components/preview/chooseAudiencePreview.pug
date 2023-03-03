@@ -1,0 +1,26 @@
+.preview.hidden(data-type="choose-audience" data-click-event="false")
+    .overlay.overlay-transparent
+    .preview-container
+        header.preview-header
+            h7.h-7.mg-lw Choose audience
+        .preview-list
+            .preview-item(data-active='true' data-value="everyone")
+                .preview-iconBox.icon-box--primary
+                    i.icon.fas.fa-globe-americas
+                .preview-details
+                    .preview-title Everyone
+                p.preview-state
+                    i.fa.fa-check
+            .preview-item(data-active='false' data-value="circle")
+                .preview-iconBox.icon-box--secondary
+                    i.icon.fas.fa-users
+                .preview-details
+                    .preview-title Twitter Circle
+                    .preview-extra
+                        h8.choose-audience-circle-count.p--md= `${total_circle_users}`
+                        |  Person
+                        a.btn--text-white.preview-option__link.preview-open-component( data-action="open-user-edit-circle") Edit
+                p.preview-state
+                    i.fa.fa-check
+
+                        

@@ -1,0 +1,75 @@
+extends ../base_settings_page
+
+block content
+    .settings
+
+        header.p-sm
+            .f-sm.f-3.mg-lw
+                a(href="/settings/account")
+                    button.btn--icon-fixed
+                        i.fa.fa-arrow-left
+                h6.h-6.mg-0 Change email
+
+
+        .settings-content
+            form.mg-sm.form.form-static(data-form='setting-update-email' data-optional='false' onsubmit='return false;')
+                .form-container
+                    .form-content
+                        .form-groups
+                            .form-group(data-field='avatar' data-input-filled='true' data-active='false' data-error='false')
+                                label.form-label(for='avatar') Username
+                                input#avatar.form-input(type='avatar' name='avatar' minlength='8' maxlength='50' value=user.avatar placeholder="" readonly)
+                                p.form-error.hidden Min Length 8
+
+            .line.mg-sm 
+
+            div.f-c
+                button.btn--primary-text(data-action="show-change-email-modal") Update email address     
+
+
+
+    //- verify-password
+    form.form.hidden(data-form='settings-verify-password' data-optional='false' data-action='verify-password' onsubmit='return false;')
+        .form-overlay.overlay &nbsp;
+        .form-container.abs-center
+            
+            .form-content
+                div.mg-c.mg-md
+                    i.nav__icon--logo.fa.fa-twitter
+
+                h6.h-5.mg-lw Verify your Password
+                p.t--md.mg-md Re-enter your Twitter password to continue.
+
+                .form-group(data-field='password' data-input-filled='false' data-active='true' data-error='false')
+                    label.form-label(for='password') Password
+                    input#password.form-input(type='password' name='password' minlength='8' maxlength='20')
+                    p.form-error.hidden Min Length 8
+                    button.btn--icon.form-hint.form-hint--seePassword(data-active='false')
+                        i.fas.fa-eye
+
+                .form-submitBtn__box.toggle-child(data-active="false")
+                    button.btn--white.el-1.form-submitBtn(disabled) Next
+                    button.btn--outline.el-2(data-action="hide-modal") Cancel
+    
+    
+    //- set new email
+    form.form.hidden(data-form='settings-change-email' data-optional='false' data-action='change-email' onsubmit='return false;')
+        .form-overlay.overlay &nbsp;
+        .form-container.abs-center
+            
+            .form-content
+                div.mg-c.mg-md
+                    i.nav__icon--logo.fa.fa-twitter
+
+                h6.h-5.mg-lw Change email
+                p.t--md.mg-md= `Your current email is ${user.email}. What would you like to update it to? Your email is not displayed in your public profile on Twitter.`
+
+                .form-group(data-field='email' data-input-filled='false' data-active='true' data-error='false')
+                    label.form-label(for='email') email
+                    input#email.form-input(type='email' name='email' minlength='8' maxlength='20')
+                    p.form-error.hidden Incorrect email.
+                
+
+                .form-submitBtn__box.toggle-child(data-active="false")
+                    button.btn--white.el-1.form-submitBtn(disabled) Submit
+                    button.btn--outline.el-2(data-action="hide-modal") Cancel

@@ -1,0 +1,27 @@
+extends ./common_page
+
+
+block section 
+
+    .section.section-explore-news(data-section="explore" data-cur_user=cur_user && JSON.stringify(cur_user))
+        header.sticky-header 
+           
+            .header-content.f-md.f-3.f-5
+                if(login_user)
+                    .mobile-nav-btn(data-active="false")
+                        img.img--sm(src=`/img/users/${cur_user.profilePic}`)
+                    button.btn--icon-fixed.hidden(data-action="hide-dropdown")  
+                        i.fa.fa-arrow-left
+                
+                include ../components/common_different_component/search_user_or_tweets
+
+        .explore-news
+            .explore-news-container
+                include ../components/explore/explore_modal
+
+
+block sidebar
+    if(login_user)
+        include ../layouts/sidebar/suggested_users_to_follow
+    else 
+        include ../layouts/sidebar/sign_up_container

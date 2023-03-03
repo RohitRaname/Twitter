@@ -1,0 +1,310 @@
+.message {
+  display: grid;
+  grid-template-columns: 35rem 1fr;
+  font-size: $font-size-md;
+  height: 100vh;
+
+  &-title {
+    padding-left: 0.4rem;
+  }
+
+  // from now on i should break the css into file search and messages
+
+  //   search side
+  &-search {
+    border-right: var(--border-line-light);
+    overflow-x: hidden;
+    .search-header {
+      padding: 1rem;
+      @include flex-column;
+    }
+    .search-form {
+      padding: 0;
+      font-size: $font-size-sm;
+      border: var(--border-line);
+      margin: 0rem;
+      padding: 1rem;
+    }
+
+    .search-input {
+      width: auto;
+      font-size: $font-size-sm;
+    }
+
+    &-list {
+    }
+
+    &-item {
+      width: 100%;
+      padding: 1.2rem;
+      padding-right: 0;
+      background: var(--background-light);
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &[data-active='true'] {
+        border-right: 2px solid var(--color-primary-light);
+      }
+
+      &:hover {
+        background: var(--background-hover);
+      }
+
+      .preview-img {
+        height: 4.7rem;
+        width: 4.7rem;
+      }
+
+      .preview-item-content {
+        align-items: center;
+        width: 100%;
+      }
+
+      .preview-text {
+        // font-size: 1.3rem;
+        display: block;
+        padding-top: 0.5rem;
+
+        span.yellow {
+          background: yellow;
+          color: var(--background-dark);
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-item:hover {
+      button[data-action='show-item-options'] {
+        @include show;
+      }
+    }
+  }
+
+  //   content side
+  &-content {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  &-content-container {
+    position: relative;
+    overflow-y: scroll;
+    height: 90vh;
+  }
+
+  &-content-header {
+    padding: 1rem !important;
+  }
+
+  &-user-info {
+    text-align: center;
+    // height: 16vh;
+    padding-top: 2rem;
+
+    img {
+    }
+  }
+
+  &-list {
+    padding: 1.2rem !important;
+    // height: 68vh;
+    position: relative;
+    z-index: 10;
+  }
+  &-item {
+    &-box {
+      width: 60%;
+    }
+
+    &-content {
+      display: inline-flex;
+      gap: 1rem;
+    }
+
+    & {
+      .message-text {
+        padding: 0 1rem;
+        background: var(--color-primary);
+        border-radius: $radius-sm;
+        color: #fff;
+      }
+      .message-time {
+        margin-top: 0.4rem;
+      }
+    }
+
+    &[data-pos='left'] {
+      justify-content: left;
+      text-align: left;
+
+      button[data-action='delete-message'] {
+        display: none;
+      }
+
+      img {
+        display: block;
+        margin-right: auto;
+      }
+    }
+    &[data-pos='right'] {
+      justify-content: right;
+      text-align: right;
+      align-items: flex-start;
+      img {
+        display: block;
+        margin-left: auto;
+      }
+    }
+
+    .message-item-img {
+      border-radius: $radius-bg;
+      height: 25rem;
+      width: 25rem;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .message-text {
+      word-break: break-all;
+      display: inline-flex;
+    }
+
+    button[data-action='delete-message'] {
+      margin-right: 0.8rem;
+
+      &,
+      .icon-box {
+        padding: 0;
+        height: 3rem;
+        width: 3rem;
+      }
+      i {
+        font-size: 1.34rem;
+        color: var(--color-tertiary);
+      }
+    }
+  }
+
+  &-item-box:hover button[data-action='delete-message'] {
+    @include show;
+  }
+
+  &-submit-container {
+    border-top: var(--border-line-light);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--default-background);
+    z-index: 50;
+    width: 100%;
+
+    padding: 1.5rem !important;
+    // height: 6vh;
+
+    .search-box {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding: 0.2rem 1rem;
+      border-radius: $radius-bg;
+    }
+
+    button[data-action='add-img'] {
+      position: relative;
+      label {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+        left: 0;
+      }
+
+      i {
+        position: relative;
+        z-index: 4;
+      }
+    }
+
+    .message-upload-img-box {
+      position: relative;
+      height: 16rem;
+      width: 15rem;
+      button[data-action='remove-img'] {
+        @include abs-center;
+        background: var(--background-dark);
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: $radius-bg;
+        border: var(--border-line);
+      }
+    }
+
+
+
+    textarea {
+      font-size: 1.8rem;
+      overflow: hidden;
+      resize: none;
+      display: block;
+      overflow-y: scroll;
+      padding: 0.8rem;
+      height: 4rem;
+      line-height: 1.3;
+
+      &::placeholder {
+        color: var(--text-dim);
+      }
+    }
+
+    button {
+      height: auto;
+      i {
+        font-size: 1.6rem;
+      }
+
+      &[data-action='send-message'] {
+        font-size: 1.5rem;
+        width: 3.2rem;
+      }
+    }
+  }
+
+  &-submit-container[data-upload-img-set='true'] {
+    button[data-action='add-img'] {
+      display: none;
+    }
+
+    .search-box {
+      padding: 2rem;
+      padding-bottom: 1.7rem;
+      display: grid;
+      grid-template-columns: min-content 1fr min-content;
+    }
+
+    .message-upload-img-box {
+      grid-column: 1/3;
+      display: block !important;
+
+      button[data-action='remove-img'] {
+        display: flex !important;
+      }
+    }
+
+    button[data-action='send-message'] {
+      grid-row: 1/3;
+      grid-column: 3;
+    }
+
+    textarea {
+      grid-column: 1/3;
+      grid-row: 2;
+      padding: 0;
+      height: auto;
+    }
+  }
+}

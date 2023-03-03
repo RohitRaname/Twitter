@@ -1,0 +1,235 @@
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-center-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin grid-center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+@mixin abs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  // -webkit-backdrop-filter: blur(3px);
+  // -moz-backdrop-filter: blur(3px);
+  // filter: blur(3px);
+  z-index: 200;
+  background: var(--color-primary-dull);
+}
+
+@mixin header-blur {
+  &::before {
+    height: 100%;
+    content: '';
+    display: inline-block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.001);
+    -moz-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin box-shadow-change {
+  & {
+    box-shadow: $shadow-light;
+    transition: all 0.3s;
+  }
+  &:hover {
+    box-shadow: $default-box-shadow;
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: $default-box-shadow;
+  }
+}
+
+@mixin translateUpAndDown {
+  & {
+    transition: all 0.3s;
+  }
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+@mixin img-round {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+@mixin input {
+  border: none;
+  box-shadow: $shadow-light;
+  border-radius: 5px;
+  color: $color-black-dark;
+  font-size: $default-font-size;
+
+  &::placeholder {
+    color: $color-shadow;
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin close-btn {
+  & {
+    position: absolute;
+    top: 1rem;
+    right: 1.4rem;
+    height: 2.4rem;
+    width: 2.4rem;
+    @include flex-center;
+    cursor: pointer;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $color-black-dark;
+  }
+  &::before,
+  &::after {
+    z-index: 1000;
+    content: '';
+    position: absolute;
+    top: 1.4rem;
+    left: 0.2rem;
+    background-color: $color-shadow-dark;
+
+    height: 2px;
+    width: 90%;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@mixin trunc($width) {
+  max-width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: $phone) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: $tab-port) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: $normal-desktop) {
+      @content;
+    }
+  }
+  @if $breakpoint == normal-desktop {
+    @media only screen and (max-width: $big-desktop) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: $big-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin makeTranslateAnimation($initial, $final) {
+  @keyframes translateAnimation {
+    0% {
+      transform: translateY($initial);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY($final);
+      opacity: 1;
+    }
+  }
+}

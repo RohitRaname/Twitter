@@ -1,0 +1,41 @@
+.modal(data-modal='news' data-sections='2' data-action='view-news' data-click-event="false" )
+    .modal-container(data-static='true')
+
+        header.explore-news-header.sticky-header.mg-sl.p-0
+            .header-content
+                .c-boxed.modal-change-section-btns.f-s
+                    button.btn--text-white.h-7(data-section='general' data-btn="change-section-btn" data-active=`${category==="general"?true:false}`)
+                        span Trending
+                    button.btn--text-white.h-7(data-section='business' data-btn="change-section-btn" data-active=`${category==="business"?true:false}`)
+                        span News
+                    button.btn--text-white.h-7(data-section='sports' data-btn="change-section-btn" data-active=`${category==="sports"?true:false}`)
+                        span Sports
+                    button.btn--text-white.h-7(data-section='entertainment' data-btn="change-section-btn" data-active=`${category==="entertainment"?true:false}`)
+                        span Entertainment
+
+                .line
+
+        .modal-sections
+            section.modal-section(data-section=category  data-page="0" data-news-set="true")
+                ul.modal-list(data-col='2')
+                    if(news_arr)
+                        -const news_list = news_arr.slice(0,10)
+                            if(news_list && news_list.length>0)
+                                each news,i in news_list
+                                    li.preview-item(data-index=i data-word=news.description.split(" ")[0]  )
+                                        .preview-details
+                                            .preview-extra= news.source
+                                            .preview-title= news.description
+                                        .preview-upload-img
+                                            img(src=`${news.urlToImage}` alt='')
+
+        
+
+            //- section.modal-section.hidden(data-section='business' data-news-set="false")
+            //-     ul.modal-list(data-col="2")
+
+            //- section.modal-section.hidden(data-section='sports' data-news-set="false")
+            //-     ul.modal-list(data-col="2")
+
+            //- section.modal-section.hidden(data-section='entertainment' data-news-set="false")
+            //-     ul.modal-list(data-col="2")

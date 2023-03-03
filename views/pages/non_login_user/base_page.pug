@@ -1,0 +1,51 @@
+extends ../../base_template/_base
+
+block navbar
+    nav.nav
+        .nav__content
+            ul.nav__list
+                li.nav__item.nav__item--logo
+                    a.nav__link.nav__link--logo
+                        i.logo__icon.nav__icon--logo.fa.fa-twitter
+             
+                li.nav__item
+                    a.nav__link(href='/n')
+                        i.nav__icon.fa.fa-wpexplorer
+                        span.nav__text  Explore 
+
+block section 
+    block section-content
+        
+
+    .non-user-login-container.f-sm 
+        div
+            h6.h-6.mg-0 Don't miss what's happening 
+            p.p--sm People on Twitter are first to know
+        
+        div.f-sm 
+            a(href="/")
+            button.btn--outline.btn--sm(data-action="login") Log in
+            button.btn--white.btn--sm(data-action="signup") Sign up
+
+
+    include ../../components/modal/add_existing_accounts
+    include ../../components/modal/login_signup_modal
+
+
+block sidebar
+    aside.sidebar-box.p-sm-f.mg-t-lw 
+        h5.h-6.mg-lw New to Twitter 
+        p.t--sm.mg-lw Sign up now to get your own personalized timeline!
+        button.btn--white.btn--100.mg-sm(data-action="login")  Sign up with email
+        p.t--sm.mg-lw 
+            span By signing up, you agree to the 
+            span.blue Terms of Service  
+            span and 
+            span.blue Privacy Policy 
+            span including 
+            span.blue Cookie Use. 
+
+
+
+
+

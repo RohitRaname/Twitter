@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form edit-profile"
+      data-form="edit-profile"
+      data-optional="false"
+      data-action="edit-profile"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+      <div class="form-container abs-center">
+        <header class="main-header">
+          <div class="header-content f-s f-1 edit-profile-header">
+            <button
+              class="btn--icon edit-profile-close-btn"
+              data-action="close"
+            >
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <h7 class="h-7 mg-sm">Edit your profile</h7>
+
+            <button class="btn--white btn--sm">Save</button>
+          </div>
+        </header>
+        <div class="form-content">
+          <div class="edit-profile-cover f-c">
+            <label for="cover_pic">
+              <div class="camera-icon-box">
+                <i class="fas fa-user-circle camera-icon"></i>
+              </div>
+            </label>
+
+            <input
+              type="file"
+              id="cover_pic"
+              name="cover_pic"
+              class="hidden"
+              accept="image/*"
+            />
+          </div>
+          <div class="edit-profile-img-box mg-lw">
+            <label for="profilePic">
+              <img
+                src="../../img/tweets/tweet-6334670cb0d772863c7ac1be-1667086108022.jpeg"
+                alt=""
+                class="img-100"
+              />
+              <div class="camera-icon-box">
+                <i class="fas fa-user-circle camera-icon"></i>
+              </div>
+            </label>
+
+            <input
+              type="file"
+              id="profilePic"
+              name="profilePic"
+              class="hidden"
+              accept="image/*"
+            />
+          </div>
+
+          <div class="form-groups">
+            <div
+              class="form-group"
+              data-field="name"
+              data-input-filled="false"
+              data-active="false"
+              data-error="false"
+            >
+              <label class="form-label" for="name">Name</label
+              ><input
+                class="form-input"
+                id="name"
+                type="text"
+                name="name"
+                minlength="0"
+                maxlength="50"
+              />
+              <p class="form-hint"><span>0 </span> / 50</p>
+              <p class="form-error hidden">What's your name?</p>
+            </div>
+            <div class="form-group" data-active="false">
+              <label for="bio" class="form-label">Your bio</label>
+              <textarea
+                class="form-textarea"
+                type="text"
+                id="bio"
+                name="bio"
+                minlength="0"
+                maxlength="160"
+              ></textarea>
+
+              <p class="form-count"><span>0</span> / 160</p>
+            </div>
+            <div
+              class="form-group mg-sm"
+              data-field="location"
+              data-switch="true"
+              data-input-filled="false"
+              data-active="false"
+              data-error="false"
+            >
+              <label class="form-label" for="location">Location</label
+              ><input
+                class="form-input"
+                id="email"
+                type="text"
+                name="location"
+              />
+            </div>
+            <div
+              class="form-group mg-sm"
+              data-field="website_link"
+              data-switch="true"
+              data-input-filled="false"
+              data-active="false"
+              data-error="false"
+            >
+              <label class="form-label" for="website_link">Website</label
+              ><input
+                class="form-input"
+                id="website_link"
+                type="text"
+                name="website_link"
+              />
+            </div>
+          </div>
+
+          <!-- birthdata -->
+          <div>
+            <p class="f-c edit-profile-birth">
+              <span>Birth date </span>
+              <span class="dot-m"></span>
+              <span class="blue">Edit</span>
+            </p>
+            <p class="p--md">October 17,2003</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+extends ../../base_settings_page
+
+block content
+    .settings
+
+        header.p-sm
+            .f-sm.f-3
+                a(href="/settings")
+                    button.btn--icon-fixed
+                        i.fa.fa-arrow-left
+                h6.h-6.mg-0 Deactive account
+
+
+        .settings-content
+
+            .settings-user 
+                div.preview-item.mg-lw(data-active='true')
+                    img.preview-img(src=`/img/users/${user.profilePic}`)
+                    .preview-details
+                        p.p--md= user.name
+                        p.t--sm= user.avatar
+                    .preview-state
+
+                .settings-description.mg-sm 
+                    h5.h-5.mg-lw This will deactivate your account
+                    p.t--sm You’re about to start the process of deactivating your Twitter account. Your display name, @username, and public profile will no longer be viewable on Twitter.com, Twitter for iOS, or Twitter for Android.
+
+            .line.mg-sm
+
+            div.f-c
+                    button.btn--tertiary-text.btn--md.form-submitBtn
+                        | Deactivate
+
+

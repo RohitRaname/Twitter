@@ -1,0 +1,19 @@
+.modal[data-modal='login-signup-modal'] {
+  .modal {
+    &-header {
+      padding: 1.3rem !important;
+    }
+
+    &-add-user-icon {
+      font-size: 2.6rem;
+    }
+
+    &-container {
+      height: unset !important;
+    }
+
+    &-signup-login-container {
+      margin-bottom: 9rem !important;
+    }
+  }
+}

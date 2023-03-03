@@ -1,0 +1,13 @@
+.alert-content {
+  padding: $padding-sm;
+  border-radius: $radius-md;
+  color: #fff;
+  background: var(--color-primary-dark);
+  display: inline-block;
+  top: 5rem !important;
+  animation: alert 0.28s ease-in 0.03s both;
+}
+
+.alert-content.hidden {
+  top: -5rem;
+}

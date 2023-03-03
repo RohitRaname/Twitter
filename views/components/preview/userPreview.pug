@@ -1,0 +1,30 @@
+.preview.hide(data-type='user-preview' data-preview-window data-user-id="23" data-follow-user="false")
+    .preview-container
+        header.preview-header.mg-lw
+            a(href="/user/1") 
+                img.img(src='/img/users/default.png' alt='')
+            div.preview-follow-following-btns 
+                button.btn--outline.btn--sm(data-follow="false" data-follow-btn)  Follow
+                button.btn--white.btn--sm.hidden(data-follow="true" data-follow-btn) Following
+
+        footer.preview-footer
+            div.preview-about-user
+                a(href="/")
+                    h7.h-8.preview-name.border-2
+                        
+                        i.fa.fa-check.preview-verify__icon.icon--verify
+                a(href="/")
+                    p.preview-avatar.mg-lw.t--sm 
+                p.preview-description.mg-lw.p--md
+                    
+            .preview-stats__container
+                .preview-stats__box(data-action="show_user_following" data-type="following") 
+                    p.preview-following.h-8.mg-0 
+                    p.preview-stat__text.t--sm Following
+                .preview-stats__box(data-action="show_user_followers" data-type="followers")
+                    p.preview-followers.h-8.mg-0
+                    p.preview-stat__text.t--sm Followers
+
+
+
+

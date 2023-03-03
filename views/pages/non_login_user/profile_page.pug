@@ -1,0 +1,90 @@
+extends ./base_page
+
+//- MIXINS 
+include ../../mixins/posted_tweet_list
+include ../../mixins/posted_comment_list
+
+block section-content 
+    header.main-header
+        div.header-content.f-sm(data-type="flex")
+            a(href="/")
+                button.btn--icon.btn--icon-fixed
+                    i.fas.fa-arrow-left
+            div
+                h.h-7.mg-sl= profile_user.name
+                p.t--sm
+                    span= profile_user.posted_tweets_count
+                    |  Tweets
+    //- user related info common top element save common_page 
+    //- section related info => section-main-content save > section-content
+
+    section.section.section-user-profile(data-section="user-profile" data-profile-user=`${JSON.stringify(restrict_profile_user)}`  data-full-size-img-set="false" data-full-size-img="img-name")
+
+        div.user-profile
+
+
+
+            //- hide full size cover pic or profile when clicked to see full size 
+            button.btn--icon.btn--icon-fixed.hidden(data-action="resize-zoom-img") 
+                i.fa.fa-times
+
+            article
+                // user big cover img
+                .user-profile-cover
+                    img(src=`/img/users/${profile_user.cover_pic}` alt='1 guy has done so many deals what are you doing rohit????')
+
+                // user info
+                .p-sm.user-details
+                    .f-s.mg-sm.user-btns-container.mg-bg
+                        .user-img-box
+                            img.img--lg.user-img(src=`/img/users/${profile_user.profilePic || "default.png"}` alt='dan pena')
+
+
+                    // user info
+                    .user-details-content
+                        .user-name.mg-lw
+                            h.h-6= profile_user.name
+                            p.t--md
+                                span= profile_user.avatar
+
+                        p.user-bio.p.mg-lw= profile_user.bio
+                        .user-description.f-s.mg-lw
+                            .user-location.f-c.f-lw
+                                i.fas.fa-map-marker-alt
+                                p.t--md= profile_user.location || ""
+                            .user-website-link.f-c.f-lw
+                                i.fas.fa-link
+                                p.t--md.blue= profile_user.website_link
+                            .user-birth-date.f-c.f-lw
+                                i.fas.fa-calendar-alt
+                                p.t--md
+                                    | Joined 
+                                    span= profile_user.joined
+                        //- .user-following-stats.f-md.f-3.mg-sm
+                        //-     p.t--md.hover-underline(data-show-users="following")
+                        //-         span.p--md= profile_user.following_count
+                        //-         |  Following
+                        //-     p.t--md.hover-underline(data-show-users="followers")
+                        //-         span.p--md= profile_user.followers_count
+                        //-         |  Followers
+
+
+                        // follow by any i am following
+                        //- if(!is_me) 
+                        //-     p.t--sm Not followed by anyone you&apos;re following
+
+        footer
+            .c-boxed.modal-change-section-btns.user-section-btns.f-s
+                button.btn--text-white.h-5(data-section='my-tweets' data-btn='change-section-btn' data-active='true')
+                    span Tweets
+                button.btn--text-white.h-5(data-section='my-comments' data-btn='change-section-btn' data-active='false')
+                    span Tweets &amp; Replies
+                button.btn--text-white.h-5(data-section='my-liked-tweets' data-btn='change-section-btn' data-active='false')
+                    span Likes
+            .line
+
+            //- sections list
+            +render_posted_tweetlist(pinned_tweets,tweets,'my-tweets',false, posted_tweet_page,true, false)   
+            +render_posted_commentlist('my-comments',true,comment_page,false ,is_me)   
+            +render_posted_tweetlist([],[],'my-liked-tweets',true,liked_tweet_page,false ,false)   
+            

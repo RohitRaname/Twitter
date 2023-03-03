@@ -1,0 +1,50 @@
+extends ../common_page
+
+
+
+block section 
+    section.section.section-comment( 
+        data-section="comment"
+        data-gallery-mode=`${gallery_mode==="gallery"?true:false}` data-page="0"
+        data-page-type=page_type
+        data-cur-user=JSON.stringify(cur_user)
+        data-gallery-full-screen="false"   
+        )
+
+        
+
+
+        header(class=`main-header ${gallery_mode==="gallery"?"hidden":''}`)
+            .header-content.f-md(data-type="flex")
+                button.btn--icon.btn--back
+                    i.fas.fa-arrow-left
+                a.h-6.mg-0(href='/')= page==="tweet_and_comments"?"Tweet":"Comment"
+
+        
+
+        .comment
+            include ../../components/comment/comment_gallery
+            .comment-content
+                include ../../components/comment/comment_or_tweet_at_top
+
+
+                if(login_user)
+                    include ../../components/comment/create_top_level_comment
+                include ../../components/comment/posted_comment_list
+                include ../../components/comment/create_child_comment
+            
+
+
+
+
+
+
+
+
+
+
+
+    //- dropdown
+    include ../../components/dropdown/other_post_tweet_options_dropdown
+    include ../../components/dropdown/cur_user_post_tweet_options_dropdown
+    include ../../components/dropdown/retweet_quote_tweet_dropdown                                                                               

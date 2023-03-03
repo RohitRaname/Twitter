@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-optional="false"
+      data-action="signUp-verification"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <button class="btn--icon form-backBtn">
+          <i class="fas fa-long-arrow-alt-left"></i>
+        </button>
+        <div class="form-content">
+          <h7 class="h-7 mg-sm">Step 4 of 5</h7>
+
+          <h4 class="h-4 mg-lw">We send you a code</h4>
+          <p class="t--md mg-md">
+            Enter it below to verify
+            <span class="form-submittedEmail"> luffyrana71@gmail.com </span>
+          </p>
+
+          <div
+            class="form-group form-group--no-label"
+            data-field="token"
+            data-active="false"
+            data-error="false"
+            data-input-filled="false"
+          >
+            <input
+              class="form-input"
+              type="text"
+              id="verification-code"
+              name="token"
+              placeholder="Verification code"
+              minlength="0"
+              maxlength="50"
+            />
+            <p class="form-error hidden">Please enter a valid phone number.</p>
+          </div>
+
+          <button class="btn--text left form-hint form-reRequestToken">
+            did't recieve an email?
+          </button>
+
+          <div class="form-submitBtn__box">
+            <button class="btn--white form-submitBtn" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

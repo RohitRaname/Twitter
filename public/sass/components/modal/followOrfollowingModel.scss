@@ -1,0 +1,37 @@
+.modal[data-modal='follow-or-following'] {
+  .overlay {
+  }
+
+  .modal-header {
+    cursor: pointer;
+  }
+
+  .modal-container {
+    height: 100% !important;
+    max-width: 72.5rem;
+    transform: translate(-50.8%, 0) !important;
+    top: 0;
+    border-radius: 0;
+  }
+
+  .preview-item {
+    grid-template-columns: 0.4fr 1fr;
+  }
+
+  .preview-item[data-follow-user='false'] {
+    button[data-follow='false'] {
+      display: none !important;
+    }
+    button[data-follow='true'] {
+      display: block !important;
+    }
+  }
+  .preview-item[data-follow-user='true'] {
+    button[data-follow='false'] {
+      display: block !important;
+    }
+    button[data-follow='true'] {
+      display: none !important;
+    }
+  }
+}

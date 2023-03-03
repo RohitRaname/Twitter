@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="retweet">
+      <div class="overlay"></div>
+      <div
+        class="retweet-container modal-container"
+        data-height="auto-height"
+        data-sticky-header="false"
+        data-tweet-id="data-tweet-id"
+      >
+        <header class="retweet-header">
+          <div class="retweet-header-content f-s">
+            <button class="btn--icon" data-action="close-modal">
+              <i class="fa fas-long-arrow-alt-left"></i>
+            </button>
+            <div class="f-lw f-4">
+              <button
+                class="btn--primary-text btn--sm"
+                data-action="show-unsent-tweets"
+              >
+                Unsent Tweets
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="tweet postedTweet mg-sm">
+          <div class="tweet-container tweet-line">
+            <img
+              class="tweet-img img--md"
+              src="/public/img/users/default.png"
+            />
+            <div class="tweet-content">
+              <div
+                class="tweet-user__info preview-item"
+                data-no-hover-change=""
+              >
+                <p class="tweet-user__name h-8 hover-underline">Rohit</p>
+                <p class="tweet-user__verified"></p>
+                <p class="tweet-user__email t--md">Rana</p>
+                <p class="tweet-user__postTime t--md hover-underline">10h</p>
+              </div>
+
+              <p class="p--md mg-sm">
+                Manifesting a dream placement in final year of college.🥺🙈
+              </p>
+              <div class="tweet-message mg-lw t--md">
+                Replying to <span class="blue"> @rohit </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="createTweet-main">
+          <form
+            class="form form--createTweet"
+            onsubmit="return false;"
+            data-action="create-tweet"
+            data-active="false"
+            data-tweet-schedule="false"
+            data-multiple-tweets="false"
+            data-tweet-empty="true"
+          >
+            <div class="createTweet">
+              <div class="createTweet-container">
+                <img
+                  class="createTweet-user__img tweet-user-img img--md"
+                  src="/public/img/users/default.png"
+                  alt="user photo"
+                />
+                <div class="createTweet-schedule-timing t--sm f-sm f-3 hidden">
+                  <i class="fas fa-calendar"></i>
+                  <p>
+                    Will send
+                    <span class="createTweet-schedule-timing-value"></span>
+                  </p>
+                </div>
+                <header class="createTweet-header mg-v-sl">
+                  <div class="form-group mg-lw">
+                    <textarea
+                      class="createTweet-textarea"
+                      placeholder="What's happening?"
+                      name="text"
+                      data-scroll-event="false"
+                      data-input-change-event="false"
+                      maxlength="200"
+                    ></textarea>
+                  </div>
+                  <div class="tweet-uploadImg__container mg-lw hidden">
+                    <div
+                      class="tweet-uploadImg__content grid--collage"
+                      data-items="0"
+                    >
+                      <figure class="tweet-uploadImg__fig hidden">
+                        <button
+                          class="btn--icon-dull pos-tl"
+                          data-action="remove-img"
+                        >
+                          <i class="fa fa-times"></i></button
+                        ><img class="tweet-uploadImg" src="src" alt="" />
+                      </figure>
+                      <figure class="tweet-uploadImg__fig hidden">
+                        <button
+                          class="btn--icon-dull pos-tl"
+                          data-action="remove-img"
+                        >
+                          <i class="fa fa-times"></i></button
+                        ><img class="tweet-uploadImg" src="src" alt="" />
+                      </figure>
+                      <figure class="tweet-uploadImg__fig hidden">
+                        <button
+                          class="btn--icon-dull pos-tl"
+                          data-action="remove-img"
+                        >
+                          <i class="fa fa-times"></i></button
+                        ><img class="tweet-uploadImg" src="src" alt="" />
+                      </figure>
+                      <figure class="tweet-uploadImg__fig hidden">
+                        <button
+                          class="btn--icon-dull pos-tl"
+                          data-action="remove-img"
+                        >
+                          <i class="fa fa-times"></i></button
+                        ><img class="tweet-uploadImg" src="src" alt="" />
+                      </figure>
+                    </div>
+                  </div>
+                </header>
+                <footer class="createTweet-footer">
+                  <div class="createTweet-btns">
+                    <button
+                      class="createTweet-btn btn--icon-color"
+                      data-action="add-img"
+                    >
+                      <label for="tweet-upload-image"></label
+                      ><i class="fa fa-file-image-o"></i>
+                      <input
+                        class="createTweet-input hidden"
+                        id="tweet-upload-image"
+                        type="file"
+                        accept="image/*"
+                        name="upload_image"
+                        data-change-event="false"
+                        multiple="multiple"
+                      />
+                    </button>
+                    <button
+                      class="createTweet-btn btn--icon-color"
+                      data-action="schedule-post"
+                    >
+                      <label for="tweet-schedule-input"
+                        ><i class="fa fa-clock-o"></i
+                      ></label>
+                      <input
+                        class="createTweet-input hidden"
+                        id="tweet-schedule-input"
+                        name="schedule_post_time"
+                      />
+                    </button>
+                  </div>
+                  <div class="createTweet-btns createTweet-btns--submit">
+                    <button
+                      class="btn--percent-box"
+                      data-action="tweet-text-limit"
+                    >
+                      <div class="flex-wrapper">
+                        <div class="single-chart">
+                          <svg
+                            class="circular-chart orange"
+                            viewbox="0 0 36 36"
+                          >
+                            <path
+                              class="circle-bg"
+                              d="M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                            ></path>
+                            <path
+                              class="circle"
+                              stroke-dasharray="2, 100"
+                              d="M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="line-v"></div>
+                    <button
+                      class="btn--primary btn--sm"
+                      data-action="save-tweet"
+                      disabled=""
+                    >
+                      Tweet
+                    </button>
+                    <button
+                      class="btn--primary btn--sm hidden"
+                      data-action="save-schedule-tweet"
+                    >
+                      Schedule
+                    </button>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

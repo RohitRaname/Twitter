@@ -1,0 +1,43 @@
+extends ./common_page
+
+block section 
+
+    .section.section-bookmark(data-section="bookmark" data-page="0" data-cur-user=JSON.stringify(cur_user))
+        .bookmark
+
+            .main-header
+                .header-content.f-s
+                    div
+                        h6.h-6.mg-0 Bookmarks
+                        p.t--sm= cur_user.avatar
+                    
+                    div.toggle-child.clear-bookmarks-btn(data-active="false") 
+                        button.btn--tertiary-text.el-1(data-action="clear-all-bookmarks") Clear all Bookmarks
+
+                        button.btn--icon-dim-tertiary.el-2(data-show-clear-all-bookmark-btns="false")
+                            .icon-box
+                                i.fas.fa-ellipsis
+
+                
+
+
+            .bookmark-container
+
+                include ../components/tweet/posted_tweet
+
+
+    //- create comments
+    include ../components/comment/create_child_comment
+
+
+
+
+
+
+
+
+    //- //- dropdown => click tweet user_id willbe set by js
+    include ../components/dropdown/other_post_tweet_options_dropdown
+    include ../components/dropdown/cur_user_post_tweet_options_dropdown
+    include ../components/dropdown/retweet_quote_tweet_dropdown
+    include ../components/dropdown/user_profile_options_dropdown

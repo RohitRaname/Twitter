@@ -1,0 +1,20 @@
+.dropdown(
+    data-type="search-message-dropdown" data-dropdown="fixed" 
+    data-active="false"
+    data-media-change="true"
+    )
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='' )
+        .dropdown-content
+            .dropdown-item(data-action='pin-chat' data-value="false")
+                i.fas.fa-map-pin
+                span= `Pin conversation` 
+            .dropdown-item(data-action='snooze-chat' data-value="false")
+                i.fas.fa-bell-slash
+                span= `Snooze conversation` 
+            .dropdown-item(data-action='delete-conversation' data-value="false")
+                i.fas.fa-trash-alt
+                span= `Delete conversation` 
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel

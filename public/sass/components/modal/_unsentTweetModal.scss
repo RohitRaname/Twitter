@@ -1,0 +1,45 @@
+.modal[data-modal='unsent-tweets'] {
+  &[data-edit-items='false'] .modal-section.display .btn--checkbox {
+    visibility: hidden;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &[data-edit-items='true'] {
+    .modal-footer {
+      transform: scaleY(1);
+      transition: transform all 0.1s ease-in;
+    }
+
+    .modal-section.display .btn--checkbox {
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    // btn outside of modal-section so no need to check
+    button[data-action='allow-to-edit-items'] {
+      display: none;
+    }
+    button[data-action='done-with-editing-items'] {
+      display: block !important ;
+    }
+  }
+
+  // ATLEAST ONE ITEM SELECTED *************************************************
+  &[data-atleast-1-item-selected='true'] {
+    button[data-action='select-all'] {
+      display: none !important;
+    }
+    button[data-action='unselect-all'] {
+      display: block !important;
+    }
+  }
+
+//   &[data-no-item-present='true'] {
+//     footer,
+//     button[data-action='allow-to-edit-items'],
+//     button[data-action='done-with-editing-items'] {
+//       display: none;
+//     }
+//   }
+}

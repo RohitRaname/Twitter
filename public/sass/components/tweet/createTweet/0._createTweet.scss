@@ -1,0 +1,271 @@
+.form--createTweet {
+  .createTweet-container {
+    .grid--collage {
+      &[data-items='2'],
+      &[data-items='4'],
+      &[data-items='3'] {
+        grid-template-rows: repeat(2, 20rem);
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &[data-items='1'] {
+        grid-template-rows: 50rem;
+        grid-template-columns: 45rem;
+      }
+
+      &[data-items='3'] {
+        figure:first-child {
+          grid-row: 1/3;
+          grid-column: 1;
+        }
+      }
+    }
+  }
+
+  // &&&&&&&& JS &&&&&&&&&&&&&&&&&&
+  &[data-active='false'] {
+    button[data-action='choose-audience'],
+    button[data-action='choose-whocan-reply'],
+    .line-col-end,
+    .line-v {
+      display: none;
+    }
+
+    // use important where it is not working
+
+    .createTweet {
+      &-btns--submit button,
+      .line-v {
+        display: none;
+      }
+
+      &-header {
+      }
+
+      button[data-action='submit-post'] {
+        display: block !important;
+      }
+    }
+  }
+
+  &[data-active='true'] {
+    .createTweet {
+      &-btns--submit button,
+      .line-v {
+        display: none !important;
+      }
+
+      &-header {
+        // margin-top: -1.2rem;
+      }
+
+      button[data-action='save-tweet'] {
+        display: block;
+      }
+    }
+  }
+
+  &[data-tweet-empty='false'] {
+    .createTweet {
+      &-btns--submit button,
+      .line-v {
+        display: block !important;
+      }
+      button[data-action='save-schedule-tweet'] {
+        display: none !important;
+      }
+
+      button[data-action='save-tweet'] {
+        display: block;
+      }
+    }
+  }
+
+  &[data-tweet-schedule='true'] {
+    .createTweet {
+      &-btns--submit button,
+      button[data-action='save-tweet'] {
+        display: none !important;
+      }
+
+      button[data-action='save-schedule-tweet'] {
+        display: block !important;
+      }
+
+      button[data-action='add-another-tweet'] {
+        filter: brightness($filter-brightess);
+      }
+
+      // button[class='btn--percent-box'] {
+      //   display: flex;
+      // }
+
+      &-header {
+        margin-top: -0.5rem !important;
+      }
+
+      &-schedule-timing {
+        display: flex !important;
+      }
+      button[data-action='choose-audience'] {
+        margin-top: -2.5rem;
+        margin-bottom: 3.6rem;
+      }
+    }
+  }
+
+  &[data-tweet-schedule='false'] {
+    .createTweet-schedule-timing {
+      display: none !important;
+    }
+  }
+
+  &[data-tweet-empty='false'][data-tweet-schedule='true'] {
+    .createTweet {
+      button[class='btn--percent-box'] {
+        display: flex !important;
+      }
+    }
+  }
+  &[data-tweet-empty='true'][data-tweet-schedule='true'] {
+    .createTweet {
+      button[data-action='save-schedule-tweet'] {
+        @extend .disable-important;
+      }
+    }
+  }
+}
+
+.createTweet {
+  &-container {
+    padding: $padding-md;
+    padding-bottom: $padding-sm;
+    padding-top: $padding-lw;
+    color: inherit;
+    font-size: $default-font-size;
+    display: grid;
+    column-gap: $gap-md;
+    grid-template-columns: min-content 1fr;
+    align-items: flex-start;
+    border-bottom: var(--border-line-light);
+  }
+
+  // overview
+
+  button[data-action='choose-audience'] {
+    width: auto;
+    @include flex-center;
+    gap: $gap-sm;
+    padding: 0.49rem 1rem;
+    font-weight: 600;
+    background: transparent;
+    justify-self: start;
+    grid-column: 2;
+    font-size: 1.4rem;
+
+    // &[data-active='true'] {
+    //   color: var(--color-secondary);
+    //   border: 1px solid currentColor;
+    // }
+
+    i {
+      font-size: $font-size-sm;
+    }
+  }
+
+  button[data-action='choose-whocan-reply'] {
+    width: auto;
+    padding-left: 0;
+    border-bottom: none;
+    font-weight: 600;
+    @include flex-center;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+  }
+
+  .form-group,
+  &-footer {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &-header {
+    align-self: center;
+    grid-column: 2;
+    .form-group {
+      border: none;
+      padding-left: 0;
+    }
+  }
+
+  &-footer {
+    @include flex-center-space;
+    padding-top: $default-padding;
+    grid-column: 2;
+  }
+
+  &-user__img {
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+  &-textarea {
+    resize: none;
+    background: transparent;
+    border: none;
+    font-size: 1.88rem;
+    width: 100%;
+    line-height: $default-line-height;
+    resize: none;
+    overflow: hidden;
+    height: 3rem;
+
+    color: var(--default-text);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-btns {
+    @include flex-center;
+
+    &--submit {
+      gap: $gap-sm;
+
+      .line-v {
+        margin-left: 0.8rem;
+      }
+    }
+  }
+
+  button[data-action='add-another-tweet'] {
+    padding: 0.7rem;
+  }
+
+  // (data-action='choose-whocan-reply' data-active='false' data-restrict="true")
+  button[data-action='choose-whocan-reply'][data-restrict='true'] {
+    i {
+      display: none;
+    }
+
+    i.hidden {
+      display: block !important;
+    }
+  }
+
+  button[data-action='add-img'] {
+    position: relative;
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 10;
+      width: 100%;
+    }
+    i {
+      position: relative;
+      z-index: 5;
+    }
+  }
+}

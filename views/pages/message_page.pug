@@ -1,0 +1,27 @@
+extends ./common_page
+
+block section 
+
+    .section.section-message(
+        data-section="message"
+        data-cur_user=JSON.stringify(cur_user)
+        data-cur_user_id=cur_user._id
+        data-chat_id=current_chat.chat_id
+        data-chat_page=current_chat.page
+        data-to_user=JSON.stringify(current_chat.to_user)
+        data-chat_mute_by_other_chat_user=`${current_chat.muted_by_other_chat_user}`
+        )
+
+        .message 
+            include ../components/message/message_search
+            include ../components/message/message_content
+
+    include ../components/dropdown/search_message_dropdown
+    include ../components/message/add_message_user_modal
+
+  
+  
+
+
+
+block sidebar

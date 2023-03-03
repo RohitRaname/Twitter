@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../script.js"></script>
+  </head>
+  <body>
+    <div class="dropdown search-dropdown">
+      <div class="dropdown-list" data-top="">
+        <div class="dropdown-previous-search f-s">
+          <h7 class="h-7">Recent</h7>
+          <button class="clear-search-btn blue btn--primary-text">
+            Clear all
+          </button>
+        </div>
+        <div
+          class="dropdown-item modal-item preview-item-container preview-item"
+          data-state=""
+          data-user-id="6348d2e4bb36f02b0334ec64"
+        >
+          <div class="preview-item-content">
+            <img
+              class="preview-img"
+              onerror="this.src='/img/users/default.png'"
+              alt=""
+            />
+            <div class="preview-details">
+              <div class="preview-title">rduri</div>
+              <div class="preview-extra">@rrudi</div>
+            </div>
+          </div>
+          <p class="preview-state">
+            <button class="btn--icon-color" data-action="remove">
+              <i class="fa fa-times"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

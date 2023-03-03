@@ -1,0 +1,67 @@
+
+
+extends ./common_page
+
+//- MIXINS 
+include ../mixins/posted_tweet_list
+include ../mixins/posted_comment_list
+
+block section 
+
+    header.main-header
+        div.header-content.f-sm(data-type="flex")
+            a(href="/")
+                button.btn--icon.btn--icon-fixed
+                    i.fas.fa-arrow-left
+            div
+                h.h-7.mg-sl= profile_user && profile_user.name || 'Profile'
+
+                if(profile_user_exist)
+                    p.t--lw
+                        span= profile_user && profile_user.posted_tweets_count
+                        |  Tweets
+    //- user related info common top element save common_page 
+    //- section related info => section-main-content save > section-content
+
+    section.section.section-user-profile(data-section="user-profile" data-cur-user=`${login_user && JSON.stringify(cur_user)}` data-profile-user=`${JSON.stringify(restrict_profile_user)}` data-is-me=`${is_me}` data-full-size-img-set="false" data-full-size-img="img-name" data-profile_user_exist=`${profile_user_exist}`)
+
+        include ../components/user_profile/user_profile_content
+
+        //- sections list
+        +render_posted_tweetlist(pinned_tweets,tweets,'my-tweets',false, posted_tweet_page,true, is_me)   
+        +render_posted_commentlist('my-comments',true,comment_page,false ,is_me)   
+        +render_posted_tweetlist([],[],'my-liked-tweets',true,liked_tweet_page,false ,is_me)   
+        
+
+            //- dropdown
+
+
+    //- create tweets 
+
+    if(login_user)
+        //- create comments
+        include ../components/comment/create_child_comment
+        include ../components/user_profile/edit_user_profile
+
+        //- //- dropdown => click tweet user_id willbe set by js
+        include ../components/dropdown/other_post_tweet_options_dropdown
+        include ../components/dropdown/cur_user_post_tweet_options_dropdown
+        include ../components/dropdown/retweet_quote_tweet_dropdown
+        include ../components/dropdown/user_profile_options_dropdown
+
+
+
+block sidebar
+    include ../components/common_different_component/search_user_or_tweets
+
+    if(login_user)
+        if(only_tweet_with_upload_imgs &&  only_tweet_with_upload_imgs.length>0)
+            .user-tweet-imgs-collage.mg-lw(data-not-shown-img-tweets=`${JSON.stringify(only_tweet_with_upload_imgs.slice(6))}`) 
+                -const img_tweets= only_tweet_with_upload_imgs.slice(0,6)
+                each tweet in img_tweets
+                    a(href=`/tweets/${tweet._id}/comments/gallery`)
+                        .user-tweet-img-box(data-tweet-id=`${tweet._id}`)
+                            img(src=`/img/tweets/${tweet.upload_imgs}`)
+                            
+    include ../layouts/sidebar/news
+    include ../layouts/sidebar/suggested_users_to_follow

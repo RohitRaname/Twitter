@@ -1,0 +1,112 @@
+.form[data-action='schedule-post'] {
+  .form {
+    &-container {
+      height: auto;
+      top: 6rem;
+      transform: translate(-50%, 0);
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      max-width: 70rem;
+    }
+
+    &-content {
+      width: 100%;
+      padding: $padding-sm $padding-md;
+    }
+
+    &-heading {
+      margin-left: 10rem;
+    }
+
+    &-description {
+      @include flex-center;
+      gap: $gap-md;
+    }
+
+    &-groups {
+      margin-top: 0;
+    }
+
+    &-group[data-type='date'] {
+      border: none;
+      padding: 0;
+      display: block;
+      margin-top: 0;
+    }
+
+    &-group__heading {
+      grid-column: 1/-1;
+
+      &[data-type='time'] {
+        margin-top: $padding-lg;
+      }
+    }
+
+    &-boxs {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 4.5fr 2.5fr 3fr;
+      column-gap: $gap-sm;
+    }
+
+    &-box {
+      // padding: 3rem $padding-md;
+      @include flex-center-space;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      transition: all 0.2s;
+
+      &__label {
+        font-size: $font-size-sm;
+        position: absolute;
+        top: 0.7rem;
+        left: 1rem;
+      }
+
+      &__icon {
+        position: absolute;
+        top: 50%;
+        right: 1.4rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-group[data-active='true'] .dropDown-list {
+      border-radius: $radius-bg;
+      height: 22rem;
+      overflow-y: scroll;
+      color: var(--default-text);
+      box-shadow: none;
+    }
+
+    &-group[data-active='true'] .dropDown-item {
+      padding: 0.15rem 1.6rem;
+      .form:hover {
+        background: var(--color-primary);
+      }
+    }
+
+    &-group[data-active='true'] .dropDown-list {
+      transform: scale(1);
+    }
+
+    &-submitBtn {
+      position: absolute;
+      top: 1rem;
+      right: 1.6rem;
+    }
+  }
+
+  button[data-action='scheduled-tweets'] {
+    margin-left: 1.6rem;
+  }
+
+  button[data-action='clear'] {
+    position: absolute;
+    top: 1.3rem;
+    right: 12.4rem;
+    font-weight: 600 !important;
+  }
+}

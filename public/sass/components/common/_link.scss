@@ -1,0 +1,8 @@
+.link {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: var(--color-primary);
+  }
+}

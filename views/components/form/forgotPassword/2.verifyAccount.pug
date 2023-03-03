@@ -1,0 +1,23 @@
+form.form.form--forgotPassword(data-form='forgotPassword' data-stage=3  data-optional='false' data-action='verify-account' onsubmit='return false;' data-email=`${email}` 
+data-progress-line-exist="true" 
+data-is_form_hidden="true" 
+data-form_submitting="false"
+)
+    .form-overlay.overlay &nbsp;
+    .form-container.abs-center
+        //- button.btn--icon.form-backBtn
+        div.progress-line(data-progress='0')
+        //-     i.fas.fa-arrow-left
+        .form-content
+            .center.mg-sm.m-center
+                i.fab.fa-twitter.icon--simple
+            h4.h-4.mg-lw We send you a code
+            p.t--md.mg-md Enter it below to verify 
+                span.form-submittedEmail=  email
+            .form-group.form-group--no-label(data-field='token' data-active='false' data-error='false' data-input-filled='false')
+                input#verification-code.form-input(type='text' name='token' placeholder='Verification code' minlength='0' )
+                //- p.form-error.hidden Please enter a valid phone number.
+            button.btn--text.left.form-hint.form-reRequestToken
+                | did&apos;t recieve an email?
+            .form-submitBtn__box
+                button.btn--white.form-submitBtn(disabled='') Next

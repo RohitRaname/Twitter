@@ -1,0 +1,35 @@
+extends ../base_settings_page
+
+block content
+    .settings
+        header.p-sm
+
+            .f-sm.f-3.mg-lw
+                a(href="/settings")
+                    button.btn--icon-fixed
+                        i.fa.fa-arrow-left
+                h6.h-7.mg-0 Account information
+
+            // action heading
+            h5.h-6.mg-sm.mg-l-lw Confirm your password
+            // hint
+            p.t--lw.mg-l-lw
+                | Please enter your password in order to get this
+
+        .line-dim.mg-sm
+
+        form.form.form-static(data-form='setting-confirm-password' data-optional='false' onsubmit='return false;')
+            .form-container
+                .form-content
+                    .form-groups
+                        .form-group.mg-sm(data-field='password' data-input-filled='false' data-active='false' data-error='false')
+                            label.form-label(for='password') Password
+                            input#password.form-input(type='password' name='password' minlength='8' maxlength='50' value="")
+                            p.form-error.hidden Min Length 8
+                          
+                            a(href='/forgotPassword/0')
+                                button.btn--text.form-help.form-help--left(data-action='forgot-password')
+                                    | Forgot Password?
+
+                    button.btn--primary.mg-l.btn--md.form-submitBtn(disabled)
+                        | Confirm

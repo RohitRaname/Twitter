@@ -1,0 +1,16 @@
+.followOther {
+  &__heading {
+    margin: 2rem;
+    margin-bottom: 0;
+  }
+
+  &__item{
+    padding-bottom: .7rem;
+    padding-top: .7rem;
+  }
+
+  &__btn {
+    margin-left: auto;
+    transform: translateY(-1rem);
+  }
+}

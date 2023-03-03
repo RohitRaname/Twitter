@@ -1,0 +1,37 @@
+extends ../common_page
+
+
+
+
+
+block section 
+
+    header.main-header
+        .header-content.f-bg.f-3.f-5
+            .mobile-nav-btn(data-active="false")
+                img.img--sm(src=`/img/users/${cur_user.profilePic}`)
+            a.h-6.mg-0.header-title Home
+
+    section.section.section-home(data-section="home"  data-cur-user=`${JSON.stringify(cur_user)}`)
+        //- tweet
+        include ../../components/tweet/createTweet
+        include ../../components/tweet/posted_tweet
+
+
+
+
+
+
+
+
+
+    //- //- dropdown => click tweet user_id willbe set by js
+    include ../../components/dropdown/other_post_tweet_options_dropdown
+    include ../../components/dropdown/cur_user_post_tweet_options_dropdown
+    include ../../components/dropdown/retweet_quote_tweet_dropdown
+    
+
+
+
+
+

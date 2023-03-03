@@ -1,0 +1,301 @@
+.comment(data-tweet-id="1" data-tweet-user-name="me")
+    .overlay.hidden
+
+
+
+
+
+
+
+    // COMMENTING ON TWEET
+    article
+        .comment-form-container
+            div.progress-line(data-progress-state='intial')
+            form.form.form--createTweet.comment-form(onsubmit='return false;' data-action='create-tweet' data-active='true' data-tweet-schedule='false' data-multiple-tweets='false' data-tweet-empty='true' data-hide-parts='true' data-tweet-id="63586b928edd14c5895dc215"
+            )
+
+
+                input.hidden(type="text" name="reply_to" value=JSON.stringify(["@rana"]))
+
+                .createTweet
+                    .createTweet-container
+                        .comment-replying.mg-lw.t--md
+                            | Replying to 
+                            span.blue  @rohit 
+                        img.createTweet-user__img.tweet-user-img.img--md(src='/img/users/default.png' alt='user photo')
+                        .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden
+                            i.fas.fa-calendar
+                            p
+                                | Will send
+                                span.createTweet-schedule-timing-value
+                        header.createTweet-header.mg-v-sl
+                            .form-group.mg-lw
+                                textarea.createTweet-textarea(placeholder='Tweet you reply' name='text' data-scroll-event='false' data-input-change-event='false' maxlength='200')
+                            .tweet-uploadImg__container.mg-lw.hidden
+                                .tweet-uploadImg__content.grid--collage(data-items='0')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                                    figure.tweet-uploadImg__fig.hidden
+                                        button.btn--icon-dull.pos-tl(data-action='remove-img')
+                                            i.fa.fa-times
+                                        img.tweet-uploadImg(src='src' alt='')
+                        footer.createTweet-footer
+                            .createTweet-btns
+                                button.createTweet-btn.btn--icon-color(data-action='add-img')
+                                    label(for='tweet-upload-image')
+                                    i.fa.fa-file-image-o
+                                    input#tweet-upload-image.createTweet-input.hidden(type='file' accept='image/*' name='upload_image' data-change-event='false' multiple='multiple')
+                                //- button.createTweet-btn.btn--icon-color(data-action='schedule-post')
+                                //-     label(for='tweet-schedule-input')
+                                //-         i.fa.fa-clock-o
+                                //- input#tweet-schedule-input.createTweet-input.hidden(name='schedule_post_time')
+                            .createTweet-btns.createTweet-btns--submit
+                                button.btn--percent-box(data-action='tweet-text-limit')
+                                    .flex-wrapper
+                                        .single-chart
+                                            svg.circular-chart.orange(viewbox='0 0 36 36')
+                                                path.circle-bg(d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                                path.circle(stroke-dasharray='2, 100' d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                button.btn--primary.btn--sm.hidden(data-action='save-tweet' disabled='')
+                                    | Reply
+                                //- button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                                //-     | Schedule
+    .line &nbsp;
+
+    // POSTED COMMENTS
+    footer.comment-list
+   
+        .comment-item.tweet.p-sm(
+        data-post='{"_id":"6359d1bf68004dd9af8e045c","tweet_id":"63586b928edd14c5895dc215"," type":"comment","ts":"2022-10-25T23:05:24.873Z","ts_format":"25h","text":"fb","upload_imgs":[], "format":"comment","author":{"_id":"6334670cb0d772863c7ac1be","avatar":"@rana","name":"jdkjkjf","profilePic":"default.png"}, "reply_to":["@rana"]}'     data-post-user-id="6334670cb0d772863c7ac1be"
+        data-post-id="6359d1bf68004dd9af8e045c"
+        data-post-type="comment" 
+        data-post-reply-to='["@ran"]'
+        data-post-avatar="@kalu"
+        data-post-format="comment" 
+        
+        )
+            .preview-item.preview-item-container(
+                data-hover=""
+                data-no-hover-change=""
+                data-name="jdkjkjf"
+                data-avatar="@rana"
+                data-bio=""
+                data-user-id="6334670cb0d772863c7ac1be"
+                data-following_count=""
+                data-followers_count=""
+                data-user-detail-set="false"
+            )
+                img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+                .preview-details
+                    f-sm.f-3.mg-sl
+                        span.preview-title(data-preview-window-target-el='true') Rohit rana
+                        span.t--md(data-preview-window-target-el='true') @rohitrana
+                        spsn.dot
+                        span.t--md 5m
+                    span.preview-extra
+                        .comment-replying.t--md
+                            | Replying to 
+                            span.blue  @rohit 
+                .preview-state
+                    button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+                        .icon-box
+                            i.fas.fa-ellipsis
+                .comment-text.mg-sm
+                    p It&apos;s been a good day.
+                    p I learnt and execute so many things.
+                .tweet-btns.f-s-a.mg-sl
+                    button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+                        .icon-box
+                            i.fa.fa-commenting-o
+                        span.tweet-btn__value.btn--icon-value 0
+                    button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+                        .icon-box
+                            i.fa.fa-heart-o
+                        .icon-box.hidden
+                            i.fa.fa-heart
+                        span.tweet-btn__value.btn--icon-dim-value 0
+                    button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+                        .icon-box
+                            i.fa.fa-bookmark-o
+                        .icon-box.hidden
+                            i.fa.fa-bookmark
+        .line-dim
+
+
+
+//- .comment(data-tweet-id="1" data-tweet-user-name="me")
+//-     .overlay.hidden
+
+//-     // HEADER
+//-     header
+//-         .postedTweet-list
+//-         .postedTweet.tweet(data-post-id="1"  data-post-user-id="jsdkjfk"
+//-         data-post-type="comment"
+
+//-         data-post-format="tweet"
+//-         data-post-user-id=`${tweet.user_id}`
+//-         data-post-id=`${tweet._id}`
+//-         data-post-type=`${tweet_type}`
+
+//-         data-post={"_id":"63586bb48edd14c5895dc22b","type":"text","ts":"2022-10-25T23:05:24.873Z","ts_format":"9h","text":"fb","follow_by_cur_user":false,"cur_user_can_reply":true,"tweet_user_mute":false,"format":"tweet","quote_tweet_parent_id_arr":[],"retweet_parent_id_arr":[],"user":{"_id":"6334670cb0d772863c7ac1be","avatar":"@rana","name":"jdkjkjf","profilePic":"default.png"}} )
+
+
+//-                 .preview-item.p-sm.p-v-0(data-hover='' data-active='true'        
+//-                             data-name="rohit"
+//-                             data-avatar=`rana`
+//-                             data-description=`this is me` 
+//-                             data-following_count=`456`
+//-                             data-followers_count=`345`)
+
+//-                     img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+//-                     .preview-details
+//-                         .preview-title(data-preview-window-target-el='true') Rohit rana
+//-                         .preview-extra(data-preview-window-target-el='true') @rohit rana
+//-                     .preview-state
+//-                         button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='tweet-options-dropdown' data-active='false')
+//-                             .icon-box
+//-                                 i.fas.fa-ellipsis
+//-                 .tweet-content.p-sm
+//-                     h4.h-6.h-l.mg-sm What did the bomb say to the bridge
+//-                     h4.h-6.h-l.mg-sm Vry me a river
+//-                     .tweet-details.f-lw.f-3.p-v-sm
+//-                         span.tweet-time.t--md 3:06 AM
+//-                         span.dot
+//-                         span.tweet-created.t--md Oct 10,2022
+//-                         span.dot
+//-                         span.t--md Twitter Web App
+//-                     .line-dim
+//-                     .tweet-stats.f-sm.f-3.p-v-sm
+//-                         p.f-sl.f-3.hover-underline
+//-                             span.p--sm 1
+//-                             span.t--sm Retweet
+//-                         p.f-sl.f-3.hover-underline
+//-                             span.p--sm 3
+//-                             span.t--sm Likes
+//-                     .line-dim
+//-                     .tweet-btns.f-s-a.p-v-lw
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+//-                             .icon-box
+//-                                 i.fa.fa-commenting-o
+//-                         button.tweet-btn.btn--icon-dim-secondary(data-action='retweet' data-dropdown-btn data-dropdown-class="retweet_quote_tweet"  data-active="false")
+//-                             .icon-box
+//-                                 i.fa.fa-retweet
+//-                         button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+//-                             .icon-box
+//-                                 i.fa.fa-heart-o
+//-                         button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+//-                             .icon-box
+//-                                 i.fa.fa-bookmark-o
+//-                     .line-dim
+
+//-     // COMMENTING ON TWEET
+//-     article
+//-         .comment-form-container
+//-             form.form.form--createTweet.comment-form(onsubmit='return false;' data-action='create-tweet' data-active='true' data-tweet-schedule='false' data-multiple-tweets='false' data-tweet-empty='true' data-hide-parts='true')
+//-                 .createTweet
+//-                     .createTweet-container
+//-                         .comment-replying.mg-lw.t--md
+//-                             | Replying to 
+//-                             span.blue  @rohit 
+//-                         img.createTweet-user__img.tweet-user-img.img--md(src='/img/users/default.png' alt='user photo')
+//-                         .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden
+//-                             i.fas.fa-calendar
+//-                             p
+//-                                 | Will send
+//-                                 span.createTweet-schedule-timing-value
+//-                         header.createTweet-header.mg-v-sl
+//-                             .form-group.mg-lw
+//-                                 textarea.createTweet-textarea(placeholder='Tweet you reply' name='text' data-scroll-event='false' data-input-change-event='false' maxlength='200')
+//-                             .tweet-uploadImg__container.mg-lw.hidden
+//-                                 .tweet-uploadImg__content.grid--collage(data-items='0')
+//-                                     figure.tweet-uploadImg__fig.hidden
+//-                                         button.btn--icon-dull.pos-tl(data-action='remove-img')
+//-                                             i.fa.fa-times
+//-                                         img.tweet-uploadImg(src='src' alt='')
+//-                                     figure.tweet-uploadImg__fig.hidden
+//-                                         button.btn--icon-dull.pos-tl(data-action='remove-img')
+//-                                             i.fa.fa-times
+//-                                         img.tweet-uploadImg(src='src' alt='')
+//-                                     figure.tweet-uploadImg__fig.hidden
+//-                                         button.btn--icon-dull.pos-tl(data-action='remove-img')
+//-                                             i.fa.fa-times
+//-                                         img.tweet-uploadImg(src='src' alt='')
+//-                                     figure.tweet-uploadImg__fig.hidden
+//-                                         button.btn--icon-dull.pos-tl(data-action='remove-img')
+//-                                             i.fa.fa-times
+//-                                         img.tweet-uploadImg(src='src' alt='')
+//-                         footer.createTweet-footer
+//-                             .createTweet-btns
+//-                                 button.createTweet-btn.btn--icon-color(data-action='add-img')
+//-                                     label(for='tweet-upload-image')
+//-                                     i.fa.fa-file-image-o
+//-                                 input#tweet-upload-image.createTweet-input.hidden(type='file' accept='image/*' name='upload_image' data-change-event='false' multiple='multiple')
+//-                                 button.createTweet-btn.btn--icon-color(data-action='schedule-post')
+//-                                     label(for='tweet-schedule-input')
+//-                                         i.fa.fa-clock-o
+//-                                 input#tweet-schedule-input.createTweet-input.hidden(name='schedule_post_time')
+//-                             .createTweet-btns.createTweet-btns--submit
+//-                                 button.btn--percent-box(data-action='tweet-text-limit')
+//-                                     .flex-wrapper
+//-                                         .single-chart
+//-                                             svg.circular-chart.orange(viewbox='0 0 36 36')
+//-                                                 path.circle-bg(d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+//-                                                 path.circle(stroke-dasharray='2, 100' d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+//-                                 .line-v
+//-                                 button.btn--primary.btn--sm.hidden(data-action='save-tweet' disabled='')
+//-                                     | Reply
+//-                                 button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+//-                                     | Schedule
+
+//-     // POSTED COMMENTS
+//-     footer.comment-list
+//-         .comment-item.tweet.p-sm(data-post-id="1273837"  data-post-user-name="golu" data-post-user-id="87234874" daat-post-reply-to="kalu")
+//-             .preview-item(data-hover='' data-active='true'  
+//-                     data-name="rohit"
+//-                     data-avatar=`rana`
+//-                     data-description=`this is me` 
+//-                     data-following_count=`456`
+//-                     data-followers_count=`345`)
+//-                 img.preview-img.img--lg(src='/img/users/default.png' data-preview-window-target-el='true')
+//-                 .preview-details
+//-                     f-sm.f-3.mg-sl
+//-                         span.preview-title(data-preview-window-target-el='true') Rohit rana
+//-                         span.t--md(data-preview-window-target-el='true') @rohitrana
+//-                         spsn.dot
+//-                         span.t--md 5m
+//-                     span.preview-extra
+//-                         .comment-replying.t--md
+//-                             | Replying to 
+//-                             span.blue  @rohit 
+//-                 .preview-state
+//-                     button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn='' data-dropdown-class='post-options-dropdown' data-active='false')
+//-                         .icon-box
+//-                             i.fas.fa-ellipsis
+//-                 .comment-text.mg-sm
+//-                     p It&apos;s been a good day.
+//-                     p I learnt and execute so many things.
+//-                 .tweet-btns.f-s-a.mg-sl
+//-                     button.tweet-btn.btn--icon-dim-primary(data-action='write-comment')
+//-                         .icon-box
+//-                             i.fa.fa-commenting-o
+//-                     button.tweet-btn.btn--icon-dim-secondary(data-action='retweet' data-dropdown-btn data-dropdown-class="retweet_quote_post"  data-active="false")
+//-                         .icon-box
+//-                             i.fa.fa-retweet
+//-                     button.tweet-btn.btn--icon-dim-tertiary(data-action='like')
+//-                         .icon-box
+//-                             i.fa.fa-heart-o
+//-                     button.tweet-btn.btn--icon-dim-primary(data-action='bookmark')
+//-                         .icon-box
+//-                             i.fa.fa-bookmark-o
+//-         .line-dim
+

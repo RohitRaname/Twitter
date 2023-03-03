@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="overlay hidden">&nbsp;</div>
+
+    <div class="main-container">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> Messages </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+
+          <div class="user__nav-box preview-parent-abs" data-active="false">
+            <div class="preview">
+              <div class="preview-list">
+                <div
+                  class="preview-item preview-item-no-hover"
+                  data-active="true"
+                >
+                  <img
+                    src="../../img/users/default.png"
+                    class="preview-img"
+                    alt=""
+                  />
+                  <div class="preview-details">
+                    <div class="preview-title">rtr</div>
+                    <div class="preview-extra">@RohitRa19327711</div>
+                  </div>
+
+                  <p class="preview-state">
+                    <i class="fa fa-check"></i>
+                  </p>
+                </div>
+                <div class="line-dim"></div>
+
+                <div class="dropDown-item">Add an existing account</div>
+                <div class="dropDown-item">
+                  Log out <span>@cool_mclarent</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="" class="user__nav-link">
+              <img
+                class="user__nav-img img--sm"
+                src="../../img/users/default.png"
+                alt="User gmail photo"
+              />
+              <p class="user__nav-name">Somesh Rawat</p>
+              <p class="user__nav-gmail">@SomeshR9984sfddfhjfdh</p>
+              <i class="nav__icon user__nav-icon fa fa-ellipsis-h"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="header">
+          <a href="/" class="h-5">Home</a>
+        </div>
+
+        <form
+          class="form form--createPost hidden"
+          onsubmit="return false;"
+          data-action="create-tweet"
+          data-active="true"
+        >
+          <div class="createPost">
+            <div class="createPost-container">
+              <a href="/me">
+                <img
+                  class="createPost-user__img img--md"
+                  src="../../img/users/default.png"
+                  alt="user photo"
+                />
+              </a>
+
+              <button
+                class="btn--inline preview-parent"
+                data-action="choose-audience"
+                data-active="false"
+              >
+                <span> Everyone </span>
+                <i class="fas fa-angle-down"></i>
+                <div class="preview">
+                  <header class="preview-header">
+                    <h5 class="h-5 mg-lw">Choose audience</h5>
+                  </header>
+
+                  <div class="preview-list">
+                    <div class="preview-item" data-active="true">
+                      <div class="preview-iconBox icon-box--primary">
+                        <i class="icon fas fa-globe-americas"></i>
+                      </div>
+                      <div class="preview-details">
+                        <div class="preview-title">Everyone</div>
+                      </div>
+
+                      <p class="preview-state">
+                        <i class="fa fa-check"></i>
+                      </p>
+                    </div>
+                    <div class="preview-item" data-active="true">
+                      <div class="preview-iconBox icon-box--secondary">
+                        <i class="icon fas fa-users"></i>
+                      </div>
+                      <div class="preview-details">
+                        <div class="preview-title">Twitter Circle</div>
+                        <div class="preview-extra">
+                          <h8 class="h-8">1</h8> Person
+                          <a
+                            href=""
+                            class="btn--text-white preview-option__link"
+                            >Edit</a
+                          >
+                        </div>
+                      </div>
+
+                      <p class="preview-state">
+                        <i class="fa fa-check"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              <header class="createPost-header">
+                <div class="form-group mg-sm">
+                  <textarea
+                    class="createPost-textarea"
+                    placeholder="What's happening?"
+                    name="tweet"
+                    maxlength="200"
+                  ></textarea>
+                </div>
+
+                <div class="createPost-uploadImg__container mg-lw">
+                  <div class="createPost-uploadImg__content grid--collage">
+                    <figure class="createPost-uploadImg__fig">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i>
+                      </button>
+
+                      <button
+                        class="btn--dull btn--sm pos-br"
+                        data-action="modify-img"
+                      >
+                        Edit
+                      </button>
+                      <img
+                        class="createPost-uploadImg"
+                        src="../../img/twitter/lohp_en_1302x955.png"
+                        alt=""
+                      />
+                    </figure>
+                    <figure class="createPost-uploadImg__fig">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i>
+                      </button>
+
+                      <button
+                        class="btn--dull btn--sm pos-br"
+                        data-action="modify-img"
+                      >
+                        Edit
+                      </button>
+                      <img
+                        class="createPost-uploadImg"
+                        src="../../img/twitter/lohp_en_1302x955.png"
+                        alt=""
+                      />
+                    </figure>
+                    <figure class="createPost-uploadImg__fig">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i>
+                      </button>
+
+                      <button
+                        class="btn--dull btn--sm pos-br"
+                        data-action="modify-img"
+                      >
+                        Edit
+                      </button>
+                      <img
+                        class="createPost-uploadImg"
+                        src="../../img/twitter/lohp_en_1302x955.png"
+                        alt=""
+                      />
+                    </figure>
+                    <figure class="createPost-uploadImg__fig">
+                      <button
+                        class="btn--icon-dull pos-tl"
+                        data-action="remove-img"
+                      >
+                        <i class="fa fa-times"></i>
+                      </button>
+
+                      <button
+                        class="btn--dull btn--sm pos-br"
+                        data-action="modify-img"
+                      >
+                        Edit
+                      </button>
+                      <img
+                        class="createPost-uploadImg"
+                        src="../../img/twitter/lohp_en_1302x955.png"
+                        alt=""
+                      />
+                    </figure>
+                  </div>
+                </div>
+
+                <button
+                  class="btn--span preview-parent"
+                  data-action="choose-whocan-reply"
+                  data-active="false"
+                >
+                  <i class="fas fa-globe-americas"></i>
+                  <span>Everyone can reply</span>
+                  <!-- <div class="preview hidden" data-preview="whocan-reply">
+                    <div class="preview-container">
+                      <header class="preview-header mg-lw">
+                        <h7 class="h-7">Who can reply?</h7>
+                        <p class="t--md">
+                          Choose who can reply to this Tweet.Anyone mentioned
+                          can always reply.
+                        </p>
+                      </header>
+
+                      <footer class="preview-footer">
+                        <div class="preview-options">
+                          <div
+                            class="preview-option"
+                            data-value="everyone"
+                            data-active="true"
+                          >
+                            <div class="icon-box--primary">
+                              <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <span>Everyone</span>
+
+                            <i
+                              class="fas fa-check icon--simple preview-option__tick"
+                            ></i>
+                          </div>
+                          <div
+                            class="preview-option"
+                            data-active="false"
+                            data-value="people-you-follow"
+                          >
+                            <div class="icon-box--primary">
+                              <i class="fa fa-user"></i>
+                            </div>
+                            <span>people you follow</span>
+
+                            <i
+                              class="fas fa-check icon--simple preview-option__tick"
+                            ></i>
+                          </div>
+                          <div
+                            class="preview-option"
+                            data-active="false"
+                            data-value="people-you-mention"
+                          >
+                            <div class="icon-box--primary">
+                              <i class="fa fa-user-secret"></i>
+                            </div>
+                            <span>Only people you mention</span>
+
+                            <i
+                              class="fas fa-check icon--simple preview-option__tick"
+                            ></i>
+                          </div>
+                        </div>
+                      </footer>
+                    </div>
+                  </div> -->
+
+                  <div class="preview">
+                    <header class="preview-header mg-lw">
+                      <h5 class="h-7 mg-sl">Who can reply?</h5>
+                      <p class="t--md">
+                        Choose who can reply to this Tweet. Anyone mentioned can
+                        always reply.
+                      </p>
+                    </header>
+
+                    <div class="preview-list">
+                      <div class="preview-item" data-active="true">
+                        <div class="preview-iconBox icon-box--primary">
+                          <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="preview-details">
+                          <div class="paragraph--md">Everyone</div>
+                        </div>
+
+                        <p class="preview-state">
+                          <i class="fa fa-check"></i>
+                        </p>
+                      </div>
+                      <div class="preview-item" data-active="true">
+                        <div class="preview-iconBox icon-box--secondary">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="preview-details">
+                          <div class="paragraph--md">People you follow</div>
+                        </div>
+
+                        <p class="preview-state">
+                          <i class="fa fa-check"></i>
+                        </p>
+                      </div>
+                      <div class="preview-item" data-active="true">
+                        <div class="preview-iconBox icon-box--secondary">
+                          <i class="fa fa-user-secret"></i>
+                        </div>
+                        <div class="preview-details">
+                          <div class="paragraph--md">
+                            Only people you mention
+                          </div>
+                        </div>
+
+                        <p class="preview-state">
+                          <i class="fa fa-check"></i>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                <div class="line-col-end line-dim">&nbsp;</div>
+              </header>
+
+              <footer class="createPost-footer">
+                <div class="createPost-btns">
+                  <button
+                    class="createPost-btn btn--icon-color"
+                    data-action="add-img"
+                  >
+                    <label for="image"
+                      ><i class="fa fa-file-image-o"></i>
+                    </label>
+
+                    <input
+                      type="file"
+                      accept="image/*"
+                      id="image"
+                      name="image"
+                      class="createPost-input hidden"
+                    />
+                  </button>
+                  <button
+                    class="createPost-btn btn--icon-color"
+                    data-action="schedule-post"
+                  >
+                    <label for="schedule-post">
+                      <i class="fa fa-clock-o"></i>
+                    </label>
+
+                    <input
+                      name="schedule-post"
+                      id="schedule-post"
+                      class="createPost-input hidden"
+                    />
+                  </button>
+                </div>
+
+                <div class="createPost-btns createPost-btns--submit">
+                  <button
+                    class="btn--percent-box"
+                    data-action="tweet-text-limit"
+                  >
+                    <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart orange">
+                          <path
+                            class="circle-bg"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                          <path
+                            class="circle"
+                            stroke-dasharray="2, 100"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div class="line-v"></div>
+                  <button class="btn--icon-color" action="add-another-tweet">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                  <button
+                    class="btn--primary btn--sm form-submitBtn"
+                    action="submit-post"
+                    disabled
+                  >
+                    Tweet
+                  </button>
+                  <button
+                    class="btn--primary btn--sm form-submitBtn hidden"
+                    action="schedule-tweet"
+                  >
+                    Schedule
+                  </button>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </form>
+        <div class="line-dim">&nbsp;</div>
+
+        <div class="tweet previousTweet" data-userId="" data-tweetId="">
+          <div class="tweet-container preview-parent" data-active="false">
+            <div class="preview">
+              <div class="preview-list">
+                <div
+                  class="preview-item preview-item-no-hover"
+                  data-active="true"
+                >
+                  <img
+                    src="../../img/users/default.png"
+                    class="preview-img"
+                    alt=""
+                  />
+                  <div class="preview-details"></div>
+
+                  <p class="preview-state">
+                    <button class="btn--outline btn--md" data-action="follow">
+                      Follow
+                    </button>
+                    <button
+                      class="btn--outline btn--md hidden"
+                      data-action="unfollow"
+                    >
+                      unfollow
+                    </button>
+                    <button
+                      class="btn--outline btn--md hidden"
+                      data-action="following"
+                    >
+                      following
+                    </button>
+                  </p>
+                </div>
+
+                <div class="preview-content">
+                  <div class="f-lw f-3">
+                    <h6 class="h-6 mg-0">PMO India</h6>
+                    <i class="fa fa-check icon--verify"></i>
+                  </div>
+                  <p class="t mg-sm">@PMOIndia</p>
+                  <p class="p--md mg-sl">Office of the Primse Ministed of India</p>
+                  <div class=" f-sm f-3">
+                    <div class="f-sl f-b">
+                      <h7 class="h-8">504</h7>
+                      <p class="t--md">Following</p>
+                    </div>
+                    <div class="f-sl f-b">
+                      <h7 class="h-8">50.4M</h7>
+                      <p class="t--md">Followers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img
+              class="tweet-img img--md"
+              src="../../img/users/default.png"
+              alt=""
+            />
+            <div class="tweet-tag subheading">Computer Programming</div>
+
+            <div class="tweet-content">
+              <div class="tweet-user__info">
+                <p class="tweet-user__name h-8">Sushant Sharma</p>
+                <p class="tweet-user__verified"></p>
+                <p class="tweet-user__email t--md">@SushantBSinha</p>
+                <p class="tweet-user__postTime t--md">1hr</p>
+
+                <button class="btn--icon-dim-primary tweet-user__options-btn">
+                  <i class="fas fa-ellipsis"></i>
+                </button>
+              </div>
+
+              <div class="tweet-message mg-lw p--md">
+                At 4:30 PM today, will dedicate to the nation a 2G Ethanol
+                Plant. This plant in Panipat will strengthen the efforts to
+                boost production and usage of biofuels & will immensely help our
+                farmers.
+              </div>
+
+              <div class="tweet-btns">
+                <button
+                  class="tweet-btn btn--icon-dim-primary"
+                  data-action="write-comment"
+                >
+                  <i class="fa fa-commenting-o"></i>
+                  <span class="tweet-btn__value btn--icon-value">45</span>
+                </button>
+                <button
+                  class="tweet-btn btn--icon-dim-secondary"
+                  data-action="retweet"
+                >
+                  <i class="fa fa-retweet"></i>
+                  <span class="tweet-btn__value btn--icon-value">190</span>
+                </button>
+                <button
+                  class="tweet-btn btn--icon-dim-tertiary"
+                  data-action="like"
+                >
+                  <i class="fa fa-heart-o"></i>
+                  <span class="tweet-btn__value btn--icon-dim-value">780</span>
+                </button>
+                <button
+                  data-action="bookmark"
+                  class="tweet-btn btn--icon-dim-primary"
+                >
+                  <i class="fa fa-bookmark-o"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="line line-dim">&nbsp;</div>
+        </div>
+
+        <form
+          class="form hidden"
+          data-action="schedule-post"
+          data-all-fields-valid="false"
+          onsubmit="return false;"
+        >
+          <div class="form-overlay overlay">&nbsp;</div>
+
+          <div class="form-container abs-center">
+            <button class="btn--icon form-closeBtn">
+              <i class="fa fa-times"></i>
+            </button>
+            <div class="form-content">
+              <h5 class="h-5 mg-sm form-heading">Schedule</h5>
+
+              <div class="t--md form-description mg-sm">
+                <i class="fas fa-calendar"></i>
+                <p>Will send on <span>Mon, Sep 5, 2022 at 5:12 PM</span></p>
+              </div>
+
+              <div class="form-groups">
+                <div class="form-group" data-type="date">
+                  <h8 class="t-md mg-sm form-group__heading">Date</h8>
+
+                  <div class="form-boxs">
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">Month</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="month"
+                        name="month"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">January</li>
+                        <li class="dropDown-item">February</li>
+                        <li class="dropDown-item">March</li>
+                        <li class="dropDown-item">April</li>
+                        <li class="dropDown-item">May</li>
+                        <li class="dropDown-item">June</li>
+                        <li class="dropDown-item">July</li>
+                        <li class="dropDown-item">August</li>
+                        <li class="dropDown-item">September</li>
+                        <li class="dropDown-item">October</li>
+                        <li class="dropDown-item">November</li>
+                        <li class="dropDown-item">December</li>
+                      </ul>
+                    </div>
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">Day</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="day"
+                        name="day"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">0</li>
+                        <li class="dropDown-item">1</li>
+                        <li class="dropDown-item">2</li>
+                        <li class="dropDown-item">3</li>
+                        <li class="dropDown-item">4</li>
+                        <li class="dropDown-item">5</li>
+                        <li class="dropDown-item">6</li>
+                        <li class="dropDown-item">7</li>
+                        <li class="dropDown-item">8</li>
+                        <li class="dropDown-item">9</li>
+                        <li class="dropDown-item">10</li>
+                        <li class="dropDown-item">11</li>
+                        <li class="dropDown-item">12</li>
+                        <li class="dropDown-item">13</li>
+                        <li class="dropDown-item">14</li>
+                        <li class="dropDown-item">15</li>
+                        <li class="dropDown-item">16</li>
+                        <li class="dropDown-item">17</li>
+                        <li class="dropDown-item">18</li>
+                        <li class="dropDown-item">19</li>
+                        <li class="dropDown-item">20</li>
+                        <li class="dropDown-item">21</li>
+                        <li class="dropDown-item">22</li>
+                        <li class="dropDown-item">23</li>
+                        <li class="dropDown-item">24</li>
+                        <li class="dropDown-item">25</li>
+                        <li class="dropDown-item">26</li>
+                        <li class="dropDown-item">27</li>
+                        <li class="dropDown-item">28</li>
+                        <li class="dropDown-item">29</li>
+                        <li class="dropDown-item">30</li>
+                        <li class="dropDown-item">31</li>
+                      </ul>
+                    </div>
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">Year</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="year"
+                        name="year"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">2022</li>
+                        <li class="dropDown-item">2023</li>
+                        <li class="dropDown-item">2024</li>
+                      </ul>
+                    </div>
+
+                    <h8 class="t-md form-group__heading" data-type="time"
+                      >Time</h8
+                    >
+
+                    <!--  -->
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">Hour</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="hour"
+                        name="hour"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">1</li>
+                        <li class="dropDown-item">2</li>
+                        <li class="dropDown-item">3</li>
+                        <li class="dropDown-item">4</li>
+                        <li class="dropDown-item">5</li>
+                        <li class="dropDown-item">6</li>
+                        <li class="dropDown-item">7</li>
+                        <li class="dropDown-item">8</li>
+                        <li class="dropDown-item">8</li>
+                        <li class="dropDown-item">9</li>
+                        <li class="dropDown-item">10</li>
+                        <li class="dropDown-item">11</li>
+                        <li class="dropDown-item">12</li>
+                      </ul>
+                    </div>
+
+                    <!--  -->
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">Minute</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="minute"
+                        name="minute"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">0</li>
+                        <li class="dropDown-item">1</li>
+                        <li class="dropDown-item">2</li>
+                        <li class="dropDown-item">3</li>
+                        <li class="dropDown-item">4</li>
+                        <li class="dropDown-item">5</li>
+                        <li class="dropDown-item">6</li>
+                        <li class="dropDown-item">7</li>
+                        <li class="dropDown-item">8</li>
+                        <li class="dropDown-item">9</li>
+                        <li class="dropDown-item">10</li>
+                        <li class="dropDown-item">11</li>
+                        <li class="dropDown-item">12</li>
+                        <li class="dropDown-item">13</li>
+                        <li class="dropDown-item">14</li>
+                        <li class="dropDown-item">15</li>
+                        <li class="dropDown-item">16</li>
+                        <li class="dropDown-item">17</li>
+                        <li class="dropDown-item">18</li>
+                        <li class="dropDown-item">19</li>
+                        <li class="dropDown-item">20</li>
+                        <li class="dropDown-item">21</li>
+                        <li class="dropDown-item">22</li>
+                        <li class="dropDown-item">23</li>
+                        <li class="dropDown-item">24</li>
+                        <li class="dropDown-item">25</li>
+                        <li class="dropDown-item">26</li>
+                        <li class="dropDown-item">27</li>
+                        <li class="dropDown-item">28</li>
+                        <li class="dropDown-item">29</li>
+                        <li class="dropDown-item">30</li>
+                        <li class="dropDown-item">31</li>
+                        <li class="dropDown-item">32</li>
+                        <li class="dropDown-item">33</li>
+                        <li class="dropDown-item">34</li>
+                        <li class="dropDown-item">35</li>
+                        <li class="dropDown-item">36</li>
+                        <li class="dropDown-item">37</li>
+                        <li class="dropDown-item">38</li>
+                        <li class="dropDown-item">39</li>
+                        <li class="dropDown-item">40</li>
+                        <li class="dropDown-item">41</li>
+                        <li class="dropDown-item">42</li>
+                        <li class="dropDown-item">43</li>
+                        <li class="dropDown-item">44</li>
+                        <li class="dropDown-item">45</li>
+                        <li class="dropDown-item">46</li>
+                        <li class="dropDown-item">47</li>
+                        <li class="dropDown-item">48</li>
+                        <li class="dropDown-item">49</li>
+                        <li class="dropDown-item">50</li>
+                        <li class="dropDown-item">51</li>
+                        <li class="dropDown-item">52</li>
+                        <li class="dropDown-item">53</li>
+                        <li class="dropDown-item">54</li>
+                        <li class="dropDown-item">55</li>
+                        <li class="dropDown-item">56</li>
+                        <li class="dropDown-item">57</li>
+                        <li class="dropDown-item">58</li>
+                        <li class="dropDown-item">59</li>
+                      </ul>
+                    </div>
+
+                    <!--  -->
+                    <div
+                      class="form-group form-group--dropDown dropDown-parent"
+                      data-input-filled="false"
+                      data-active="false"
+                      data-error="false"
+                    >
+                      <label for="" class="form-box__label">AM/PM</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="am/pm"
+                        name="am/pm"
+                      />
+                      <i class="fa fa-angle-down form-icon"></i>
+                      <ul class="dropDown-list" data-active="false">
+                        <li class="dropDown-item">AM</li>
+                        <li class="dropDown-item">PM</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-submitBtn">
+                <button class="btn--white btn--sm" disabled>Confirm</button>
+              </div>
+            </div>
+            <div class="line-dim mg-lw mg-v-sm"></div>
+            <button
+              class="btn--primary-text mg-lw"
+              data-action="scheduled-tweets"
+            >
+              Scheduled Tweets
+            </button>
+          </div>
+        </form>
+
+        <div class="createTweets hidden">
+          <div class="createTweets-container modal" data-modal="auto-height">
+            <div class="f-s f-1 mg-sm">
+              <button class="btn--icon" data-action="close-modal">
+                <i class="fa fa-times"></i>
+              </button>
+
+              <button
+                class="btn--primary-text btn--sm"
+                data-action="show-unsent-tweets"
+              >
+                Unsent Tweets
+              </button>
+            </div>
+            <div class="createTweets-list">
+              <div class="createTweets-item" data-active="false">
+                <form
+                  class="form form--createPost"
+                  onsubmit="return false;"
+                  data-action="create-multiple-tweets"
+                  data-tweet-empty="false"
+                >
+                  <div class="createPost">
+                    <button
+                      class="btn--icon-color hidden"
+                      data-action="remove-tweet"
+                    >
+                      <i class="fa fa-times"></i>
+                    </button>
+                    <div class="createPost-container">
+                      <img
+                        class="createPost-img img--md"
+                        src="../../img/users/default.png"
+                        alt="user photo"
+                      />
+
+                      <header class="createPost-header">
+                        <div class="form-group mg-md">
+                          <textarea
+                            class="createPost-textarea"
+                            placeholder="What's happening?"
+                            name="tweet"
+                            maxlength="200"
+                          ></textarea>
+                        </div>
+                        <button
+                          class="btn--span preview-parent"
+                          data-action="choose-whocan-reply"
+                          data-active="false"
+                        >
+                          <i class="fas fa-globe-americas"></i>
+                          <span>Everyone can reply</span>
+                          <div class="preview" data-preview="whocan-reply">
+                            <div class="preview-container">
+                              <header class="preview-header mg-lw">
+                                <h7 class="h-7">Who can reply?</h7>
+                                <p class="t--md">
+                                  Choose who can reply to this Tweet.Anyone
+                                  mentioned can always reply.
+                                </p>
+                              </header>
+
+                              <footer class="preview-footer">
+                                <div class="preview-options">
+                                  <div
+                                    class="preview-option"
+                                    data-value="everyone"
+                                    data-active="true"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <span>Everyone</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                  <div
+                                    class="preview-option"
+                                    data-active="false"
+                                    data-value="people-you-follow"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fa fa-user"></i>
+                                    </div>
+                                    <span>people you follow</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                  <div
+                                    class="preview-option"
+                                    data-active="false"
+                                    data-value="people-you-mention"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fa fa-user-secret"></i>
+                                    </div>
+                                    <span>Only people you mention</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                </div>
+                              </footer>
+                            </div>
+                          </div>
+                        </button>
+                        <div class="line-col-end line-dim">&nbsp;</div>
+                      </header>
+
+                      <footer class="createPost-footer">
+                        <div class="createPost-btns">
+                          <button
+                            class="createPost-btn btn--icon-color"
+                            data-action="add-img"
+                          >
+                            <label for="image"
+                              ><i class="fa fa-file-image-o"></i>
+                            </label>
+
+                            <input
+                              type="file"
+                              accept="image/*"
+                              id="image"
+                              name="image"
+                              class="createPost-input hidden"
+                            />
+                          </button>
+                          <button
+                            class="createPost-btn btn--icon-color"
+                            data-action="schedule-post"
+                          >
+                            <label for="schedule-post">
+                              <i class="fa fa-clock-o"></i>
+                            </label>
+
+                            <input
+                              name="schedule-post"
+                              id="schedule-post"
+                              class="createPost-input hidden"
+                            />
+                          </button>
+                        </div>
+
+                        <div class="createPost-btns createPost-btns--submit">
+                          <button
+                            class="btn--percent-box"
+                            data-action="tweet-text-limit"
+                          >
+                            <div class="flex-wrapper">
+                              <div class="single-chart">
+                                <svg
+                                  viewBox="0 0 36 36"
+                                  class="circular-chart orange"
+                                >
+                                  <path
+                                    class="circle-bg"
+                                    d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                  />
+                                  <path
+                                    class="circle"
+                                    stroke-dasharray="2, 100"
+                                    d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+
+                          <div class="line-v"></div>
+                          <button
+                            class="btn--icon-color"
+                            action="add-another-tweet"
+                          >
+                            <i class="fa fa-plus"></i>
+                          </button>
+                          <button
+                            class="btn--primary btn--sm form-submitBtn"
+                            action="submit-all-tweets"
+                            disabled
+                          >
+                            Tweet All
+                          </button>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="createTweets-item" data-active="true">
+                <form
+                  class="form form--createPost"
+                  onsubmit="return false;"
+                  data-action="create-multiple-tweets"
+                  data-tweet-empty="true"
+                >
+                  <div class="createPost">
+                    <button
+                      class="btn--icon-color hidden"
+                      data-action="remove-tweet"
+                    >
+                      <i class="fa fa-times"></i>
+                    </button>
+                    <div class="createPost-container">
+                      <img
+                        class="createPost-img img--md"
+                        src="../../img/users/default.png"
+                        alt="user photo"
+                      />
+
+                      <header class="createPost-header">
+                        <div class="form-group mg-md">
+                          <textarea
+                            class="createPost-textarea"
+                            placeholder="What's happening?"
+                            name="tweet"
+                            maxlength="200"
+                          ></textarea>
+                        </div>
+                        <div class="createPost-uploadImg__container mg-lw">
+                          <div
+                            class="createPost-uploadImg__content grid--collage"
+                          >
+                            <figure class="createPost-uploadImg__fig">
+                              <button
+                                class="btn--icon-dull pos-tl"
+                                data-action="remove-img"
+                              >
+                                <i class="fa fa-times"></i>
+                              </button>
+
+                              <button
+                                class="btn--dull btn--sm pos-br"
+                                data-action="modify-img"
+                              >
+                                Edit
+                              </button>
+                              <img
+                                class="createPost-uploadImg"
+                                src="../../img/twitter/lohp_en_1302x955.png"
+                                alt=""
+                              />
+                            </figure>
+                            <figure class="createPost-uploadImg__fig">
+                              <button
+                                class="btn--icon-dull pos-tl"
+                                data-action="remove-img"
+                              >
+                                <i class="fa fa-times"></i>
+                              </button>
+
+                              <button
+                                class="btn--dull btn--sm pos-br"
+                                data-action="modify-img"
+                              >
+                                Edit
+                              </button>
+                              <img
+                                class="createPost-uploadImg"
+                                src="../../img/twitter/lohp_en_1302x955.png"
+                                alt=""
+                              />
+                            </figure>
+                            <figure class="createPost-uploadImg__fig">
+                              <button
+                                class="btn--icon-dull pos-tl"
+                                data-action="remove-img"
+                              >
+                                <i class="fa fa-times"></i>
+                              </button>
+
+                              <button
+                                class="btn--dull btn--sm pos-br"
+                                data-action="modify-img"
+                              >
+                                Edit
+                              </button>
+                              <img
+                                class="createPost-uploadImg"
+                                src="../../img/twitter/lohp_en_1302x955.png"
+                                alt=""
+                              />
+                            </figure>
+                            <figure class="createPost-uploadImg__fig">
+                              <button
+                                class="btn--icon-dull pos-tl"
+                                data-action="remove-img"
+                              >
+                                <i class="fa fa-times"></i>
+                              </button>
+
+                              <button
+                                class="btn--dull btn--sm pos-br"
+                                data-action="modify-img"
+                              >
+                                Edit
+                              </button>
+                              <img
+                                class="createPost-uploadImg"
+                                src="../../img/twitter/lohp_en_1302x955.png"
+                                alt=""
+                              />
+                            </figure>
+                          </div>
+                        </div>
+                        <button
+                          class="btn--span preview-parent"
+                          data-action="choose-whocan-reply"
+                          data-active="false"
+                        >
+                          <i class="fas fa-globe-americas"></i>
+                          <span>Everyone can reply</span>
+                          <div class="preview" data-preview="whocan-reply">
+                            <div class="preview-container">
+                              <header class="preview-header mg-lw">
+                                <h7 class="h-7">Who can reply?</h7>
+                                <p class="t--md">
+                                  Choose who can reply to this Tweet.Anyone
+                                  mentioned can always reply.
+                                </p>
+                              </header>
+
+                              <footer class="preview-footer">
+                                <div class="preview-options">
+                                  <div
+                                    class="preview-option"
+                                    data-value="everyone"
+                                    data-active="true"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <span>Everyone</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                  <div
+                                    class="preview-option"
+                                    data-active="false"
+                                    data-value="people-you-follow"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fa fa-user"></i>
+                                    </div>
+                                    <span>people you follow</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                  <div
+                                    class="preview-option"
+                                    data-active="false"
+                                    data-value="people-you-mention"
+                                  >
+                                    <div class="icon-box--primary">
+                                      <i class="fa fa-user-secret"></i>
+                                    </div>
+                                    <span>Only people you mention</span>
+
+                                    <i
+                                      class="fas fa-check icon--simple preview-option__tick"
+                                    ></i>
+                                  </div>
+                                </div>
+                              </footer>
+                            </div>
+                          </div>
+                        </button>
+                        <div class="line-col-end line-dim">&nbsp;</div>
+                      </header>
+
+                      <footer class="createPost-footer">
+                        <div class="createPost-btns">
+                          <button
+                            class="createPost-btn btn--icon-color"
+                            data-action="add-img"
+                          >
+                            <label for="image"
+                              ><i class="fa fa-file-image-o"></i>
+                            </label>
+
+                            <input
+                              type="file"
+                              accept="image/*"
+                              id="image"
+                              name="image"
+                              class="createPost-input hidden"
+                            />
+                          </button>
+                          <button
+                            class="createPost-btn btn--icon-color"
+                            data-action="schedule-post"
+                          >
+                            <label for="schedule-post">
+                              <i class="fa fa-clock-o"></i>
+                            </label>
+
+                            <input
+                              name="schedule-post"
+                              id="schedule-post"
+                              class="createPost-input hidden"
+                            />
+                          </button>
+                        </div>
+
+                        <div class="createPost-btns createPost-btns--submit">
+                          <button
+                            class="btn--percent-box"
+                            data-action="tweet-text-limit"
+                          >
+                            <div class="flex-wrapper">
+                              <div class="single-chart">
+                                <svg
+                                  viewBox="0 0 36 36"
+                                  class="circular-chart orange"
+                                >
+                                  <path
+                                    class="circle-bg"
+                                    d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                  />
+                                  <path
+                                    class="circle"
+                                    stroke-dasharray="2, 100"
+                                    d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+
+                          <div class="line-v"></div>
+                          <button
+                            class="btn--icon-color"
+                            action="add-another-tweet"
+                          >
+                            <i class="fa fa-plus"></i>
+                          </button>
+                          <button
+                            class="btn--primary btn--sm form-submitBtn"
+                            action="submit-all-tweets"
+                            disabled
+                          >
+                            Tweet All
+                          </button>
+                        </div>
+                      </footer>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div
+        class="modal hidden"
+        data-modal="fixed-height"
+        data-column="2"
+        data-action="edit-your-circle"
+      >
+        <div class="p-lw f-md f-3 f-1">
+          <button class="btn--icon modal-closeBtn">
+            <i class="fa fa-times"></i>
+          </button>
+
+          <h5 class="h-5">Edit your twitter circle</h5>
+        </div>
+
+        <div class="c-boxed modal-change-column-btns">
+          <button
+            class="btn--text-white h-5"
+            data-content-controller="true"
+            data-action="twitter-circle"
+          >
+            Twitter Circle
+          </button>
+          <button
+            class="btn--text-white h-5"
+            data-content-controller="true"
+            data-action="recommend"
+          >
+            Recommend
+          </button>
+        </div>
+        <div class="line mg-sl"></div>
+        <div class="modal-container">
+          <div class="modal-content hidden" data-action="twitter-circle">
+            <ul class="modal-list">
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button
+                    class="btn--outline btn--sm"
+                    data-action="remove-from-twitter-circle"
+                  >
+                    Remove
+                  </button>
+                </p>
+              </div>
+            </ul>
+          </div>
+          <div class="modal-content" data-action="twitter-recommend">
+            <form class="search-form mg-sl" onsubmit="return false;">
+              <i class="fa fa-search" class="search-icon"></i>
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search people"
+              />
+              <i class="fa fa-times btn--icon-white"></i>
+            </form>
+
+            <ul class="modal-list">
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button
+                    class="btn--outline btn--sm"
+                    data-action="add-to-twitter-circle"
+                  >
+                    Add
+                  </button>
+                </p>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal hidden"
+        data-modal="fixed-height"
+        data-column="1"
+        data-action="tweet-liked-by"
+      >
+        <header class="modal-header p-lw f-md f-3 f-1">
+          <button class="btn--icon modal-closeBtn">
+            <i class="fa fa-times"></i>
+          </button>
+
+          <h5 class="h-5">Liked by</h5>
+        </header>
+
+        <div class="modal-container">
+          <div class="modal-content" data-action="twitter-circle">
+            <ul class="modal-list">
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                  <div class="preview-text">my life is beautiful</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+              <div class="preview-item" data-active="true">
+                <img
+                  src="../../img/users/default.png"
+                  class="preview-img"
+                  alt=""
+                />
+                <div class="preview-details">
+                  <div class="preview-title">rtr</div>
+                  <div class="preview-extra">@RohitRa19327711</div>
+                </div>
+
+                <p class="preview-state">
+                  <button class="btn--outline btn--sm" data-action="follow">
+                    Follow
+                  </button>
+                </p>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal hidden"
+        data-modal="fixed-height"
+        data-action="unsent-tweets"
+        data-edit-items="false"
+        data-atleast-1-item-selected="false"
+        data-no-item-present="false"
+      >
+        <header class="modal-header p-lw f-md f-3 f-1">
+          <button class="btn--icon modal-backBtn" data-action="back">
+            <i class="fas fa-long-arrow-alt-left"></i>
+          </button>
+
+          <h5 class="h-5">Edit your twitter circle</h5>
+
+          <button
+            class="btn--primary-dull btn--sm pos-tr modal-topRightBtn hidden"
+            data-action="done-with-editing-items"
+          >
+            Done
+          </button>
+          <button
+            class="btn--primary-dull btn--sm pos-tr modal-topRightBtn"
+            data-action="allow-to-edit-items"
+          >
+            Edit
+          </button>
+        </header>
+
+        <div class="c-boxed modal-change-column-btns">
+          <button
+            class="btn--text-white h-5"
+            data-action="drafts"
+            data-active="false"
+          >
+            Drafts
+          </button>
+          <button
+            class="btn--text-white h-5"
+            data-action="scheduled"
+            data-active="true"
+          >
+            Scheduled
+          </button>
+        </div>
+        <div class="line mg-sl"></div>
+        <div class="modal-container">
+          <div class="modal-content hidden" data-content="drafts">
+            <ul class="modal-list">
+              <div class="preview-item preview-item--sm" data-active="true">
+                <div class="btn--checkbox" data-checked="false">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div class="preview-details">
+                  <div class="preview-text">This is the quote</div>
+                </div>
+
+                <p class="preview-state"></p>
+              </div>
+              <div class="line">&nbsp;</div>
+              <div class="preview-item preview-item--sm" data-active="true">
+                <div class="btn--checkbox" data-checked="true">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div class="preview-details">
+                  <div class="preview-text">This is the quote</div>
+                </div>
+
+                <p class="preview-state"></p>
+              </div>
+              <div class="line">&nbsp;</div>
+            </ul>
+          </div>
+          <div class="modal-content display" data-content="schedule-tweets">
+            <ul class="modal-list">
+              <div class="preview-item preview-item--sm" data-active="true">
+                <div class="btn--checkbox" data-checked="false">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div class="preview-details">
+                  <div class="preview-extra">
+                    <i class="fas fa-clock"></i>
+                    <p>Will send on <span>Fri,Sep 9,2022 at 5:46 PM</span></p>
+                  </div>
+                  <div class="preview-text">my life is beautiful</div>
+                </div>
+
+                <p class="preview-state"></p>
+              </div>
+
+              <div class="line">&nbsp;</div>
+            </ul>
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <div class="line"></div>
+
+          <div class="f-s modal-footer-content">
+            <button class="btn--primary-text" data-action="select-all">
+              Select all
+            </button>
+            <button class="btn--primary-text hidden" data-action="unselect-all">
+              Deselect all
+            </button>
+            <button class="btn--tertiary-text" data-action="delete" disabled>
+              Delete
+            </button>
+          </div>
+        </footer>
+      </div>
+
+      <div
+        class="popup hidden"
+        data-type="delete"
+        data-action="remove-unsent-tweets"
+      >
+        <h6 class="h-6 mg-lw">Discard unsent Tweets</h6>
+        <p class="t--md mg-sm">
+          This can't be undone and you'll lose your unsent Tweets.
+        </p>
+        <button
+          class="btn--tertiary btn--full mg-sl"
+          data-action="delete-tweets"
+        >
+          Delete
+        </button>
+        <button class="btn--outline btn--full" data-action="cancel-tweets">
+          Cancel
+        </button>
+      </div>
+      <div class="popup hidden" data-type="save" data-action="save-tweets">
+        <h6 class="h-6 mg-sl">Save Tweet?</h6>
+        <p class="t--md mg-sm">
+          You can save this to send later from your unsent Tweets.
+        </p>
+        <button class="btn--white btn--full mg-sl" data-action="save-tweets">
+          Save
+        </button>
+        <button class="btn--outline btn--full" data="discard-tweets">
+          Discard
+        </button>
+      </div>
+
+      <div class="sidebar"></div>
+    </div>
+  </body>
+</html>

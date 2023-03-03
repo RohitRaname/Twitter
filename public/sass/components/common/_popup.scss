@@ -1,0 +1,15 @@
+.popup {
+  .overlay {
+    z-index: 340;
+  }
+
+  &-container {
+    @include fixed-center;
+    z-index: 400;
+    width: 38rem;
+    border-radius: $radius-bg;
+    background: var(--default-background);
+    padding: $padding-lg;
+    padding-top: $padding-bg;
+  }
+}

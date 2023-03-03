@@ -1,0 +1,227 @@
+.user-profile {
+  .user {
+    font-size: $font-size-md;
+    // header
+    &-profile-cover {
+      height: 20.5rem;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+        cursor: pointer;
+        transition: all 0.02s;
+      }
+    }
+
+    &-details {
+      padding-top: 01em !important;
+    }
+
+    // article
+    &-btns-container {
+      // padding-top: 1.5rem !important;
+
+      .user-img-box {
+        display: inline-block;
+        position: relative;
+
+        img {
+          width: 11.5rem;
+          height: 11.5rem;
+
+          position: absolute;
+          top: -9rem;
+          left: 0;
+          border: 0.3rem solid var(--default-background);
+          cursor: pointer;
+          object-fit: cover;
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          filter: brightness(95%);
+        }
+      }
+
+      button[data-action='edit-profile'] {
+        margin-left: auto;
+      }
+
+      .user-btns {
+        margin-left: auto;
+
+        .btn--icon {
+          height: 3.2rem;
+          width: 3.2rem;
+          padding: 0 !important;
+
+          i {
+            font-size: 1.2rem !important;
+          }
+        }
+
+        // follow btn
+        button.btn--md {
+          padding: 0.6rem 1.5rem !important;
+          font-size: 1.46rem !important;
+        }
+      }
+
+      button[data-action='following']:hover {
+        color: var(--color-tertiary);
+        border: 0.1px solid var(--color-tertiary-light);
+      }
+    }
+
+    &-details-content {
+      // padding-right: 3rem;
+    }
+
+    // footer
+    &-description {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      justify-content: start;
+
+      & > * {
+        justify-content: start;
+      }
+
+      i {
+        font-size: 1.3rem;
+      }
+    }
+
+    &-following-stats {
+      display: inline-flex;
+    }
+
+    &-section-btns {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.sidebar .user-tweet-imgs-collage {
+  border-radius: $radius-hg;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 11rem);
+  gap: 0.2rem;
+  border: var(--border-line-light);
+
+  .user-tweet-img-box {
+    cursor: pointer;
+  }
+
+  img,
+  .user-tweet-img-box {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+// VARIATIONS ------------------------------------------------------------
+
+.section-user-profile {
+  &[data-full-size-img-set='true'] button[data-action='resize-zoom-img'] {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 232;
+    display: block !important;
+    background: var(--color-primary-dark);
+  }
+  &[data-full-size-img='cover-pic'] {
+    .user-img {
+      position: static;
+      transform: translate(0);
+    }
+
+    .user-profile .user-profile-cover {
+      // 1.when click on background cover pic
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 200;
+      background: var(--color-primary-dull);
+
+      img {
+        height: 70%;
+      }
+    }
+  }
+  &[data-full-size-img='profile-pic'] .user-profile .user-img-box {
+    // 1.when click on background cover pic
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background: var(--color-primary-dull);
+
+    img {
+      position: static;
+      height: 36rem;
+      width: 36rem;
+      transform: translate(0);
+      border: none;
+    }
+  }
+}
+
+// Profileuser does exist
+.section[data-profile_user_exist='false'] {
+  .user {
+    &-profile-cover {
+      background-color: var(--color-primary-dim);
+      pointer-events: none;
+    }
+
+    &-details {
+      padding: 0 2rem !important;
+    }
+
+    &-img-box {
+      pointer-events: none;
+
+      &::before {
+        content: '';
+        background: #fff;
+        width: 13rem;
+        height: 13rem;
+        position: absolute;
+        top: -10rem;
+        left: 0;
+        border-radius: 50%;
+        border: 0.3rem solid var(--default-background);
+        cursor: pointer;
+        object-fit: cover;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .profile_user_not_exist_container {
+    margin-top: 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 43.75em) {
+  &[data-full-size-img='profile-pic'] .user-profile .user-img-box {
+    img {
+      height: 45vw !important;
+      width: 45vw !important;
+    }
+  }
+}

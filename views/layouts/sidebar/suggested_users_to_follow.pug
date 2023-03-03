@@ -1,0 +1,20 @@
+if(to_follow_users && to_follow_users.length>0)
+    aside.sidebar-box.follow-people(data-type="follow")
+        h4.h-6.p-sm.mg-0 Who to follow
+        ul.follow-list
+            each user in to_follow_users
+                .modal-item.preview-item.preview-item-container(data-user=`${JSON.stringify(user)}`)
+                    .preview-item-content
+                        img.preview-img(src=`/img/users/${user.profilePic || "default.png"}`)
+                        .preview-details-col
+                            .preview-title= user.name
+                            .t--md= user.avatar
+                        p.preview-state.follow_following_box.toggle-child(data-active='false')
+                            button.btn--outline.btn--sm.el-1(data-follow='false')
+                                | Following
+                            button.btn--white.btn--sm.el-2(data-follow='true')
+                                | Follow
+
+        footer.p-sm
+            a(href="/i/connect-people")
+                button.btn--primary-text.more-news.show-more-people Show more

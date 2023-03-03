@@ -1,0 +1,125 @@
+.search {
+  position: relative;
+  background: var(--default-background);
+  .search-form {
+    padding: 0 !important;
+    z-index: 100;
+    position: relative;
+    background: var(--default-background);
+    padding: 0;
+
+    & > * {
+      position: relative;
+      z-index: 40;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--color-primary-dim);
+      border-radius: inherit;
+      z-index: 30;
+
+      &:focus {
+        border: 1px solid var(--color-primary-light);
+      }
+    }
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 1rem 2rem;
+
+      border: 1px solid transparent;
+      padding-left: 5rem;
+      border-radius: inherit;
+
+      &:focus {
+        border: 1px solid var(--color-primary-light);
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 1.5rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  .search-dropdown {
+    .dropdown-previous-search {
+      padding: 1.2rem 1.6rem;
+    }
+
+    .clear-search-btn {
+      font-size: 1.45rem;
+      margin-right: -1.2rem;
+      margin-top: -0.5rem;
+    }
+
+    // position fixed not depends on abs or fixed unless transform is used
+
+    .dropdown-list {
+      transform: translate(0);
+      overflow-y: scroll;
+      margin: 0;
+      position: absolute;
+      // width: 95%;
+      left: 0;
+      top: 110%;
+      left: unset;
+      max-width: unset;
+      border-radius: $radius-bg;
+      max-width: 42rem;
+      min-height: 8rem;
+      max-height: 50rem;
+      border: var(--border-line);
+    }
+
+    .dropdown-item {
+      &:hover {
+        background: var(--background-hover);
+      }
+
+      &[data-type='text'] {
+        grid-template-columns: min-content 1fr min-content;
+        gap: 3.45rem;
+        .search-icon {
+          font-size: 2rem;
+          color: var(--default-text);
+          padding-left: 0.4rem;
+        }
+
+        p {
+          font-size: 1.8rem;
+          font-weight: 500;
+        }
+
+        // grid-template-columns: 1fr min-content;
+      }
+
+      & .preview-item-content {
+        gap: 2rem;
+      }
+
+      .preview-state {
+        right: 2.14rem;
+        top: 0.6rem;
+      }
+    }
+
+    // state
+    &[data-active='true'] .dropdown-list {
+      @include show;
+    }
+  }
+
+  .overlay {
+    background: transparent;
+  }
+}

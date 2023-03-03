@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+*::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+// *:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 0.6rem $color-primary;
+// }
+
+html {
+  font-size: 62.25%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  *::-webkit-scrollbar {
+    width: 0;
+  }
+
+  // overflow-y: hidden;
+
+  // @include respond(big-desktop) {
+  //   font-size: 75%;
+  // }
+
+  @include respond(tab-land) {
+    font-size: 58.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 55%;
+  }
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  // overflow-y: hidden;
+  scroll-behavior: smooth;
+  background: var(--default-background);
+  min-height: 100vh;
+  height: 100%;
+  // width: 100vw;
+
+  // every element remove scrollbar
+  // *::-webkit-scrollbar {
+  //   width: 0;
+  // }
+}

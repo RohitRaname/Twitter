@@ -1,0 +1,26 @@
+.modal.hidden(data-modal='login-signup-modal')
+    .overlay 
+    .modal-container(data-height='fixed-height')
+        header.modal-header.f-3.f-1
+
+            button.btn--icon-fixed(data-action="back")
+                i.fa.fa-times
+           
+
+        div.modal-signup-login-container.center.f-col.width-70.mg-bg
+            div.modal-signup-login-content
+
+                i.fa.fa-user-plus.mg-bg.blue.modal-add-user-icon
+                h4.h-5.mg-lw 
+                    span Follow
+                    span.value Givenuser
+                    span to see what they share on Twitter
+
+                p.t--md.mg-sm Sign up so you never miss the Tweets
+
+
+            button.btn--primary.btn--100.mg-lw(data-action="show-add-account-modal") Log In
+            button.btn--outline.btn--100(data-action="redirect-to-signup-page") Sign Up
+
+
+

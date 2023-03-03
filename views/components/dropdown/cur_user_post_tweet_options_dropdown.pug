@@ -1,0 +1,21 @@
+//- cur user viewing cur user profile so we cant show follow or mute options for cur user
+
+.dropdown(data-type="cur-user-post-options-dropdown" data-dropdown="fixed" data-post-id=`${post_id}` data-post-user-id=`${post_user_id}`
+post-user-name="mne" data-media-change="true"
+data-post-type data-active="false")
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='' )    
+        .dropdown-content
+            .dropdown-item(data-action='delete-tweet red' data-active="false")
+                i.fas.fa-trash-alt
+                span= `Delete` 
+            .dropdown-item(data-action='pin-tweet' data-active="false")
+                i.fas.fa-map-pin
+                span= `Pin to your profile` 
+            .dropdown-item(data-action='change-who-can-reply' data-active="false")
+                i.fas.fa-comment-dots
+                span= `Change who can reply` 
+                
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel

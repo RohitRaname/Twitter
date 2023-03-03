@@ -1,0 +1,113 @@
+
+
+div.user-profile
+
+
+
+    //- hide full size cover pic or profile when clicked to see full size 
+    button.btn--icon.btn--icon-fixed.hidden(data-action="resize-zoom-img") 
+        i.fa.fa-times
+
+    article
+        // user big cover img
+        .user-profile-cover
+            if(profile_user)
+                img(src=`/img/users/${profile_user && profile_user.cover_pic}` )
+
+        // user info
+        .p-sm.user-details
+
+            // buttons
+
+            if(is_me)
+                .f-s.mg-md.user-btns-container
+                    .user-img-box
+                        img.img--lg.user-img(src=`/img/users/${profile_user.profilePic || "default.png"}` alt='dan pena')
+                    button.btn--outline.btn--sm(data-action='edit-profile')
+                        span Edit profile
+            else
+                .f-s.user-btns-container.mg-sm
+                    .user-img-box
+                        if(profile_user)
+                            img.img--lg.user-img(src=`/img/users/${profile_user && profile_user.profilePic}` alt='dan pena')
+
+                    if(profile_user_exist)
+                        .user-btns.f-lw
+                            if(login_user)
+                                button.btn--icon.btn--sm.btn--icon-fixed.btn--outline(data-action='show-profile-options' data-dropdown-btn  data-dropdown-class="user-profile-options-dropdown" data-active='false')
+                                    i.fas.fa-ellipsis-h
+                                
+                                button.toggle-child.btn--icon.btn--sm.btn--icon-fixed.btn--outline(data-action='allow-notification' data-active=`${restrict_profile_user.send_notification_to_cur_user}`)
+                                    i.fa.fa-bell.el-1
+                                    i.fas.fa-bell-slash.el-2.hidden                     
+
+                            //- following-btn
+                            div.toggle-child(data-action="follow_or_following" data-active=`${restrict_profile_user.follow_by_cur_user}`)
+
+                                button.el-1.btn--outline.btn--md(data-action='unfollow')
+                                    span Following
+
+                                button.el-2.btn--white.btn--md(data-action='follow')
+                                    span follow
+
+            // user info
+
+            if(profile_user_exist)
+                .user-details-content
+                    .user-name.mg-lw
+                        h.h-7.mg-0= profile_user.name
+                        p.t--sm
+                            span= profile_user.avatar
+
+                    p.user-bio.mg-lw.p--md= profile_user.bio
+                    .user-description.f-s.mg-lw
+
+                        if(profile_user.location)
+                            .user-location.f-c.f-lw
+                                i.fas.fa-map-marker-alt
+                                p.t--sm= profile_user.location
+
+                        if(profile_user.website_link)
+                            .user-website-link.f-c.f-lw
+                                i.fas.fa-link
+                                p.t--sm.blue= profile_user.website_link
+
+                        if(profile_user.joined)
+                            .user-birth-date.f-c.f-lw
+                                i.fas.fa-calendar-alt
+                                p.t--sm
+                                    | Joined 
+                                    span= profile_user.joined
+                    .user-following-stats.f-md.f-3.mg-sm
+                        p.t--sm.hover-underline(data-show-users="following")
+                            span.w-600.p--md= profile_user.following_count
+                            |  Following
+                        p.t--sm.hover-underline(data-show-users="followers")
+                            span.w-600.p--md= profile_user.followers_count
+                            |  Followers
+
+
+                // follow by any i am following
+                //- if(!is_me) 
+                //-     p.t--sm Not followed by anyone you&apos;re following
+
+    if(profile_user_exist)
+        footer
+            .c-boxed.modal-change-section-btns.user-section-btns
+                button.btn--text-white.h-5(data-section='my-tweets' data-btn='change-section-btn' data-active='true')
+                    span Tweets
+                button.btn--text-white.h-5(data-section='my-comments' data-btn='change-section-btn' data-active='false')
+                    span Tweets &amp; Replies
+                button.btn--text-white.h-5(data-section='my-liked-tweets' data-btn='change-section-btn' data-active='false')
+                    span Likes
+            .line
+
+    if(!profile_user_exist)
+        .p-sm.profile_user_not_exist_container 
+            h6.h-6.w-600.mg-bg= `@${search_user}`
+
+            div.f-col
+                h4.h-4.mg-sl This account does't exist
+                p.t--sm Try searching for another
+
+

@@ -1,0 +1,21 @@
+.quotetweet {
+  &-container {
+    padding-top: 0;
+  }
+
+  &-posted-tweet {
+    border: var(--border-line);
+    border-radius: $radius-lg;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 0.4rem;
+    cursor: default;
+    padding: 1rem !important;
+
+    padding-bottom: 0rem !important;
+
+    .tweet-message {
+      grid-column: 1/-1;
+    }
+  }
+}

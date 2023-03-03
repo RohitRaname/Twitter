@@ -1,0 +1,69 @@
+.preview[data-type='user-preview'] {
+  display: block !important;
+
+  position: absolute;
+  z-index: 400;
+  .preview {
+    &-container {
+      padding: $padding-md;
+    }
+
+    &-header {
+      @include flex-center-space;
+      align-items: start;
+      padding-bottom: 0;
+      padding: 0;
+    }
+    &-footer {
+    }
+
+    &-verify__icon {
+      transform: translateY(-0.4rem);
+    }
+
+    &-gmail {
+      transform: translateY(-0.5rem);
+    }
+
+    &-stats__container {
+      @include flex-center;
+      column-gap: $gap-lg;
+      justify-content: start;
+    }
+
+    &-stats__box {
+      height: 2.2rem;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-bottom: 2px solid var(--default-text);
+      }
+
+      @include flex-center;
+      align-items: baseline;
+      column-gap: $gap-lw;
+    }
+
+    // making white space unclickable
+    &-about-user,
+    &-stats__container {
+      pointer-events: none;
+    }
+
+    // cursor pointer
+    &-name,
+    &-avatar,
+    &-stats__box {
+      cursor: pointer;
+      pointer-events: auto !important;
+    }
+  }
+}
+
+.preview[data-follow-user='true'] {
+  button[data-follow='false'] {
+    display: none !important;
+  }
+  button[data-follow='true'] {
+    display: block !important;
+  }
+}

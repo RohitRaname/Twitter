@@ -1,0 +1,75 @@
+.quotetweet.hidden(data-tweet-id='data-tweet-id' data-quote-tweet=`${JSON.stringify({_id:"df",name:"rohit",avatar:"@rana",ts:"10hr",text:"I am high performance and have good habits",profilePic:"kjfk"})}`)
+    .overlay
+    .quotetweet-container.modal-container(data-height='auto-height' data-sticky-header='false' )
+        header.createTweets-header
+            .createTweets-header-content.f-s
+                button.btn--icon(data-action='close-modal')
+                    i.fa.fas-long-arrow-alt-left
+                .f-lw.f-4
+                    button.btn--primary-text.btn--sm(data-action='show-unsent-tweets')
+                        | Unsent Tweets
+        form.form.form--createTweet(onsubmit='return false;' data-action='create-tweet' data-active='true' data-tweet-schedule='false' data-multiple-tweets='false' data-tweet-empty='true')
+            .createTweet
+                .createTweet-container
+                    a(href='/me')
+                        img.createTweet-user__img.img--md(src='../../img/users/default.png' alt='user photo')
+                    .createTweet-schedule-timing.t--sm.f-sm.f-3.hidden
+                        i.fas.fa-calendar
+                        p
+                            | Will send
+                            span.createTweet-schedule-timing-value
+                    button.btn--inline.preview-parent(data-action='choose-audience' data-active='false')
+                        span.preview-parent-text  Everyone 
+                        input.hidden.preview-parent-input(type='text' name='target_audience' value='everyone')
+                        i.fas.fa-angle-down
+                        
+
+                    header.createTweet-header.mg-v-sl
+                        .form-group.mg-sm
+                            textarea.createTweet-textarea(placeholder='Add a comment' name='text' data-scroll-event='false' data-input-change-event='false' maxlength='200')
+
+                        include ../uploadImgs/tweetImgs 
+
+                        article.quotetweet-posted-tweet.p-sm(data-tweet-id='')
+                            img.tweet-img.img--lw(src='../../img/users/default.png' onerror='this.src')
+                            .tweet-content
+                                .tweet-user__info.f-sl.f-3
+                                    p.tweet-user__name.h-8.mg-0(href='') rohit
+                                    p.tweet-user__verified
+                                    p.tweet-user__email.t--md(href='/') @rohit
+                                    p.tweet-user__postTime.t--md 8hr
+                            .tweet-message.p--md
+                                | i am high performance person i am discipline and good hobby
+                                | person
+                            include ../uploadImgs/tweetImgs 
+                      
+                        button.btn--span.preview-parent(data-action='choose-whocan-reply' data-active='false' data-restrict='false')
+                            i.fas.fa-globe-americas
+                            i.hidden.fas.fa-lock  
+                            span.preview-parent-text Everyone can reply
+                            input.hidden.preview-parent-input(type='text' name='audience_can_reply' value='everyone')
+                           
+
+
+                        .line-col-end.line-dim &nbsp;
+                    footer.createTweet-footer
+                        .createTweet-btns
+                            button.createTweet-btn.btn--icon-color(data-action='add-img')
+                                label(for='quote-upload-image')
+                                i.fa.fa-file-image-o
+                            input#quote-upload-image.createTweet-input.hidden(type='file' accept='image/*' name='upload_image' data-change-event='false' multiple='multiple')
+                            button.createTweet-btn.btn--icon-color(data-action='schedule-post')
+                                label(for='tweet-schedule-input')
+                                    i.fa.fa-clock-o
+                            input#tweet-schedule-input.createTweet-input.hidden(name='schedule_post_time')
+                        .createTweet-btns.createTweet-btns--submit
+                            button.btn--percent-box(data-action='tweet-text-limit')
+                                .flex-wrapper
+                                    .single-chart
+                                        svg.circular-chart.orange(viewbox='0 0 36 36')
+                                            path.circle-bg(d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                            path.circle(stroke-dasharray='2, 100' d='M18 2.0845                                        a 15.9155 15.9155 0 0 1 0 31.831                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                            button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                                | Tweet
+                            button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                                | Schedule

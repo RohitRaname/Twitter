@@ -1,0 +1,31 @@
+.form--signUp[data-action='set-profile'] {
+  .form-group {
+    border: none;
+    padding: 0;
+  }
+
+  .form-photo {
+    &__box {
+    }
+    &__label {
+      display: inline-block;
+      height: 20rem;
+      width: 20rem;
+      position: relative;
+      border: 0.3rem solid var(--default-text);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 0.22rem solid var(--default-background);
+      filter: brightness(65%);
+    }
+
+    &__icon {
+      z-index: 10;
+    }
+  }
+}

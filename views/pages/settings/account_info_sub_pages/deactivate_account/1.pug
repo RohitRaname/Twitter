@@ -1,0 +1,40 @@
+extends ../../base_settings_page
+
+block content
+    .settings
+
+        header.p-sm
+            .f-sm.f-3
+                a(href="/settings//account/deactivate-account/0")
+                    button.btn--icon-fixed
+                        i.fa.fa-arrow-left
+                h6.h-6.mg-0 Confirm your password
+
+        div.settings-padding
+            p.t--sm.mg-lw Complete your deactivation request by entering the password associated with your account.
+
+        .line.mg-sm
+
+        .settings-content
+            form.form.form-static(data-form='setting-deactivate--account-confirm-password' data-optional='false' onsubmit='return false;')
+                .form-container
+                    .form-content
+                        .form-groups
+                            .form-group(data-field='cur_password' data-input-filled='false' data-active='false' data-error='false')
+                                label.form-label(for='cur_password') Current password
+                                input#cur_password.form-input(type='password' name='password' minlength='8' maxlength='50'
+                                  placeholder="")
+                                a(href='/forgotcur_password/0' class="forgot-password-btn")
+                                    button.btn--text.form-help.form-help--left(data-action='forgot-cur_password')
+                                        | Forgot password?
+                                p.form-error.hidden Password incorrect.
+
+                            .line.mg-sm
+
+                            
+
+
+                        button.btn--tertiary.mg-l.mg-r-sm.btn--md.form-submitBtn(disabled)
+                            | Deactivate
+
+

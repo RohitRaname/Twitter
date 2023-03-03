@@ -1,0 +1,35 @@
+
+.search 
+    form.search-form.mg-v-sl.mg-sl(onsubmit='return false;')
+        i.fa.fa-search
+        input.search-input(type='text' placeholder='Search Twitter')
+
+    .dropdown.search-dropdown.hidden(data-active="false" data-media-change="false")
+        .overlay
+        .dropdown-list
+            // previous search(clear when user type something)
+            .dropdown-previous-search.f-s
+                h7.h-7 Recent
+                button.clear-search-btn.blue.btn--primary-text(data-action="clear-all-tags") Clear all
+
+            if(search_keywords && search_keywords.length>0)
+                each doc in search_keywords
+                    -const {type,text,user,_id}=doc;
+
+                    .dropdown-item.modal-item.preview-item-container.preview-item(data-state='' data-id=`${_id}` data-type=`${type}` data-text=`${text}` data-avatar=`${type==="user"?user.avatar:""}`)
+
+                        if(type==="user")
+                            .preview-item-content
+                                img.preview-img(src=`/img/users/${user.profilePic || "default.png"}` onerror="this.src='/img/users/default.png'" alt='')
+                                .preview-details
+                                    .preview-title= user.name                                
+                                    .preview-extra= user.avatar
+                            p.preview-state
+                                button.btn--icon-color(data-action='remove')
+                                    i.fa.fa-times
+
+                        else 
+                            i.search-icon.fa.fa-search
+                            p= text
+                            button.btn--icon-color(data-action='remove')
+                                i.fa.fa-times

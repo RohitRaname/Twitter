@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../../script.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        background: var(--default-background);
+      }
+    </style>
+
+    <div class="modal view" data-modal="customise-twitter-view">
+      <div class="overlay"></div>
+      <div class="modal-container customize p-sm" data-height="fixed-height">
+        <header class="center modal-header">
+          <h5 class="h-5 mg-lw">Customize your view</h5>
+          <p class="t--md">
+            These settings affect all the Twitter accounts on this browser
+          </p>
+        </header>
+
+        <div class="preview-tweet mg-lw">
+          <div
+            class="tweet postedTweet preview-item-container dropdown-details"
+          >
+            <div class="tweet-container" data-active="false">
+              <a href="/users/rana">
+                <img
+                  class="tweet-img img--md"
+                  src="../../../img/twitter/pic.jpg"
+                />
+              </a>
+              <div class="tweet-content">
+                <div class="tweet-user__info">
+                  <a class="tweet-user__name h-8" href="/users/rana">Twitter</a>
+                  <a class="tweet-user__verified"></a>
+
+                  <p class="tweet-user__email t--md" href="/users/rana">
+                    @Twitter
+                  </p>
+                  <p class="tweet-user__postTime t--md">2min</p>
+                </div>
+
+                <div class="tweet-message p--md">
+                  At the heart of Twitter are short messages called Tweets —
+                  just like this one — which can include photos, videos, links,
+                  text, hashtags, and mentions like
+                  <span class="blue"> @Twitter. </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- font size -->
+        <div class="customize-group mg-sm" data-group="font-size">
+          <p class="t--md mg-sl customize-group-title">Font size</p>
+          <div class="customize-box f-sm">
+            <p class="p--lw">Aa</p>
+            <div class="customize-box-content">
+              <div class="customize-fontsize-select-track-line"></div>
+              <div
+                class="customize-size-pointer"
+                data-font-size="56.25%"
+                data-active="false"
+              ></div>
+              <div
+                class="customize-size-pointer"
+                data-font-size="60%"
+                data-active="false"
+              ></div>
+              <div
+                class="customize-size-pointer"
+                data-font-size="62.25%"
+                data-active="false"
+              ></div>
+              <div
+                class="customize-size-pointer"
+                data-font-size="64%"
+                data-active="false"
+              ></div>
+              <div
+                class="customize-size-pointer"
+                data-font-size="66%"
+                data-active="false"
+              ></div>
+            </div>
+            <t class="p">Aa</t>
+          </div>
+        </div>
+
+        <!-- color -->
+        <div class="customize-group mg-sm" data-group="color">
+          <p class="t--md mg-sl customize-group-title">Color</p>
+          <div class="customize-box">
+            <div class="customize-box-content f-sm">
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="primary"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="secondary"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="tertiary"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="quad"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="pent"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div
+                class="customize-color-pointer"
+                data-active="false"
+                data-color="hex"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- background -->
+        <div class="customize-group mg-sm" data-group="background-color">
+          <p class="t--md mg-sl customize-group-title">Background</p>
+          <div class="customize-box">
+            <div class="customize-box-content f-sm">
+              <div
+                class="customize-background-box f-sm"
+                data-theme="light"
+                data-active="false"
+              >
+                <div class="customize-background-pointer">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="customize-background-text" data-color="white">
+                  Default
+                </p>
+              </div>
+              <!-- <div class="customize-background-box f-sm" data-theme="grey" data-active="false">
+                <div class="customize-background-pointer" >
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="customize-background-text" data-color="primary">
+                  Dim
+                </p>
+              </div> -->
+              <div
+                class="customize-background-box f-sm"
+                data-theme="dark"
+                data-active="false"
+              >
+                <div class="customize-background-pointer">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="customize-background-text" data-color="dark">
+                  Lights out
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-c">
+          <div class="btn--primary btn--sm">Done</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

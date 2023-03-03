@@ -1,0 +1,539 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-family: 400;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  i {
+    position: relative;
+    z-index: 10;
+  }
+
+  &--100 {
+    width: 100% !important;
+  }
+
+  &--auto {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  &--sm {
+    padding: 0.6rem 1.7rem !important;
+    font-size: 1.45rem !important;
+  }
+  &--md {
+    font-size: $font-size-md !important;
+    padding: 1rem 2.2rem !important;
+  }
+  &--bg {
+    padding: 1.4rem 2.4rem !important;
+    font-size: $default-font-size !important;
+  }
+  &--lg {
+    padding: 1.6rem 3.2rem !important;
+    font-size: $default-font-size !important;
+  }
+
+  &[disabled='true'],
+  &[disabled=''] {
+    cursor: default !important;
+    // font-size: $font-size-md !important;
+    filter: brightness(var(--brightness)) !important;
+    &:hover {
+      filter: brightness(var(--brightness)) !important;
+    }
+  }
+
+  &--full {
+    width: 100% !important;
+  }
+}
+
+// BTN PRIMARY **************************************************************************
+.btn--primary {
+  @extend .btn;
+  font-weight: 600;
+  border-radius: $radius-round;
+  color: #fff;
+  padding: 1.3rem 3.2rem;
+  font-size: $font-size-md;
+  text-align: center;
+  background: var(--color-primary-light);
+
+  &:hover {
+    background: var(--color-primary-dark);
+  }
+
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-primary-dull);
+  }
+}
+.btn--tertiary {
+  @extend .btn--primary;
+  border-radius: $radius-round;
+  color: #fff;
+  padding: 1.3rem 3.2rem;
+  font-size: $font-size-md;
+  text-align: center;
+  background: var(--color-tertiary);
+
+  &:hover {
+    background: var(--color-tertiary-dark);
+  }
+
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-tertiary-dull);
+  }
+}
+
+.btn--primary-dull {
+  @extend .btn--primary;
+
+  background: var(--color-primary-dim);
+
+  &:hover {
+    background: var(--background-dull);
+  }
+}
+
+.btn--dull {
+  @extend .btn--primary;
+  background: var(--default-background);
+  &:hover {
+    background: var(--background-dim);
+  }
+}
+
+.btn--primary-text {
+  @extend .btn--primary;
+  background: transparent;
+  color: var(--color-primary-light);
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--color-primary-dim);
+  }
+}
+.btn--tertiary-text {
+  @extend .btn--primary;
+  font-weight: 600;
+  background: transparent;
+  color: var(--color-tertiary);
+  padding: 0.6rem 1.2rem;
+
+  &:hover {
+    background: var(--color-tertiary-dim);
+  }
+
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-tertiary-dull);
+  }
+}
+
+// BTN WHITE
+.btn--white {
+  @extend .btn--primary;
+  width: auto;
+  background: var(--default-text);
+  color: var(--background-dark);
+  font-size: $font-size-md;
+
+  &:hover {
+    background-color: var(--text-dark);
+  }
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--text-dark);
+  }
+}
+
+// BTN TEXT **************************************************************************
+.btn--text {
+  @extend .btn;
+  width: 100%;
+  font-size: $font-size-md;
+  color: var(--color-primary-light) !important;
+  background: transparent;
+  @include flex-center;
+  padding: 1.2rem 2.4rem;
+  display: inline-block;
+  margin: $padding-lw 0;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    background: var(--background-hover-light);
+    border-bottom: 1px solid currentColor;
+  }
+
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--background-hover-light);
+  }
+}
+.btn--text-left {
+  @extend .btn--text;
+  justify-content: start;
+  padding-top: 1.7rem;
+  padding-bottom: 2.4rem;
+}
+
+.btn--text-white {
+  @extend .btn--text;
+  color: var(--default-text) !important;
+  border-bottom: 2px solid var(--default-text) !important;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  font-weight: 500 !important;
+}
+
+.btn--span {
+  @extend .btn--text;
+  border-bottom: none;
+  font-size: $font-size-sm;
+
+  & span::first-letter {
+    text-transform: uppercase;
+  }
+
+  &:hover,
+  &:active {
+    border-bottom: none;
+  }
+}
+
+// BTN OUTLINE ************************************************************************
+.btn--outline {
+  @extend .btn--primary;
+  display: inline-block;
+  border: var(--border-line);
+  background: transparent;
+  font-weight: 600 !important;
+  color: #fff;
+  // padding: 1rem 2.4rem;
+
+  &:hover {
+    background: var(--background-hover);
+  }
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-primary-dim);
+  }
+}
+
+.btn--outline-primary {
+  @extend .btn--outline;
+  color: var(--color-primary-light);
+}
+
+// BTN INLINE
+.btn--inline {
+  @extend .btn--outline;
+  @include flex-center;
+
+  color: var(--color-primary-light);
+  gap: $gap-sm;
+  padding: 0.6rem 1.2rem;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  background: transparent;
+
+  span {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  i {
+    font-size: $default-font-size;
+  }
+}
+
+.btn--inline-primary,
+.btn--inline-secondary,
+.btn--inline-teritary {
+  @extend .btn--inline;
+  border: 1px solid currentColor;
+}
+
+.btn--inline-primary {
+  color: var(--color-primary-light) !important;
+}
+
+.btn--inline-secondary {
+  color: var(--color-secondary) !important;
+}
+.btn--inline-teritary {
+  color: var(--color-tertiary) !important;
+}
+
+//  BTN ICON ***********************************************************************
+//  ***
+
+.btn--icon-fixed {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.btn--icon {
+  @extend .btn;
+  background: transparent;
+  font-size: $font-size-bg;
+  @include flex-center;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+
+  &-fixed {
+    @extend .btn--icon;
+    height: 4rem;
+    width: 4rem;
+    padding: 0.8rem;
+  }
+
+  i {
+    color: var(--text-light);
+  }
+
+  &:hover {
+    background: var(--background-hover);
+  }
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-primary-dim);
+  }
+}
+
+.btn--icon-color {
+  @extend .btn;
+  background: transparent;
+
+  font-size: $default-font-size;
+  @include flex-center;
+  padding: 0.7rem;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+
+  i {
+    color: var(--color-primary-light);
+    font-size: inherit;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: var(--color-primary-dim);
+  }
+  &[disabled='true'],
+  &[disabled=''] {
+    background: var(--color-primary-dim);
+  }
+}
+
+.btn--icon-dim {
+  @extend .btn--icon;
+  color: var(--text-dim);
+  @include flex-center;
+  gap: 0.6rem;
+  padding: 1rem;
+
+  height: 4rem;
+  width: 4rem;
+
+  .icon-box {
+    height: unset;
+    width: unset;
+  }
+
+  i {
+    font-size: $font-size-md;
+    color: var(--text-dim) !important;
+  }
+
+  span {
+    font-size: $font-size-sm;
+    color: inherit;
+  }
+}
+
+.btn--icon-dim {
+  &-primary,
+  &-secondary,
+  &-tertiary {
+    @extend .btn--icon-dim;
+    align-items: center;
+
+    .icon-box {
+      transition: all 0.3s !important;
+    }
+
+    // .icon-box {
+    //   border-radius: 50%;
+    // }
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &-primary {
+    &:hover {
+      .icon-box i,
+      span {
+        color: var(--color-primary-light) !important;
+      }
+
+      .icon-box {
+        background: var(--color-primary-dim);
+      }
+    }
+    &[data-active='true'] {
+      span {
+        color: var(--color-primary-light) !important;
+      }
+
+      .icon-box i {
+        color: var(--color-primary-light) !important;
+      }
+    }
+  }
+  &-secondary {
+    &:hover {
+      .icon-box i,
+      span {
+        color: var(--color-secondary) !important;
+      }
+
+      .icon-box {
+        background: var(--color-secondary-dim);
+      }
+    }
+    &[data-active='true'] {
+      span {
+        color: var(--color-secondary);
+      }
+      .icon-box i {
+        color: var(--color-secondary) !important;
+      }
+    }
+  }
+  &-tertiary {
+    &:hover {
+      .icon-box i,
+      span {
+        color: var(--color-tertiary) !important;
+      }
+
+      .icon-box {
+        background: var(--color-tertiary-dim);
+      }
+    }
+    &[data-active='true'] {
+      span {
+        color: var(--color-tertiary);
+      }
+      .icon-box i {
+        color: var(--color-tertiary) !important;
+      }
+    }
+  }
+}
+
+.btn--icon-dull {
+  @extend .btn--icon-dim;
+  background: var(--background-light);
+  padding: 1rem 1.2rem;
+
+  color: #fff;
+
+  &:hover {
+    background: var(--background-dull);
+  }
+}
+
+.btn--icon-white {
+  @extend .btn--icon;
+  background: var(--default-text);
+  color: var(--default-background);
+  font-size: $font-size-md;
+  padding: 0.5rem 0.7rem;
+
+  &:hover {
+    background: var(--text-light);
+  }
+}
+
+.btn--checkbox {
+  @extend .btn;
+  border: 1px solid var(--text-dull);
+  border-radius: $radius-sm;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.15rem 0.3rem;
+  color: #fff;
+  @include flex-center;
+
+  i {
+    display: inline-block;
+    visibility: hidden;
+    color: inherit;
+    font-size: $font-size-sm;
+  }
+
+  &[data-checked='true'] {
+    background: var(--color-primary-light);
+    border: 1px solid transparent;
+    i {
+      visibility: visible;
+    }
+  }
+}
+
+.btn--checkbox[data-type='circle'] {
+  border-radius: 50%;
+  padding: 0.35rem 0.45rem;
+  border: var(--border-line-dark);
+  background: transparent;
+  color: var(--color-primary-light);
+}
+
+// BTN PERCENT => percent show in cirlce form how much is left *********************************
+.btn--percent-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2rem;
+  width: 2.2rem;
+  border: none;
+  background: transparent;
+}
+
+.btn--back {
+  height: 3.8rem;
+  width: 3.8rem;
+  display: inline-block;
+  padding: 0.8rem;
+}
+
+:root[data-theme='light'] {
+  .btn--outline {
+    background: #fff;
+    color: #000;
+  }
+}

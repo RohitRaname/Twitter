@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-action="set-bio"
+      data-optional="true"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <div class="form-content">
+          <div class="center mg-sm m-center">
+            <i class="fab fa-twitter icon--simple"></i>
+          </div>
+          <h3 class="h-4 mg-lw">Describe yourself</h3>
+          <p class="t--md mg-md">
+            What makes you special? Don't think too hard, just have fun with it
+          </p>
+
+          <div class="form-group" data-active="true">
+            <label for="bio" class="form-label">Your bio</label>
+            <textarea
+              class="form-textarea"
+              type="text"
+              id="bio"
+              name="bio"
+              minlength="0"
+              maxlength="160"
+            ></textarea>
+
+            <p class="form-count"><span>0</span> / 160</p>
+          </div>
+
+          <div class="form-submitBtn__box">
+            <button class="btn--outline form-submitBtn">Skip for now</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      const textArea = document.querySelector('textarea');
+      
+    </script>
+  </body>
+</html>

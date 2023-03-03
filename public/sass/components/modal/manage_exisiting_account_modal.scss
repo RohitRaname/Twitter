@@ -1,0 +1,13 @@
+.modal[data-modal='manage-existing-accounts'] {
+  button {
+    margin-left: -0.6rem;
+  }
+}
+
+.form--add-existing-accounts {
+  .add-account-header {
+    height: 8.5rem;
+    display: flex;
+    align-items: center;
+  }
+}

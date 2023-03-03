@@ -1,0 +1,26 @@
+form.form.form--login.hidden(data-form='login' data-stage=0  data-optional='false' data-action='login-with-email-or-name' data-all-input-fields-valid='false' onsubmit='return false;'
+data-progress-line-exist="true" 
+data-is_form_hidden="true" 
+data-form_submitting="false")
+    .form-overlay.overlay &nbsp;
+    .form-container.abs-center
+        div.progress-line(data-progress='0')
+        button.btn--icon.form-closeBtn(data-action='close')
+            i.fa.fa-times
+        .form-content
+            .center.mg-sm.m-center
+                i.fab.fa-twitter.icon--simple
+            h4.h-4.mg-bg Sign in to Twitter
+            .form-groups.mg-lg
+                .form-group(data-field='name,email' data-input-filled='false' data-active='false' data-error='false')
+                    label.form-label(for='name') Username or email address
+                    input#name.form-input(type='text' name='nameOrEmail' autoComplete=false)
+                    // <p class="form-error hidden">What's your name?</p>
+            button.btn--primary.btn--100.form-submitBtn.mg-sm(disabled='' data-action='next')
+                | Next
+            button.btn--outline.btn--100.form-submitBtn.mg-lg(data-action='forgot-password')
+                | Forgot password?
+            
+            div.f-sm.f-3
+                p.text--sm  Don&apos;t have an account? 
+                span.blue(data-action="show-signup-form") Sign up

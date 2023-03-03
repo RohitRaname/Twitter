@@ -1,0 +1,21 @@
+
+//- if we are in comment reply page so comment create will be top level for that comment( => we can insert tweet inside the comment list)
+//- but in tweet's comment page , reply comment will be nested(we will not insert the comment inside tweet list)
+.createComments.hidden(data-page-type=page_type)
+    .overlay
+    .createTweets-container.modal-container(data-height='fixed-height' data-sticky-header="false")
+
+        //- progress line
+        div.progress-line(data-progress-state='intial')
+
+        //- header
+        header.createTweets-header
+            .createTweets-header-content.f-s
+                button.btn--icon-fixed(data-action='close-modal')
+                    i.fa.fa-arrow-left
+                .f-lw.f-4
+                    button.btn--primary-text.btn--sm(data-action='show-unsent-tweets')
+                        | Unsent Tweets
+
+        //-   list
+        .createTweets-list(data-multiple-tweets="false")

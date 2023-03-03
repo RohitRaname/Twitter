@@ -1,0 +1,72 @@
+.form--signUp[data-action='create-account'] {
+  .form-group[data-field='name'] {
+    .form-hint {
+      position: absolute;
+
+      top: 0.6rem;
+      right: 1rem;
+    }
+  }
+  .form-group[data-field='phone'],
+  .form-group[data-field='email'] {
+    .form-hint {
+      position: absolute;
+      bottom: -3.7rem;
+      right: 0;
+    }
+  }
+
+  .form-group[data-field='date'] {
+    width: 100%;
+    position: relative;
+    z-index: 4;
+  }
+
+  .form-boxs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4.5fr 2.5fr 3fr;
+    column-gap: $gap-sm;
+  }
+
+  // .form-box {
+  //   // padding: 3rem $padding-md;
+  //   @include flex-center-space;
+  //   align-items: center;
+  //   position: relative;
+  //   justify-content: space-between;
+  //   transition: all 0.2s;
+
+  //   &__label {
+  //     font-size: $font-size-sm;
+  //     position: absolute;
+  //     top: 0.7rem;
+  //     left: 1rem;
+  //   }
+
+  //   &__icon {
+  //     position: absolute;
+  //     top: 50%;
+  //     right: 1.4rem;
+  //     transform: translateY(-50%);
+  //   }
+  // }
+
+  // .form-group[data-active='true'] .dropDown-list {
+  //   transform: scale(1);
+  //   border-radius: $radius-bg;
+  //   height: 22rem;
+  //   overflow-y: scroll;
+  //   color: var(--default-text);
+  //   box-shadow: none;
+  // }
+
+  // .form-group[data-active='true'] .dropDown-item {
+  //   padding: 0.15rem 1.6rem;
+  //   .form:hover {
+  //     background: var(--color-primary);
+  //   }
+  // }
+
+
+}

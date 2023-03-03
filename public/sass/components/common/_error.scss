@@ -1,0 +1,13 @@
+.error {
+  &-content {
+    @include fixed-center;
+    z-index: 3000;
+  }
+
+  &-message {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,48 @@
+extends ./base_settings_page
+
+block content
+    .settings
+
+        header.p-sm
+            h6.h-6.mg-sm Your account
+            p.t--sm
+                | See information about your account, download an archive of your
+                | data, or learn about your account deactivation options
+    
+        .settings-content
+            ul.settings-list
+
+
+                a(href="/settings/account/protect")
+                    li.settings-item.preview-item(data-active='true')
+                        .preview-iconBox
+                            i.fa.fa-user
+                        .preview-details
+                            p.p--md Account imformation
+                            p.t--sm
+                                | See your account imformation like your phone number and
+                                | email address
+                        .preview-state
+                            i.fa.fa-angle-right
+
+                a(href="/settings/account/change-password")
+                    li.settings-item.preview-item(data-active='true')
+                        .preview-iconBox
+                            i.fa.fa-user
+                        .preview-details
+                            p.p--md Change your password
+                            p.t--sm Change your password at any time.
+                        .preview-state
+                            i.fa.fa-angle-right
+
+                a(href="/settings/account/deactivate-account/0")
+                    li.settings-item.preview-item(data-active='true')
+                        .preview-iconBox
+                            i.fa.fa-user
+                        .preview-details
+                            p.p--md Deactivate your account
+                            p.t--sm
+                                | Find out how you can decativate your account.
+                        .preview-state
+                            i.fa.fa-angle-right
+

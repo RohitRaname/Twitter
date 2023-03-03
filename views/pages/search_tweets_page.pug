@@ -1,0 +1,31 @@
+extends ./common_page
+
+block section 
+
+    .section.section-search-tweets(data-section="search-tweets" data-page="0" data-cur-user=JSON.stringify(cur_user))
+        .search-tweets
+
+            header.main-header 
+                .header-content
+                    h6.h-6.mg-0  Search Tweets
+            .search-tweets-container
+
+                include ../components/tweet/posted_tweet
+
+
+
+    //- create comments
+    include ../components/comment/create_child_comment
+
+
+
+
+
+
+
+    //- //- dropdown => click tweet user_id willbe set by js
+    include ../components/dropdown/other_post_tweet_options_dropdown
+    include ../components/dropdown/cur_user_post_tweet_options_dropdown
+    include ../components/dropdown/retweet_quote_tweet_dropdown
+
+block sidebar

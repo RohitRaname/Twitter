@@ -1,0 +1,22 @@
+include ./posted_tweet_item
+
+mixin render_posted_tweetlist(pinned_tweets=[],tweets=[], type,hide,page,doc_set,is_me)
+    div(class=`postedTweet-list post-list ${hide?'hidden':''}` data-initial-docs-set=`${doc_set}` data-type=`${type}` data-page=`${page}` data-no-more-tweets="false")
+
+        //- pinned-tweets 
+        div.pinned-tweets
+            -const pinned_tweet_key =Object.keys(pinned_tweets);
+            if(pinned_tweet_key.length>0) 
+                each key in pinned_tweet_key
+                    -const pinned_tweet =pinned_tweets[key]
+                    +tweet(pinned_tweet,is_me,true)   
+                
+
+        //- posted-tweets 
+        div.posted-tweets
+            -const tweets_key =Object.keys(tweets);
+            if(tweets_key.length>0) 
+                each key in tweets_key
+                    -const posted_tweets =tweets[key]
+                    +tweet(posted_tweets,is_me,false)   
+                

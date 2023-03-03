@@ -1,0 +1,28 @@
+
+                    .createTweet-btns
+                        button.createTweet-btn.btn--icon-color(data-action='add-img')
+                            label(for='tweet-upload-image')
+                            i.fa.fa-file-image-o
+                            input#tweet-upload-image.createTweet-input.hidden(type='file' accept='image/*'  name='upload_image' data-change-event="false" multiple )
+                        button.createTweet-btn.btn--icon-color(data-action='schedule-post')
+                            label(for='tweet-schedule-input')
+                                i.fa.fa-clock-o
+                            input#tweet-schedule-input.createTweet-input.hidden(name='schedule_post_time')
+                    .createTweet-btns.createTweet-btns--submit
+                        button.btn--percent-box(data-action='tweet-text-limit')
+                            .flex-wrapper
+                                .single-chart
+                                    svg.circular-chart.orange(viewbox='0 0 36 36')
+                                        path.circle-bg(d='M18 2.0845\
+                                        a 15.9155 15.9155 0 0 1 0 31.831\
+                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                                        path.circle(stroke-dasharray='2, 100' d='M18 2.0845\
+                                        a 15.9155 15.9155 0 0 1 0 31.831\
+                                        a 15.9155 15.9155 0 0 1 0 -31.831')
+                        .line-v
+                        button.btn--icon-color(data-action='add-another-tweet')
+                            i.fa.fa-plus
+                        button.btn--primary.btn--sm(data-action='save-tweet' disabled='')
+                            | Tweet
+                        button.btn--primary.btn--sm.hidden(data-action='save-schedule-tweet')
+                            | Schedule

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-action="set-profile"
+      data-optional="true"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <!-- <button class="btn--icon form-nextBtn">
+          <i class="fa fa-times"></i>
+        </button> -->
+
+        <div class="form-content">
+          <div class="center m-center mg-sm">
+            <i class="fab fa-twitter icon--simple"></i>
+          </div>
+          <h3 class="h-4 mg-lw">Pick a profile picture</h3>
+          <p class="t--md mg-bg">Have a favourite selfie? Upload it now.</p>
+
+          <div class="form-group form-photo__box m-center">
+            <input
+              type="file"
+              class="hidden"
+              id="user-profile"
+              name="user-profile"
+              accept="image/*"
+            />
+
+            <label for="user-profile" class="form-photo__label m-center">
+              <i class="fas fa-camera icon--sm form-photo__icon abs-center"></i>
+              <img
+                class="img form-photo__img"
+                src="../../img/users/defaultBioPic.png"
+                alt=""
+              />
+            </label>
+          </div>
+
+          <div class="form-submitBtn__box">
+            <button class="btn--outline form-submitBtn" disabled>
+              Skip for now
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      // const textArea = document.querySelector('textarea');
+      // textArea.addEventListener('scroll', function (e) {
+      //   this.style.height = this.clientHeight + this.scrollTop + 'px';
+      // });
+    </script>
+  </body>
+</html>

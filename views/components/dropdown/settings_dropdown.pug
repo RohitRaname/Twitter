@@ -1,0 +1,13 @@
+.dropdown(data-type="settings" data-dropdown="fixed"  data-active="false" data-media-change="true")
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='')
+        .dropdown-content    
+            .dropdown-item(data-action='redirect-to-settings-page' data-active="false")
+                i.fa.fa-cog
+                span= `Settings and privacy` 
+            .dropdown-item(data-action='show-customize-twitter-modal' data-active="false")
+                i.fa.fa-pencil-square-o
+                span= `Display` 
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel

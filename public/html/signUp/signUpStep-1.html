@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <!-- <script defer type="module" src="../public/js/common/dropDown.js"></script> -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <form
+      class="form form--signUp"
+      data-form="signUp"
+      data-optional="false"
+      data-stage="create-account"
+      onsubmit="return false;"
+    >
+      <div class="form-overlay overlay">&nbsp;</div>
+
+      <div class="form-container abs-center">
+        <button class="btn--icon form-closeBtn">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="form-content">
+          <h6 class="h-6 mg-sm">Step 1 of 5</h6>
+
+          <h4 class="h-4 mg-md">Create your account</h4>
+
+          <div class="form-groups">
+            <div class="form-group" data-type="name">
+              <label for="name" class="form-label">Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                minlength="0"
+                maxlength="50"
+              />
+              <p class="form-hint">0 / <span>50</span></p>
+              <p class="form-error hidden">What's your name</p>
+            </div>
+            <div class="form-group mg-sm" data-type="phone">
+              <label for="phone" class="form-label">Phone</label>
+              <input class="form-input" type="text" maxlength="9" id="phone" />
+              <p class="form-error hidden">
+                Please enter a valid phone number.
+              </p>
+              <button class="btn--text form-hint">Use email instead</button>
+            </div>
+
+            <div class="form-group" data-type="date">
+              <h8 class="h-8 mg-sm">Date to birth</h8>
+              <p class="t--lw mg-lw">
+                This will not be shown publicly. Confirm your own age, even if
+                this account is for a business, a pet, or something else.
+              </p>
+
+              <div class="form-boxs">
+                <div class="form-box dropDown-parent" data-type="month">
+                  <label for="" class="form-box__label">Month</label>
+                  <i class="fa fa-angle-down form-icon"></i>
+                  <ul class="dropDown-list" data-active="false">
+                    <li class="dropDown-item">January</li>
+                    <li class="dropDown-item">February</li>
+                    <li class="dropDown-item">March</li>
+                    <li class="dropDown-item">April</li>
+                    <li class="dropDown-item">May</li>
+                    <li class="dropDown-item">June</li>
+                    <li class="dropDown-item">July</li>
+                    <li class="dropDown-item">August</li>
+                    <li class="dropDown-item">September</li>
+                    <li class="dropDown-item">October</li>
+                    <li class="dropDown-item">November</li>
+                    <li class="dropDown-item">December</li>
+                  </ul>
+                </div>
+                <div class="form-box dropDown-parent" data-type="day">
+                  <label for="" class="form-box__label">Day</label>
+                  <i class="fa fa-angle-down form-icon"></i>
+                  <ul class="dropDown-list" data-active="false">
+                    <li class="dropDown-item">0</li>
+                    <li class="dropDown-item">1</li>
+                    <li class="dropDown-item">2</li>
+                    <li class="dropDown-item">3</li>
+                    <li class="dropDown-item">4</li>
+                    <li class="dropDown-item">5</li>
+                    <li class="dropDown-item">6</li>
+                    <li class="dropDown-item">7</li>
+                    <li class="dropDown-item">8</li>
+                    <li class="dropDown-item">9</li>
+                    <li class="dropDown-item">10</li>
+                    <li class="dropDown-item">11</li>
+                    <li class="dropDown-item">12</li>
+                    <li class="dropDown-item">13</li>
+                    <li class="dropDown-item">14</li>
+                    <li class="dropDown-item">15</li>
+                    <li class="dropDown-item">16</li>
+                    <li class="dropDown-item">17</li>
+                    <li class="dropDown-item">18</li>
+                    <li class="dropDown-item">19</li>
+                    <li class="dropDown-item">20</li>
+                    <li class="dropDown-item">21</li>
+                    <li class="dropDown-item">22</li>
+                    <li class="dropDown-item">23</li>
+                    <li class="dropDown-item">24</li>
+                    <li class="dropDown-item">25</li>
+                    <li class="dropDown-item">26</li>
+                    <li class="dropDown-item">27</li>
+                    <li class="dropDown-item">28</li>
+                    <li class="dropDown-item">29</li>
+                    <li class="dropDown-item">30</li>
+                    <li class="dropDown-item">31</li>
+                  </ul>
+                </div>
+                <div class="form-box dropDown-parent" data-type="year">
+                  <label for="" class="form-box__label">Year</label>
+                  <i class="fa fa-angle-down form-icon"></i>
+                  <ul class="dropDown-list" data-active="false">
+                    <li class="dropDown-item">1902</li>
+                    <li class="dropDown-item">1903</li>
+                    <li class="dropDown-item">1904</li>
+                    <li class="dropDown-item">1905</li>
+                    <li class="dropDown-item">1906</li>
+                    <li class="dropDown-item">1907</li>
+                    <li class="dropDown-item">1908</li>
+                    <li class="dropDown-item">1909</li>
+                    <li class="dropDown-item">1910</li>
+                    <li class="dropDown-item">1911</li>
+                    <li class="dropDown-item">1912</li>
+                    <li class="dropDown-item">1913</li>
+                    <li class="dropDown-item">1914</li>
+                    <li class="dropDown-item">1915</li>
+                    <li class="dropDown-item">1916</li>
+                    <li class="dropDown-item">1917</li>
+                    <li class="dropDown-item">1918</li>
+                    <li class="dropDown-item">1919</li>
+                    <li class="dropDown-item">1920</li>
+                    <li class="dropDown-item">1921</li>
+                    <li class="dropDown-item">1922</li>
+                    <li class="dropDown-item">1923</li>
+                    <li class="dropDown-item">1924</li>
+                    <li class="dropDown-item">1925</li>
+                    <li class="dropDown-item">1926</li>
+                    <li class="dropDown-item">1927</li>
+                    <li class="dropDown-item">1928</li>
+                    <li class="dropDown-item">1929</li>
+                    <li class="dropDown-item">1930</li>
+                    <li class="dropDown-item">1931</li>
+                    <li class="dropDown-item">1932</li>
+                    <li class="dropDown-item">1933</li>
+                    <li class="dropDown-item">1934</li>
+                    <li class="dropDown-item">1935</li>
+                    <li class="dropDown-item">1936</li>
+                    <li class="dropDown-item">1937</li>
+                    <li class="dropDown-item">1938</li>
+                    <li class="dropDown-item">1939</li>
+                    <li class="dropDown-item">1940</li>
+                    <li class="dropDown-item">1941</li>
+                    <li class="dropDown-item">1942</li>
+                    <li class="dropDown-item">1943</li>
+                    <li class="dropDown-item">1944</li>
+                    <li class="dropDown-item">1945</li>
+                    <li class="dropDown-item">1946</li>
+                    <li class="dropDown-item">1947</li>
+                    <li class="dropDown-item">1948</li>
+                    <li class="dropDown-item">1949</li>
+                    <li class="dropDown-item">1950</li>
+                    <li class="dropDown-item">1951</li>
+                    <li class="dropDown-item">1952</li>
+                    <li class="dropDown-item">1953</li>
+                    <li class="dropDown-item">1954</li>
+                    <li class="dropDown-item">1955</li>
+                    <li class="dropDown-item">1956</li>
+                    <li class="dropDown-item">1957</li>
+                    <li class="dropDown-item">1958</li>
+                    <li class="dropDown-item">1959</li>
+                    <li class="dropDown-item">1960</li>
+                    <li class="dropDown-item">1961</li>
+                    <li class="dropDown-item">1962</li>
+                    <li class="dropDown-item">1963</li>
+                    <li class="dropDown-item">1964</li>
+                    <li class="dropDown-item">1965</li>
+                    <li class="dropDown-item">1966</li>
+                    <li class="dropDown-item">1967</li>
+                    <li class="dropDown-item">1968</li>
+                    <li class="dropDown-item">1969</li>
+                    <li class="dropDown-item">1970</li>
+                    <li class="dropDown-item">1971</li>
+                    <li class="dropDown-item">1972</li>
+                    <li class="dropDown-item">1973</li>
+                    <li class="dropDown-item">1974</li>
+                    <li class="dropDown-item">1975</li>
+                    <li class="dropDown-item">1976</li>
+                    <li class="dropDown-item">1977</li>
+                    <li class="dropDown-item">1978</li>
+                    <li class="dropDown-item">1979</li>
+                    <li class="dropDown-item">1980</li>
+                    <li class="dropDown-item">1981</li>
+                    <li class="dropDown-item">1982</li>
+                    <li class="dropDown-item">1983</li>
+                    <li class="dropDown-item">1984</li>
+                    <li class="dropDown-item">1985</li>
+                    <li class="dropDown-item">1986</li>
+                    <li class="dropDown-item">1987</li>
+                    <li class="dropDown-item">1988</li>
+                    <li class="dropDown-item">1989</li>
+                    <li class="dropDown-item">1990</li>
+                    <li class="dropDown-item">1991</li>
+                    <li class="dropDown-item">1992</li>
+                    <li class="dropDown-item">1993</li>
+                    <li class="dropDown-item">1994</li>
+                    <li class="dropDown-item">1995</li>
+                    <li class="dropDown-item">1996</li>
+                    <li class="dropDown-item">1997</li>
+                    <li class="dropDown-item">1998</li>
+                    <li class="dropDown-item">1999</li>
+                    <li class="dropDown-item">2000</li>
+                    <li class="dropDown-item">2001</li>
+                    <li class="dropDown-item">2002</li>
+                    <li class="dropDown-item">2003</li>
+                    <li class="dropDown-item">2004</li>
+                    <li class="dropDown-item">2005</li>
+                    <li class="dropDown-item">2006</li>
+                    <li class="dropDown-item">2007</li>
+                    <li class="dropDown-item">2008</li>
+                    <li class="dropDown-item">2009</li>
+                    <li class="dropDown-item">2010</li>
+                    <li class="dropDown-item">2011</li>
+                    <li class="dropDown-item">2012</li>
+                    <li class="dropDown-item">2013</li>
+                    <li class="dropDown-item">2014</li>
+                    <li class="dropDown-item">2015</li>
+                    <li class="dropDown-item">2016</li>
+                    <li class="dropDown-item">2017</li>
+                    <li class="dropDown-item">2018</li>
+                    <li class="dropDown-item">2019</li>
+                    <li class="dropDown-item">2020</li>
+                    <li class="dropDown-item">2021</li>
+                    <li class="dropDown-item">2022</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-submitBtn">
+            <button class="btn--white btn--lg" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

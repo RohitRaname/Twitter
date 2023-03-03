@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="overlay hidden">&nbsp;</div>
+
+    <div class="main-container" data-page="settings">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> settingss </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <section
+          class="section-settings"
+          data-chat_id="1"
+          data-from_id="12"
+          data-to_user_doc='{"name":"rohit rana"}'
+          data-cur_user_id="6334670cb0d772863c7ac1be"
+        >
+          <div class="settings">
+            <header class="p-sm">
+              <h6 class="h-6 mg-sm">Your account</h6>
+
+              <p class="t--sm">
+                See information about your account, download an archive of your
+                data, or learn about your account deactivation options
+              </p>
+            </header>
+
+            <div class="settings-content">
+              <!-- user info -->
+              <ul class="settings-list">
+                <li class="settings-item preview-item" data-active="true">
+                  <div class="preview-iconBox">
+                    <i class="fa fa-user"></i>
+                  </div>
+
+                  <div class="preview-details">
+                    <p class="p--md">Account imformation</p>
+                    <p class="t--sm">
+                      See your account imformation like your phone number and
+                      email address/
+                    </p>
+                  </div>
+
+                  <div class="preview-state">
+                    <i class="fa fa-angle-right"></i>
+                  </div>
+                </li>
+                <li class="settings-item preview-item" data-active="true">
+                  <div class="preview-iconBox">
+                    <i class="fa fa-user"></i>
+                  </div>
+
+                  <div class="preview-details">
+                    <p class="p--md">Change your password</p>
+                    <p class="t--sm">Change your password at any time.</p>
+                  </div>
+
+                  <div class="preview-state">
+                    <i class="fa fa-angle-right"></i>
+                  </div>
+                </li>
+                <li class="settings-item preview-item" data-active="true">
+                  <div class="preview-iconBox">
+                    <i class="fa fa-user"></i>
+                  </div>
+
+                  <div class="preview-details">
+                    <p class="p--md">Deactivate your account</p>
+                    <p class="t--sm">
+                      Find out how you can decativate your account.
+                    </p>
+                  </div>
+
+                  <div class="preview-state">
+                    <i class="fa fa-angle-right"></i>
+                  </div>
+                </li>
+                <li class="settings-item preview-item" data-active="true">
+                  <div class="preview-iconBox">
+                    <i class="fa fa-user"></i>
+                  </div>
+
+                  <div class="preview-details">
+                    <p class="p--md">Account imformation</p>
+                    <p class="t--sm">
+                      See your account imformation like your phone number and
+                      email address
+                    </p>
+                  </div>
+
+                  <div class="preview-state">
+                    <i class="fa fa-angle-right"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+
+extends ./common_page
+
+block section 
+
+    .section.section-notification(data-section="notification" data-page="0" data-cur_user=JSON.stringify(cur_user))
+        .notification
+
+            header.main-header 
+                .header-content.f-bg.f-3.f-5
+                    .mobile-nav-btn(data-active="false")
+                        img.img--sm(src=`/img/users/${cur_user.profilePic}`)
+                    a.h-6.header-title.mg-0 Notifications
+                
+            .notification-container
+                ul.notification-list
+                    if(notifications && notifications.length>0)
+                        each notification in notifications
+                            -const {type,text,_id,user,url}= notification  
+
+                            a(href=url)     
+                                li.preview-item(data-notification-id=_id data-notification-type=type)
+                                    .preview-img 
+                                        if(type==="follow")
+                                            i.blue.fas.fa-user
+
+                                        else if(type==="like-tweet" || type==="like-comment")
+                                            i.red.fas.fa-heart
+
+                                        else 
+                                            i.fab.fa-twitter.blue
+
+                                    div.preview-details-col
+                                        img.img--sm(src=`/img/users/${user.profilePic}`)
+                                        p.f-sm.f-3
+                                            h8.mg-0.h-8= `${user.name } ` 
+                                            if(type==="follow")
+                                                span.p--md followed you
+
+                                            else if(type.includes("like"))
+                                                span.p--md= ` liked your ${type.split("-")[1]}`
+
+                                            else if(type==="tweet-create")
+                                                span.p--md= ` posted tweet`
+
+                                            else if(type==="comment-on-tweet")
+                                                span.p--md= `comment on tweet`
+
+                                            else if(type==="reply-to-comment")
+                                                span.p--md= `reply to comment`
+
+                                        if(text)
+                                            p.t--lw= text
+                            .line-dim
+
+
+
+block sidebar

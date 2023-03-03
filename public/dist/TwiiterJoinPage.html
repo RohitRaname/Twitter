@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.a384a00b.css">
+    <script src="https://kit.fontawesome.com/28cd1ccca7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer="" type="module" src="/script.06b7cfbd.js"></script>
+  <script src="/style.a384a00b.js"></script></head>
+  <body>
+    <div class="twitter__joinPage" onsubmit="return false;">
+      <form class="form form--signUp hidden" data-form="signUp" data-optional="false" data-action="create-account" data-all-input-fields-valid="false" onsubmit="return false;">
+        <div class="form-overlay overlay">&nbsp;</div>
+
+        <div class="form-container abs-center">
+          <button class="btn--icon form-closeBtn" data-action="close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="form-content">
+            <h7 class="h-7 mg-sm">Step 1 of 5</h7>
+
+            <h4 class="h-4 mg-md">Create your account</h4>
+
+            <div class="form-groups">
+              <div class="form-group" data-field="name" data-input-filled="false" data-active="false" data-error="false">
+                <label for="name" class="form-label">Name</label>
+                <input class="form-input" type="text" id="name" name="name" minlength="0" maxlength="50">
+                <p class="form-hint"><span>0 </span> / 50</p>
+                <p class="form-error hidden">What's your name?</p>
+              </div>
+              <div class="form-group mg-sm" data-field="phone" data-switch="true" data-input-filled="false" data-active="false" data-error="false">
+                <label for="phone" class="form-label">Phone</label>
+                <input class="form-input" type="text" maxlength="11" id="phone" name="phone">
+                <p class="form-error hidden">
+                  Please enter a valid phone number.
+                </p>
+                <!-- <button
+                class="btn--text form-hint"
+                data-switch-between="true"
+                data-switch-to="email"
+              >
+                Use email instead
+              </button> -->
+              </div>
+              <div class="form-group mg-sm hidden" data-field="email" data-switch="true" data-input-filled="false" data-active="false" data-error="false">
+                <label for="email" class="form-label">Email</label>
+                <input class="form-input" type="email" minlength="4" id="email" name="email">
+                <p class="form-error hidden">Please enter a valid email.</p>
+              </div>
+              <button class="btn--text form-hint" data-switch-between="true" data-switch-to="email">
+                Use Email instead
+              </button>
+
+              <div>
+                <h8 class="h-8 mg-sm">Date to birth</h8>
+                <p class="t--lw mg-lw">
+                  This will not be shown publicly. Confirm your own age, even if
+                  this account is for a business, a pet, or something else.
+                </p>
+
+                <div class="form-boxs">
+                  <div class="form-group form-group--dropDown dropDown-parent" data-field="date" data-input-filled="false" data-active="false" data-error="false" data-type="month">
+                    <label for="" class="form-label">Month</label>
+                    <input class="form-input" type="text" id="month" name="month">
+                    <i class="fa fa-angle-down form-box__icon"></i>
+                    <ul class="dropDown-list" data-input-filled="false" data-active="false" data-error="false">
+                      <li class="dropDown-item">January</li>
+                      <li class="dropDown-item">February</li>
+                      <li class="dropDown-item">March</li>
+                      <li class="dropDown-item">April</li>
+                      <li class="dropDown-item">May</li>
+                      <li class="dropDown-item">June</li>
+                      <li class="dropDown-item">July</li>
+                      <li class="dropDown-item">August</li>
+                      <li class="dropDown-item">September</li>
+                      <li class="dropDown-item">October</li>
+                      <li class="dropDown-item">November</li>
+                      <li class="dropDown-item">December</li>
+                    </ul>
+                  </div>
+                  <div class="form-group form-group--dropDown dropDown-parent" data-field="date" data-type="day" data-input-filled="false" data-active="false" data-error="false">
+                    <label for="" class="form-label">Day</label>
+                    <input class="form-input" type="text" id="day" name="day">
+                    <i class="fa fa-angle-down form-box__icon"></i>
+                    <ul class="dropDown-list" data-input-filled="false" data-active="false" data-error="false">
+                      <li class="dropDown-item">0</li>
+                      <li class="dropDown-item">1</li>
+                      <li class="dropDown-item">2</li>
+                      <li class="dropDown-item">3</li>
+                      <li class="dropDown-item">4</li>
+                      <li class="dropDown-item">5</li>
+                      <li class="dropDown-item">6</li>
+                      <li class="dropDown-item">7</li>
+                      <li class="dropDown-item">8</li>
+                      <li class="dropDown-item">9</li>
+                      <li class="dropDown-item">10</li>
+                      <li class="dropDown-item">11</li>
+                      <li class="dropDown-item">12</li>
+                      <li class="dropDown-item">13</li>
+                      <li class="dropDown-item">14</li>
+                      <li class="dropDown-item">15</li>
+                      <li class="dropDown-item">16</li>
+                      <li class="dropDown-item">17</li>
+                      <li class="dropDown-item">18</li>
+                      <li class="dropDown-item">19</li>
+                      <li class="dropDown-item">20</li>
+                      <li class="dropDown-item">21</li>
+                      <li class="dropDown-item">22</li>
+                      <li class="dropDown-item">23</li>
+                      <li class="dropDown-item">24</li>
+                      <li class="dropDown-item">25</li>
+                      <li class="dropDown-item">26</li>
+                      <li class="dropDown-item">27</li>
+                      <li class="dropDown-item">28</li>
+                      <li class="dropDown-item">29</li>
+                      <li class="dropDown-item">30</li>
+                      <li class="dropDown-item">31</li>
+                    </ul>
+                  </div>
+                  <div class="form-group form-group--dropDown dropDown-parent" data-field="date" data-type="year" data-input-filled="false" data-active="false" data-error="false">
+                    <label for="" class="form-label">Year</label>
+                    <input class="form-input" type="text" id="year" name="year">
+                    <i class="fa fa-angle-down form-box__icon"></i>
+                    <ul class="dropDown-list" data-input-filled="false" data-active="false" data-error="false">
+                      <li class="dropDown-item">1902</li>
+                      <li class="dropDown-item">1903</li>
+                      <li class="dropDown-item">1904</li>
+                      <li class="dropDown-item">1905</li>
+                      <li class="dropDown-item">1906</li>
+                      <li class="dropDown-item">1907</li>
+                      <li class="dropDown-item">1908</li>
+                      <li class="dropDown-item">1909</li>
+                      <li class="dropDown-item">1910</li>
+                      <li class="dropDown-item">1911</li>
+                      <li class="dropDown-item">1912</li>
+                      <li class="dropDown-item">1913</li>
+                      <li class="dropDown-item">1914</li>
+                      <li class="dropDown-item">1915</li>
+                      <li class="dropDown-item">1916</li>
+                      <li class="dropDown-item">1917</li>
+                      <li class="dropDown-item">1918</li>
+                      <li class="dropDown-item">1919</li>
+                      <li class="dropDown-item">1920</li>
+                      <li class="dropDown-item">1921</li>
+                      <li class="dropDown-item">1922</li>
+                      <li class="dropDown-item">1923</li>
+                      <li class="dropDown-item">1924</li>
+                      <li class="dropDown-item">1925</li>
+                      <li class="dropDown-item">1926</li>
+                      <li class="dropDown-item">1927</li>
+                      <li class="dropDown-item">1928</li>
+                      <li class="dropDown-item">1929</li>
+                      <li class="dropDown-item">1930</li>
+                      <li class="dropDown-item">1931</li>
+                      <li class="dropDown-item">1932</li>
+                      <li class="dropDown-item">1933</li>
+                      <li class="dropDown-item">1934</li>
+                      <li class="dropDown-item">1935</li>
+                      <li class="dropDown-item">1936</li>
+                      <li class="dropDown-item">1937</li>
+                      <li class="dropDown-item">1938</li>
+                      <li class="dropDown-item">1939</li>
+                      <li class="dropDown-item">1940</li>
+                      <li class="dropDown-item">1941</li>
+                      <li class="dropDown-item">1942</li>
+                      <li class="dropDown-item">1943</li>
+                      <li class="dropDown-item">1944</li>
+                      <li class="dropDown-item">1945</li>
+                      <li class="dropDown-item">1946</li>
+                      <li class="dropDown-item">1947</li>
+                      <li class="dropDown-item">1948</li>
+                      <li class="dropDown-item">1949</li>
+                      <li class="dropDown-item">1950</li>
+                      <li class="dropDown-item">1951</li>
+                      <li class="dropDown-item">1952</li>
+                      <li class="dropDown-item">1953</li>
+                      <li class="dropDown-item">1954</li>
+                      <li class="dropDown-item">1955</li>
+                      <li class="dropDown-item">1956</li>
+                      <li class="dropDown-item">1957</li>
+                      <li class="dropDown-item">1958</li>
+                      <li class="dropDown-item">1959</li>
+                      <li class="dropDown-item">1960</li>
+                      <li class="dropDown-item">1961</li>
+                      <li class="dropDown-item">1962</li>
+                      <li class="dropDown-item">1963</li>
+                      <li class="dropDown-item">1964</li>
+                      <li class="dropDown-item">1965</li>
+                      <li class="dropDown-item">1966</li>
+                      <li class="dropDown-item">1967</li>
+                      <li class="dropDown-item">1968</li>
+                      <li class="dropDown-item">1969</li>
+                      <li class="dropDown-item">1970</li>
+                      <li class="dropDown-item">1971</li>
+                      <li class="dropDown-item">1972</li>
+                      <li class="dropDown-item">1973</li>
+                      <li class="dropDown-item">1974</li>
+                      <li class="dropDown-item">1975</li>
+                      <li class="dropDown-item">1976</li>
+                      <li class="dropDown-item">1977</li>
+                      <li class="dropDown-item">1978</li>
+                      <li class="dropDown-item">1979</li>
+                      <li class="dropDown-item">1980</li>
+                      <li class="dropDown-item">1981</li>
+                      <li class="dropDown-item">1982</li>
+                      <li class="dropDown-item">1983</li>
+                      <li class="dropDown-item">1984</li>
+                      <li class="dropDown-item">1985</li>
+                      <li class="dropDown-item">1986</li>
+                      <li class="dropDown-item">1987</li>
+                      <li class="dropDown-item">1988</li>
+                      <li class="dropDown-item">1989</li>
+                      <li class="dropDown-item">1990</li>
+                      <li class="dropDown-item">1991</li>
+                      <li class="dropDown-item">1992</li>
+                      <li class="dropDown-item">1993</li>
+                      <li class="dropDown-item">1994</li>
+                      <li class="dropDown-item">1995</li>
+                      <li class="dropDown-item">1996</li>
+                      <li class="dropDown-item">1997</li>
+                      <li class="dropDown-item">1998</li>
+                      <li class="dropDown-item">1999</li>
+                      <li class="dropDown-item">2000</li>
+                      <li class="dropDown-item">2001</li>
+                      <li class="dropDown-item">2002</li>
+                      <li class="dropDown-item">2003</li>
+                      <li class="dropDown-item">2004</li>
+                      <li class="dropDown-item">2005</li>
+                      <li class="dropDown-item">2006</li>
+                      <li class="dropDown-item">2007</li>
+                      <li class="dropDown-item">2008</li>
+                      <li class="dropDown-item">2009</li>
+                      <li class="dropDown-item">2010</li>
+                      <li class="dropDown-item">2011</li>
+                      <li class="dropDown-item">2012</li>
+                      <li class="dropDown-item">2013</li>
+                      <li class="dropDown-item">2014</li>
+                      <li class="dropDown-item">2015</li>
+                      <li class="dropDown-item">2016</li>
+                      <li class="dropDown-item">2017</li>
+                      <li class="dropDown-item">2018</li>
+                      <li class="dropDown-item">2019</li>
+                      <li class="dropDown-item">2020</li>
+                      <li class="dropDown-item">2021</li>
+                      <li class="dropDown-item">2022</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-submitBtn__box">
+              <button class="btn--white form-submitBtn" disabled="">Next</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form class="form form--login hidden" data-form="login" data-optional="false" data-action="login-with-email-or-name" data-all-input-fields-valid="false" onsubmit="return false;">
+        <div class="form-overlay overlay">&nbsp;</div>
+
+        <div class="form-container abs-center">
+          <button class="btn--icon form-closeBtn" data-action="close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="form-content">
+            <div class="center mg-sm m-center">
+              <i class="fab fa-twitter icon--simple"></i>
+            </div>
+
+            <h4 class="h-4 mg-bg">Sign in to Twitter</h4>
+
+            <div class="form-groups mg-lg">
+              <div class="form-group" data-field="name,email" data-input-filled="false" data-active="false" data-error="false">
+                <label for="name" class="form-label">Username or email address</label>
+                <input class="form-input" type="text" id="name" name="nameOrEmail">
+                <!-- <p class="form-error hidden">What's your name?</p> -->
+              </div>
+            </div>
+            <button class="btn--primary btn--100 form-submitBtn mg-sm" disabled="" data-action="next">
+              Next
+            </button>
+
+            <button class="btn--outline btn--100 form-submitBtn mg-bg" data-action="forgot-password">
+              Forgot password?
+            </button>
+
+            <p class="text--sm">
+              Don't have an account? <a class="link" href="/signUp">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </form>
+      <div class="twitter__joinPage-content grid--6-4">
+        <div class="twitter__joinPage-left">
+          <img class="twitter__joinPage-img" src="/lohp_en_1302x955.2f4bff23.png" alt="">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="twitter__joinPage-icon twitter__joinPage-icon--bg abs-center">
+            <g>
+              <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="twitter__joinPage-right">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="twitter__joinPage-icon twitter__joinPage-icon--sm mg-bg">
+            <g>
+              <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
+            </g>
+          </svg>
+          <h1 class="h-1 mg-bg">Happening now</h1>
+
+          <div class="twitter__joinPage-right__content">
+            <h4 class="h-4 mg-sm">Join Twitter today.</h4>
+            <button class="btn--primary mg-lw twitter__joinPage-signUpBtn" data-action="signUp">
+              Sign up with phone or email
+            </button>
+            <p class="t--lw mg-bg">
+              By signing up, you agree to the Terms of Service and Privacy
+              Policy, including Cookie Use.
+            </p>
+
+            <h8 class="h-8 mg-sm">Already have an account?</h8>
+            <button class="btn--outline-primary twitter__joinPage-signInBtn" data-action="signIn">
+              Sign in
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

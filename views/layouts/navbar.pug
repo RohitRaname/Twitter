@@ -1,0 +1,146 @@
+
+nav.nav
+    .nav__content
+        ul.nav__list
+            if(login_user)
+                -const cur_user_profile_link = `/users/${cur_user.avatar.slice(1)}`;
+                -const cur_user_profile_pic =`/img/users/${cur_user.profilePic}`
+                li.nav__item.nav__item--logo.mg-lw
+                    a.nav__link.nav__link--logo(href='/')
+                        i.logo__icon.nav__icon--logo.fa.fa-twitter
+                li.nav__item(data-active='true' data-section="home")
+                  
+                    a.nav__link(href='/')
+                        i.nav__icon.nav__icon--home.fa.fa-home
+                        i.nav__icon.nav__icon--home.fa.fa-home.hidden
+                            p.nav__indicator &nbsp;
+                        span.nav__text  Home 
+                li.nav__item(data-active="false" data-section="explore") 
+                    a.nav__link(href='/news/explore/general')
+                        i.nav__icon.fa.fa-wpexplorer
+                        i.nav__icon.fa.fa-hashtag.hidden
+                        span.nav__text  Explore 
+                li.nav__item(data-active="false" data-section="notification")
+                    a.nav__link(href='/notifications')
+                        i.nav__icon.fa.fa-bell-o
+                        i.nav__icon.hidden.fas.fa-bell
+                        span.nav__text  Notifications 
+                li.nav__item(data-active="false" data-section="message")
+                    a.nav__link(href='/messages')
+                        i.nav__icon.fa.fa-envelope-o
+                        i.nav__icon.fas.fa-envelope.hidden
+                        span.nav__text  Messages 
+                li.nav__item(data-active="false" data-section="bookmark")
+                    a.nav__link(href='/bookmarks')
+                        i.nav__icon.fa.fa-bookmark-o
+                        i.nav__icon.fa.fa-bookmark.hidden
+                        span.nav__text  Bookmarks 
+                li.nav__item(data-active="false" data-section="user-profile")
+                    a.nav__link(href=`/users/${cur_user.avatar.slice(1
+                    )}`)
+                        i.nav__icon.fa.fa-user-o
+                        i.nav__icon.fa.fa-user.hidden
+                        span.nav__text  Profile 
+                li.nav__item.mg-lw(data-dropdown-btn data-dropdown-class="settings")
+                    a.nav__link
+                        i.nav__icon.fa.fa-sliders
+                        span.nav__text  More 
+
+                button.btn--primary.nav__tweet-btn
+                    i.fas.fa-feather-alt.hidden
+                    span Tweet
+
+                .user__nav-box(data-dropdown-btn data-dropdown-class="user-logout")
+                    img.user__nav-img.img--sm(src=`/img/users/${cur_user.profilePic || "default.png"}` alt='User gmail photo')
+                    p.user__nav-name.p--md= cur_user.name
+                    p.user__nav-gmail.t--lw= cur_user.avatar
+                    i.nav__icon.user__nav-icon.fa.fa-ellipsis-h
+
+            else
+                li.nav__item.nav__item--logo.mg-lw
+                    a.nav__link.nav__link--logo(href='/')
+                        i.logo__icon.nav__icon--logo.fa.fa-twitter
+
+                li.nav__item
+                    a.nav__link(href='/news/explore/general')
+                        i.nav__icon.fa.fa-wpexplorer
+                        span.nav__text  Explore 
+
+
+        // mobile user navigation
+
+    if(login_user)
+        -const cur_user_profile_link = `/users/${cur_user.avatar.slice(1)}`;
+        -const cur_user_profile_pic =`/img/users/${cur_user.profilePic}`
+
+        .mobile-nav.hide
+                //- .mobile-nav-btn(data-active="false")
+                //-     img.img--sm(src=`${cur_user_profile_pic}`)
+
+         
+                .overlay
+                .mobile-nav-content
+                    header.mobile-nav-header.p-sm
+                        .mobile-nav-title.f-sm.mg-sm
+                            h7.h-7 Account info
+                            button.btn--icon-fixed(data-action='hide')
+                                i.fa.fa-times(aria-hidden='true')
+                        .mobile-nav-user
+                            // imgs
+                            .mobile-nav-user-details
+                                .f-sm.mg-lw
+                                    a(href=`${cur_user_profile_link}`)
+                                        img.img--bg(src=`${cur_user_profile_pic}`)
+                                    .f-lw
+                                        if(cur_user_other_accounts.length>0)
+                                            each other_account in cur_user_other_accounts 
+                                                a(href=`/users/${other_account.avatar.slice(1)}`)
+                                                    img.img--bg(src=`/img/users/${other_account.profilePic}`)
+
+                                        button.btn--icon-fixed.btn--outline(data-action='show-manage-accounts-modal')
+                                            i.fas.fa-ellipsis-h(aria-hidden='true')
+                            // name and avatar
+                            .f-col.f-1
+                                a(href=`${cur_user_profile_link}`)
+                                    h.h-7.block.mg-0.hover-underline Dan Pena student
+                                a(href=`${cur_user_profile_link}`)
+                                    p.t--md.mg-sm @rana
+                            // follow stats
+                            .mobile-nav-follow-stats.f-sm.f-3
+                                .mobile-nav-follow-modal-btn.f-lw.f-1.hover-underline(data-action='show-follow-following-modal' data-type="following")
+                                    h8.h-8 0
+                                    p.t--md Following
+                                .mobile-nav-follow-modal-btn.f-lw.f-1.hover-underline(data-action='show-follow-following-modal' data-type="followers")
+                                    h8.h-8 0
+                                    p.t--md Followers
+                    .mobile-nav-page-link
+                        // direct link
+                        .mobile-nav-direct-link
+                            a(href='/users/rana')
+                                .dropdown-item.f-md
+                                    i.nav__icon.fa.fa-wpexplorer(aria-hidden='true')
+                                    span.h-5.mg-0  Profile 
+                            a(href='/bookmarks')
+                                .dropdown-item.f-md
+                                    i.nav__icon.fa.fa-bookmark-o(aria-hidden='true')
+                                    span.h-5.mg-0  Bookmarks 
+                        .line-dim
+                        // nested links
+                        .mobile-nav-settings
+                            div.mobile-nav-settings-item
+                                .dropdown-item(data-child-els='true' data-active='false')
+                                    span.h-6  Settings 
+                                    i.fa.fa-angle-down(aria-hidden='true')
+                                .dropdown-item-options
+                                    a(href='/settings')
+                                        .dropdown-item(data-child-el='true' data-active='false')
+                                            i.fa.fa-cog(aria-hidden='true')
+                                            span.h-7  Settings and Privacy
+                                    .dropdown-item(data-child-el='true' data-action='show-customize-twitter-modal')
+                                        i.fas.fa-edit(aria-hidden='true')
+                                        span.h-7  Display
+                                    .dropdown-item(data-child-el='true' data-action="logout")
+                                        i.fas.fa-sign-out-alt(aria-hidden='true')
+                                        span.h-7 Log out @rana
+
+

@@ -1,0 +1,23 @@
+.tweet-reply {
+  font-size: $font-size-md;
+
+  .postedTweet .tweet-img {
+    grid-column: 1;
+    /* grid-row: 2/3 !important; */
+  }
+  .postedTweet {
+    pointer-events: none;
+  }
+
+  .postedTweet .tweet-img {
+    grid-row: 1 !important;
+  }
+
+  .createTweetReply {
+    position: relative;
+    z-index: 10;
+  }
+
+  .createTweet-textarea {
+  }
+}

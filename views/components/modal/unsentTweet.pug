@@ -1,0 +1,106 @@
+.modal.hidden(data-modal='unsent-tweets' data-edit-items='false' data-atleast-1-item-selected='false' data-click-event="false" data-sections="2")
+    .overlay 
+    .modal-container(data-height='fixed-height')
+        header.modal-header.p-lw.f-md.f-3.f-1
+            button.btn--icon.modal-backBtn(data-action='back')
+                i.fas.fa-arrow-left
+            h6.h-6.w-600 Unsent Tweets
+            button.btn--primary-dull.btn--sm.pos-tr.modal-topRightBtn.hidden(data-action='done-with-editing-items')
+                | Done
+            button.btn--primary-dull.btn--sm.pos-tr.modal-topRightBtn(data-action='allow-to-edit-items')
+                | Edit
+        .c-boxed.modal-change-section-btns
+            button.btn--text-white.h-5(data-section='draft-tweets' data-btn="change-section-btn" data-active="true")
+                span Drafts
+            button.btn--text-white.h-5(data-section='schedule-tweets' data-btn="change-section-btn" data-active=`false`)
+                span Scheduled
+        .line
+
+        .modal-sections
+            section.modal-section.display(data-section='draft-tweets' data-no-more-docs="false" data-docs-loading="false" data-page="0",)
+                ul.modal-list
+
+                    //- simple-draft-tweet, retweet-draft-tweet, quote-tweet-draft, 
+
+                    //- if(draft_tweets && draft_tweets.length>0)
+                    //-     each unsent_tweet in draft_tweets
+
+                    //-         -const tweet_type= unsent_tweet.tweet_type
+                    //-         -const tweet_user=unsent_tweet.posted_tweet.user
+                    //-         -const tweet = unsent_tweet.posted_tweet
+
+                    //-         li.preview-item.modal-item.preview-item--sm(data-active="false" data-tweet-id=`${tweet._id}` data-tweet-type=`${unsent_tweet.tweet_type}` 
+                    //-         data-tweet=`${JSON.stringify(unsent_tweet)}`
+                    //-         )
+                    //-             .btn--checkbox(data-checked='false')
+                    //-                 i.fa.fa-check
+                    //-             .preview-details
+                    //-                 .preview-extra
+                    //-                     if(tweet_type==="draft-comment")
+                    //-                         i.fas.fa-comment 
+                    //-                         p
+                    //-                             | Replying to 
+                    //-                             span= `${tweet_user.name}`
+
+                    //-                     else if(tweet_type==="draft-quote")
+                    //-                         i.fas.fa-retweet
+                    //-                         p
+                    //-                             | Quoting to 
+                    //-                             span= `${tweet_user.name}`
+
+                    //-                 .preview-text= `${unsent_tweet.text}`
+                    //-             .preview-upload-img
+                    //-                 if(unsent_tweet.upload_imgs && unsent_tweet.upload_imgs.length>0)
+                    //-                     img(src=`/img/tweet/${unsent_tweet.upload_imgs[0]}`)
+                    //-         .line &nbsp;
+
+
+
+            section.modal-section.hidden(data-section='schedule-tweets' data-no-more-docs="false" data-docs-loading="false" data-page="0",)
+                ul.modal-list
+                    //- if(schedule_tweets && schedule_tweets.length>0)
+                    //-     each unsent_tweet in schedule_tweets
+
+                    //-         -const tweet_type= unsent_tweet.tweet_type
+                    //-         -const tweet_user=unsent_tweet.posted_tweet.user
+                    //-         -const tweet=unsent_tweet.posted_tweet
+
+                    //-         li.preview-item.modal-item.preview-item--sm(data-active="false"  data-tweet-id=`${tweet._id}`   data-tweet-type=`${unsent_tweet.tweet_type}`  data-tweet=`${JSON.stringify(unsent_tweet)}`)
+                    //-             //- .btn--checkbox(data-checked='false')
+                    //-             .btn--checkbox(data-checked='false')
+                    //-                 i.fa.fa-check
+                    //-             .preview-details
+                    //-                 .preview-extra
+                    //-                     i.fas.fa-clock
+                    //-                     p
+                    //-                         | Will send on 
+                    //-                         span= `${new Date(unsent_tweet.schedule_post_time).toLocaleString()}`
+
+
+                    //-                 if(tweet_type==="schedule-comment")
+                    //-                     p.t--sm
+                    //-                         i.fas.fa-comment 
+                    //-                         | Replying to 
+                    //-                         span= `${tweet_user.name}`
+
+                    //-                 else if(tweet_type==="schedule-quote")
+                    //-                     p.t--sm
+                    //-                         i.fas.fa-retweet
+                    //-                         | Quoting to 
+                    //-                         span= `${tweet_user.name}`
+
+                    //-                 .preview-text= `${unsent_tweet.text}`
+                    //-             .preview-upload-img   
+                    //-                 if(unsent_tweet.upload_imgs && unsent_tweet.upload_imgs.length>0)
+                    //-                     img(src=`/img/tweet/${unsent_tweet.upload_imgs[0]}`)
+                    //-         .line &nbsp;
+
+        footer.modal-footer
+            .line
+            .f-s.modal-footer-content
+                button.btn--primary-text(data-action='select-all')
+                    | Select all
+                button.btn--primary-text.hidden(data-action='unselect-all')
+                    | Deselect all
+                button.btn--tertiary-text(data-action='delete' disabled)
+                    | Delete

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <script
+      src="https://kit.fontawesome.com/28cd1ccca7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="../../script.js"></script>
+  </head>
+  <body>
+    <div class="overlay hidden">&nbsp;</div>
+
+    <div class="main-container">
+      <nav class="nav">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--logo mg-lw">
+              <a href="#" class="nav__link nav__link--logo">
+                <i class="logo__icon nav__icon--logo fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav__item" data-active="true">
+              <a href="#" class="nav__link">
+                <i class="nav__icon nav__icon--home fa fa-home">
+                  <p class="nav__indicator">&nbsp;</p>
+                </i>
+                <span class="nav__text"> Home </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-wpexplorer"></i>
+                <span class="nav__text"> Explore </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-envelope-o"></i>
+                <span class="nav__text"> Notifications </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-commenting-o"></i>
+                <span class="nav__text"> Messages </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-bookmark-o"></i>
+                <span class="nav__text"> Bookmarks </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-list-alt"></i>
+                <span class="nav__text"> Lists </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-user"></i>
+                <span class="nav__text"> Profile </span>
+              </a>
+            </li>
+            <li class="nav__item mg-lw">
+              <a href="#" class="nav__link">
+                <i class="nav__icon fa fa-sliders"></i>
+                <span class="nav__text"> More </span>
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn--primary nav__tweet-btn">
+            <a href="" class="nav__tweet-link">Tweet</a>
+          </button>
+
+          <div class="user__nav-box preview-parent-abs" data-active="false">
+            <div class="preview">
+              <div class="preview-list">
+                <div
+                  class="preview-item preview-item-no-hover"
+                  data-active="true"
+                >
+                  <img
+                    src="../../img/users/default.png"
+                    class="preview-img"
+                    alt=""
+                  />
+                  <div class="preview-details">
+                    <div class="preview-title">rtr</div>
+                    <div class="preview-extra">@RohitRa19327711</div>
+                  </div>
+
+                  <p class="preview-state">
+                    <i class="fa fa-check"></i>
+                  </p>
+                </div>
+                <div class="line-dim"></div>
+
+                <div class="dropDown-item">Add an existing account</div>
+                <div class="dropDown-item">
+                  Log out <span>@cool_mclarent</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="" class="user__nav-link">
+              <img
+                class="user__nav-img img--sm"
+                src="../../img/users/default.png"
+                alt="User gmail photo"
+              />
+              <p class="user__nav-name">Somesh Rawat</p>
+              <p class="user__nav-gmail">@SomeshR9984sfddfhjfdh</p>
+              <i class="nav__icon user__nav-icon fa fa-ellipsis-h"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="section-user">
+          <header class="header f-sm f-3">
+            <button class="btn--icon btn--icon-fixed">
+              <i class="fas fa-long-arrow-alt-left"></i>
+            </button>
+
+            <div>
+              <h class="h-6">Dan Pena</h>
+              <p class="t--md"><span>505.1k</span> Tweets</p>
+            </div>
+          </header>
+
+          <!-- user profile -->
+          <article>
+            <!-- user big cover img -->
+            <div class="user-profile-cover">
+              <img
+                src="../../img/tweets//tweet-6334670cb0d772863c7ac1be-1667086313946.jpeg"
+                alt="1 guy has done so many deals what are you doing rohit????"
+              />
+            </div>
+
+            <!-- user info -->
+            <div class="p-sm user-details">
+              <!-- buttons -->
+              <div class="f-s user-btns-container">
+                <img
+                  class="img--lg user-img"
+                  src="../../img/users/default.png"
+                  alt="dan pena"
+                />
+
+                <div class="user-btns f-lw">
+                  <button
+                    class="btn--icon btn--sm btn--icon-fixed btn--outline"
+                    data-action="show-profile-options"
+                    data-active="false"
+                  >
+                    <i class="fas fa-ellipsis-h"></i>
+                  </button>
+                  <button
+                    class="btn--icon btn--sm btn--icon-fixed btn--outline"
+                    data-action="allow-notification"
+                    data-active="false"
+                  >
+                    <i class="fa fa-bell"></i>
+                    <i class="fas fa-bell-slash hidden"></i>
+                  </button>
+                  <button
+                    class="btn--outline btn--md"
+                    data-action="following"
+                    data-active="false"
+                  >
+                    <span class>Follow</span>
+                    <span class="hidden">Following</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- user info -->
+              <div class="user-details-content">
+                <div class="user-name mg-lw">
+                  <h class="h-6">Dan Pena</h>
+                  <p class="t--md"><span>505.1k</span> Tweets</p>
+                </div>
+
+                <p class="user-bio p mg-lw">
+                  Trillion Dollar Man, High Performance man, Greatest of all
+                  time in creation of wealth
+                </p>
+
+                <div class="user-description f-s mg-lw">
+                  <div class="user-location f-c f-lw">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p class="t--md">Guthrie Castle, Scotland, UK</p>
+                  </div>
+                  <div class="user-website-link f-c f-lw">
+                    <i class="fas fa-link"></i>
+                    <p class="t--md blue">linktr.ee/danspena</p>
+                  </div>
+                  <div class="user-birth-date f-c f-lw">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p class="t--md">Joined <span>August 2009</span></p>
+                  </div>
+                </div>
+
+                <div class="user-following-stats f-md f-3 mg-sm">
+                  <p class="t--md hover-underline">
+                    <span class="p--md">1,405</span> Following
+                  </p>
+                  <p class="t--md hover-underline">
+                    <span class="p--md">45.8K </span> Followers
+                  </p>
+                </div>
+
+                <!-- follow by any i am following -->
+                <p class="t--sm">Not followerd by anyone you're following</p>
+              </div>
+            </div>
+          </article>
+
+          <footer>
+            <div class="c-boxed modal-change-section-btns user-section-btns">
+              <button
+                class="btn--text-white h-5"
+                data-section="my-tweets"
+                data-btn="change-section-btn"
+                data-active="data-active"
+              >
+                <span>Tweets</span>
+              </button>
+              <button
+                class="btn--text-white h-5"
+                data-section="my-replies"
+                data-btn="change-section-btn"
+                data-active="data-active"
+              >
+                <span>Tweets & Replies</span>
+              </button>
+              <button
+                class="btn--text-white h-5"
+                data-section="my-liked-tweets"
+                data-btn="change-section-btn"
+                data-active="data-active"
+              >
+                <span>Likes</span>
+              </button>
+            </div>
+            <div class="line"></div>
+          </footer>
+        </div>
+      </main>
+
+      <aside class="sidebar"></aside>
+    </div>
+  </body>
+</html>

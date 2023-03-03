@@ -1,0 +1,29 @@
+.dropdown(data-type="retweet_quote_post" data-dropdown="auto"  data-active="false" data-media-change="true")
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='' )
+        .dropdown-content
+            .dropdown-item(data-action='retweet' data-value="true")
+                i.fas.fa-sync-alt
+                span= `Retweet`
+                //- .dropdown-item.hidden(data-action='delete-retweet')
+                //-     i.fas.fa-sync-alt
+                //-     span= `Undo Retweet`
+            .dropdown-item(data-action='quote' data-value="false")
+                i.fas.fa-pencil-alt
+                span= `Quote Tweet` 
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel
+
+//- .dropdown(data-type="retweet_quote_tweet" data-dropdown="auto" data-tweet-id=`${tweet_id}` data-active="false")
+//-     .dropdown-list(data-top='' )
+//-         .dropdown-item(data-action='retweet')
+//-             i.fas.fa-sync-alt
+//-             span= `Retweet`
+//-         //- .dropdown-item.hidden(data-action='delete-retweet')
+//-         //-     i.fas.fa-sync-alt
+//-         //-     span= `Undo Retweet`
+//-         .dropdown-item(data-action='quote-tweet')
+//-             i.fas.fa-pencil-alt
+//-             span= `Quote Tweet` 
+

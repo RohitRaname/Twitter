@@ -1,0 +1,56 @@
+// tweet => that have been posted(shared)
+
+.tweet {
+  &-container {
+    // display: grid;
+    // grid-template-columns: min-content 1fr;
+    // gap: $gap-md;
+  }
+
+  .postedTweet .tweet-img {
+    grid-column: 1;
+    /* grid-row: 2/3 !important; */
+  }
+
+  &-img {
+    grid-row: 1;
+  }
+
+  &-item[data-multiple-tweets='true'],
+  &-line {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 3px;
+      background: var(--background-light);
+
+      position: absolute;
+      top: 7rem;
+      left: 4.26rem;
+    }
+  }
+
+  &-user-img {
+    outline: 1.4rem solid var(--default-background);
+  }
+
+  // uploadImgs collage
+  &-uploadImg {
+    &__container {
+    }
+    &__content {
+    }
+    &__fig {
+      position: relative;
+    }
+    & {
+      width: 100%;
+      border-radius: $radius-hg;
+      border: var(--border-line);
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}

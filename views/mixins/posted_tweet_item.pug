@@ -1,0 +1,171 @@
+mixin tweet(posted_tweets)
+
+    .postedTweet-group(data-tweets-count=`${posted_tweets.length>1?"multiple":"single"}`)
+        each tweet in posted_tweets
+
+            -const mine_tweet=tweet.user_id.toString()=== (cur_user && cur_user._id.toString())
+
+            -const user = tweet.user_details
+            -const tweet_type = tweet.tweet_type
+            -const ts_format =tweet.ts_format;
+
+            -const is_pinned  = tweet.pinned
+
+
+
+            div(class=`tweet postedTweet preview-item-container dropdown-details`
+            data-post= JSON.stringify({
+
+                _id:tweet._id,
+                type:tweet.tweet_type,
+                ts:tweet.ts, 
+                text:tweet.text,
+                format:'tweet',  
+                upload_imgs:tweet.upload_imgs,
+                pinned:`${is_pinned}`,
+
+                ts_format:tweet.ts_format,
+
+                follow_by_cur_user:tweet.follow_by_cur_user,
+                cur_user_can_reply:tweet.cur_user_can_reply, 
+                audience_reply:tweet.audience_can_reply,
+                mute_by_cur_user:tweet.mute_by_cur_user,
+                block_by_cur_user:tweet.block_by_cur_user,
+
+                quote_tweet_parent_id_arr:tweet.quote_tweet_parent_id_arr,
+                retweet_parent_id_arr:tweet.retweet_parent_id_arr,                                   
+
+                user:{
+                _id:tweet.user_id,
+                avatar:user.avatar,
+                name:user.name,
+                profilePic:user.profilePic                                                                      
+                }
+                })
+            data-post-format="tweet"
+            data-post-user-id=`${tweet.user_id}`
+            data-post-id=`${tweet._id}`
+            data-post-type=`${tweet_type}`
+            data-pinned-tweet=`${is_pinned}`
+            data-retweet-parent-id=`${tweet.tweet_type==="retweet"?tweet.retweet_parent_id:""}`
+            )
+
+                if(tweet_type==="retweet" && is_pinned)
+                    div.f-sm.f-3.tweet-retweet-title
+                        i.fas.fa-thumb-tack
+                        p.p--lw Pinned Tweet
+
+                else if(tweet_type==="retweet" && !is_pinned)
+                    div.f-sm.f-3.tweet-retweet-title
+                        i.fa.fa-retweet
+                        p.p--lw You Retweet
+
+                else if(is_pinned && tweet_type!=="retweet")
+                    div.f-sm.f-3.tweet-retweet-title
+                        i.fas.fa-thumb-tack
+                        p.p--lw Pinned Tweet
+
+                
+                .tweet-container(data-active='false')
+                    a(href=`/users/${user.avatar.slice(1)}` )
+                        img.tweet-img.img--md(src=`/img/users/${user.profilePic}`
+                            onerror="this.src='/img/users/default.png'" data-preview-window-target-el='true')
+
+
+                    div.tweet-content
+                        .tweet-user__info.preview-item(
+                            data-hover=''
+                            data-no-hover-change=''
+                            data-name=`${user.name}`
+                            data-avatar=`${user.avatar}`
+                            data-bio=`${user.bio}` 
+                            data-user-id=`${tweet.user_id}`
+
+
+                            data-following_count=`` 
+                            data-followers_count=``
+
+                            data-user-detail-set="false")
+
+                            a.tweet-user__name.h-8.hover-underline(href=`/users/${user.avatar.slice(1)}` data-preview-window-target-el='true')
+                                = `${user.name}`
+
+                            a.tweet-user__verified(data-preview-window-target-el='true')
+                            p.tweet-user__email.t--md(href=`/users/${user.avatar.slice(1)}`  
+
+                            data-preview-window-target-el='true')
+                                = `${user.avatar}`
+                            p.tweet-user__postTime.t--md.hover-underline= `${  ts_format}`
+
+                        button.tweet-btn.tweet-options-btn.btn--icon-dim-primary(data-dropdown-btn data-dropdown-class= `${login_user? mine_tweet?"cur-user-post-options-dropdown":"post-options-dropdown":""}` data-active="false")
+                            .icon-box
+                                i.fas.fa-ellipsis
+
+
+                        .tweet-message.mg-lw.p--md
+                            = `${tweet.text || ""}`
+
+                        -const upload_imgs= tweet.upload_imgs
+                        if(upload_imgs && upload_imgs.length>0)
+                            .tweet-uploadImg__container.mg-lw
+                                .tweet-uploadImg__content.grid--collage(data-items=`${upload_imgs.length}`)
+                                    each img in upload_imgs
+                                        figure.tweet-uploadImg__fig
+                                            img.tweet-uploadImg(src=`/img/tweets/${img}` alt='tweet img')
+
+                        //- quote tweet 
+                        if(tweet.posted_tweet.text)
+                            -const quote = tweet.posted_tweet
+                            -const quote_user = quote.user
+                            article.quotetweet-posted-tweet.p-sm(data-tweet-id=`${quote._id}`)
+                                img.tweet-img.img--lw(src=`/img/users/${quote_user.profilePic}`)
+                                .tweet-content.mg-sl
+                                    .tweet-user__info.f-sl.f-3
+                                        p.tweet-user__name.h-8.mg-0(href='')= `${quote_user.name}`
+                                        p.tweet-user__verified
+                                        p.tweet-user__email.t--md(href='/')= `${quote_user.avatar}`
+                                        p.tweet-user__postTime.t--md=quote.ts_format
+                                    .tweet-message.p--md.mg-sm= `${quote.text ||""}`
+                                    -const quote_upload_imgs= quote.upload_imgs
+                                    if(quote_upload_imgs && quote_upload_imgs.length>0)
+                                        .tweet-uploadImg__container.mg-lw
+                                            .tweet-uploadImg__content.grid--collage(data-items=`${quote_upload_imgs.length}`)
+                                                each img in quote_upload_imgs
+                                                    figure.tweet-uploadImg__fig
+                                                        img.tweet-uploadImg(src=`/img/tweets/${img}` alt='tweet img')
+
+
+
+                        .tweet-btns
+                            button(class=`tweet-btn btn--icon-dim-primary ${tweet.cur_user_can_reply?"":"disable-important"}` data-action='write-comment' data-active=`${tweet.comment_by_cur_user}`)
+                                .icon-box
+                                    if(tweet.comment_by_cur_user)
+                                        i.fa.fa-commenting
+                                    else
+                                        i.fa.fa-commenting-o
+                                span.tweet-btn__value.btn--icon-value= `${tweet.metadata.comment_count}`
+
+                            button.tweet-btn.btn--icon-dim-secondary(
+                            data-action='retweet' 
+                            data-dropdown-btn data-dropdown-class=`${login_user?"retweet_quote_post":""}`  data-active=`${tweet.retweet_quotetweet_by_cur_user}` )
+                                .icon-box
+                                    i.fa.fa-retweet
+                                span.tweet-btn__value.btn--icon-value= `${tweet.metadata.retweet_count}`
+
+                            button.tweet-btn.btn--icon-dim-tertiary(data-action='like' data-active=`${tweet.like_by_cur_user}`)
+
+                                .icon-box
+                                    if(tweet.like_by_cur_user)
+                                        i.fa.fa-heart
+                                    else
+                                        i.fa.fa-heart-o
+
+                                span.tweet-btn__value.btn--icon-dim-value= `${tweet.metadata.like_count}`
+
+                            button.tweet-btn.btn--icon-dim-primary(data-action='bookmark' data-active=`${tweet.bookmark_by_cur_user}`)
+                                div(class=`icon-box ${mine_tweet?"hide":""}`)
+                                    if(tweet.bookmark_by_cur_user)
+                                        i.fa.fa-bookmark
+                                    else
+                                        i.fa.fa-bookmark-o
+

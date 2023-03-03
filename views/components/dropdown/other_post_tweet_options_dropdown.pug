@@ -1,0 +1,39 @@
+//- cur user viewing other user profile so we  need to  follow or mute options for other user
+
+
+.dropdown(data-type="post-options-dropdown" data-dropdown="fixed" data-post-id=`${post_id}` data-post-user-id=`${post_user_id}`
+post-user-name="mne" data-media-change="true"
+data-post-type data-active="false")
+    .overlay.overlay-transparent 
+
+    .dropdown-list(data-top='' )    
+        .dropdown-content
+            .dropdown-item(data-action='uninterest-tweet')
+                i.fas.fa-frown
+                span Not intersected in this Tweet
+            .dropdown-item(data-action='unfollow-user')
+                i.fas.fa-user-times
+                span= `Unfollow name` 
+            .dropdown-item(data-action='mute-user')
+                i.fas.fa-volume-mute
+                span= `Mute name` 
+            .dropdown-item(data-action='block-user')
+                i.fas.fa-user-alt-slash
+                span= `Block name` 
+
+        .dropdown-btn.hidden
+            button.btn--outline(data-action="hide") Cancel
+//- .dropdown(data-type="tweet-options-dropdown" data-dropdown="fixed" data-tweet-id=`${tweet_id}` data-tweet-user-id=`${tweet_user_id}` data-active="false")
+//-     .dropdown-list(data-top='' )
+//-         .dropdown-item(data-action='uninterest-tweet')
+//-             i.fas.fa-frown
+//-             span Not intersected in this Tweet
+//-         .dropdown-item(data-action='unfollow-user')
+//-             i.fas.fa-user-times
+//-             span= `Unfollow name` 
+//-         .dropdown-item(data-action='mute-user')
+//-             i.fas.fa-volume-mute
+//-             span= `Mute name` 
+//-         .dropdown-item(data-action='block-user')
+//-             i.fas.fa-user-alt-slash
+//-             span= `Block name` 

@@ -1,0 +1,24 @@
+.progress-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.4rem;
+  background: var(--color-primary);
+  z-index: 400;
+  width: 0%;
+
+  &[data-progress-state='initial'] {
+    width: 0%;
+  }
+
+  &[data-progress-state='half'] {
+    animation: finish-87 0.6s ease-in;
+    animation-fill-mode: both;
+  }
+
+  &[data-progress-state='final'] {
+    animation: finish-87
+    -100 0.15s ease-in;
+    animation-fill-mode: both;
+  }
+}

@@ -1,0 +1,21 @@
+.comment-gallery.hidden
+    //- close button => redirect to tweet home page
+    button.hidden.btn--icon(data-action="redirect-to-home-page") 
+        i.fa.fa-times
+
+
+    .comment-gallery-btns
+        button.btn--icon(data-action="full-screen")
+            i.fa.fa-angle-double-right
+        button.btn--icon(data-action="mini-screen")
+            i.fa.fa-angle-double-left
+
+            
+    -const upload_imgs= page_type==="tweet_and_comments"?tweet.upload_imgs:comment.upload_imgs
+    -const path = page_type==="tweet_and_comments"? "tweets":"comments"
+    if(upload_imgs.length>0)
+        .tweet-uploadImg__container.mg-lw
+            .tweet-uploadImg__content.grid--collage(data-items=`${upload_imgs.length}`)
+                each img in upload_imgs
+                    figure.tweet-uploadImg__fig
+                        img.tweet-uploadImg(src=`/img/${path}/${img}` alt='tweet img')                                      

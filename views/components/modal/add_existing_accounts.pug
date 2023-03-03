@@ -1,0 +1,31 @@
+form.form.form--add-existing-accounts.hidden(data-form='add-existing-accounts' data-optional='false'  data-progress-line-exist="true" data-all-input-fields-valid='false' data-is_form_hidden="true" data-form_submitting="false" onsubmit='return false;')
+    .form-overlay.overlay &nbsp;
+    .form-container.modal-container
+        div.progress-line(data-progress='0')
+
+        button.btn--icon.form-closeBtn(data-action='close')
+            i.fa.fa-times
+
+        .form-content
+            .center.m-center.add-account-header
+                i.fab.fa-twitter.icon--simple
+            h4.h-5.mg-bg Sign in to Twitter
+            .form-groups.mg-lg
+                .form-group(data-field='name,email' data-input-filled='false' data-active='false' data-error='false')
+                    label.form-label(for='name') Username or email address
+                    input#name.form-input(type='text' name='name_or_email' autoComplete=false)
+
+                .form-group(data-field='password' data-input-filled='false' data-active='false' data-error='false')
+                    label.form-label(for='password') Password
+                    input#name.form-input(type='password' name='password' autoComplete=false)
+                 
+            button.btn--primary.btn--100.form-submitBtn.mg-sm(disabled data-action='submit')
+                | Submit
+            button.btn--outline.btn--100.form-submitBtn.mg-sm(data-action='forgot-password')
+                | Forgot password?
+            
+       
+            div.f-sm.f-3
+                p.text--sm  Don&apos;t have an account? 
+                a(href="/join/signup")
+                    span.blue(data-action="show-signup-form") Sign up

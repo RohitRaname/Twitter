@@ -1,0 +1,22 @@
+form.form.form--signUp(data-form='signUp' data-stage=6  data-action='set-bio' data-optional='true' onsubmit='return false;' data-email=`${user.email}`
+data-progress-line-exist="true" 
+data-is_form_hidden="true" 
+data-form_submitting="false"
+)
+    .form-overlay.overlay &nbsp;
+    .form-container.abs-center
+        div.progress-line(data-progress='0')
+        .form-content
+            .center.mg-sm.m-center
+                i.fab.fa-twitter.icon--simple
+            h3.h-4.mg-lw Describe yourself
+            p.t--md.mg-md
+                | What makes you special? Don&apos;t think too hard, just have fun with it
+            .form-group(data-active='true')
+                label.form-label(for='bio') Your bio
+                textarea#bio.form-textarea(type='text' name='bio' minlength='0' maxlength='160')
+                p.form-count
+                    span 0
+                    |  / 160
+            .form-submitBtn__box
+                button.btn--outline.form-submitBtn Skip for now

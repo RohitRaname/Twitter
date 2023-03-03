@@ -1,0 +1,22 @@
+.modal.hidden(data-modal='add-chat-user' data-sections='1' data-action='add-chat-user' data-click-event="false" )
+    .overlay 
+    .modal-container(data-height='fixed-height')
+        header.main-header.modal-header
+            .header-content
+
+                div.f-sm.f-3.header-content-text
+                    button.btn--icon.modal-backBtn(data-action='back')
+                        i.fas.fa-arrow-left
+                    h6.h-6.w-600 Add chat user
+                    //- button.btn--primary-dull.btn--sm.pos-tr.modal-topRightBtn(data-action='create-chat-group') Next
+
+
+                form.search-form(onsubmit='return false;')
+                    i.blue.fa.fa-search(aria-hidden='true')
+                    input.search-input(type='text' placeholder='Search people')
+                
+            .header-line.mg-lw
+
+        .modal-sections
+            section.modal-section.display(data-section='add-chat-user'  data-no-more-docs="false" data-docs-loading="false" data-page="0")
+                ul.modal-list

@@ -1,0 +1,3 @@
+mixin render_posted_commentlist(type,hide,page,doc_set)
+    footer(data-type=type data-initial-docs-set=`${doc_set}` data-page=page class=`comment-list comment-list-footer post-list ${hide?"hidden":""}`  data-page-type="tweet_and_comments" data-no-more-tweets="false")
+      
